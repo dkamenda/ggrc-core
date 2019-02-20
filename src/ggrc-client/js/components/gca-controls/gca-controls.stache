@@ -4,7 +4,7 @@
 }}
 {{#each items}}
 <div class="ggrc-form-item {{#isHidable .}}hidable{{/isHidable}}">
-  <div class="ggrc-form-item__row {{#if_helpers '\n #if' validationState.hasGCAErrors '\n and #if' instance.computed_errors._gca_valid}}field-failure{{/if_helpers}}">
+  <div class="ggrc-form-item__row {{#if_helpers '\n #if' validationState.hasGCAErrors '\n and #if' instance.computed_errors.custom_attribute_values}}field-failure{{/if_helpers}}">
     <div class="ggrc-form-item__field-header">
       <label for="form-field-{{customAttributeId}}" class="form-label ggrc-form-item__label form-label__extended">
         <span class="ggrc-form-item__label-text">{{title}}</span>
@@ -40,7 +40,7 @@
       (value-changed)="{updateGlobalAttribute(%event, %context)}"
       class="form-field__content custom-attribute-{{attributeType}}"
     ></custom-attributes-field>
-    {{#if_helpers '\n #if' validationState.hasGCAErrors '\n and #if' instance.computed_errors._gca_valid}}
+    {{#if_helpers '\n #if' validationState.hasGCAErrors '\n and #if' instance.computed_errors.custom_attribute_values}}
       <div role="alert">{{errorMessage attributeType}}</div>
     {{/if_helpers}}
   </div>

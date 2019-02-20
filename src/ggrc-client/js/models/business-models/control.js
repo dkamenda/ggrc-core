@@ -112,17 +112,30 @@ export default Cacheable.extend({
   keyControlOptions:
     [{title: 'Non-Key', value: false}, {title: 'Key', value: true}],
   init: function () {
-    this.validateNonBlank('title');
-
-    this.validate('assertions', function () {
-      if (!this.attr('assertions') || !this.attr('assertions.length')) {
-        return 'cannot be blank';
-      }
-    });
-
     this._super(...arguments);
   },
 }, {
+  define: {
+    title: {
+      value: '',
+      validate: {
+        required: true,
+        validateUniqueTitle: true,
+      },
+    },
+    _transient_title: {
+      value: '',
+      validate: {
+        validateUniqueTitle: true,
+      },
+    },
+    assertions: {
+      value: [],
+      validate: {
+        required: true,
+      },
+    },
+  },
   init: function () {
     this._super(...arguments);
     this.bind('refreshInstance', this.refresh.bind(this));

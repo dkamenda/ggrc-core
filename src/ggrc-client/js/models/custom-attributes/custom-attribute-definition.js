@@ -76,20 +76,32 @@ export default Cacheable.extend({
   },
 
   init: function () {
-    this.validateNonBlank('title');
-
+    this._super(...arguments);
+  },
+}, {
+  define: {
+    title: {
+      value: '',
+      validate: {
+        required: true,
+      },
+    },
     // Besides multi_choice_options we need toset the validation on the
     // attribute_type field as well, even though its validation always
     // succeeds. For some reson this is required for the modal UI buttons to
     // properly update themselves when choosing a different attribute type.
-    this.validate(
-      ['multi_choice_options', 'attribute_type'],
-      this._customValidators.multiChoiceOptions
-    );
-
-    this._super(...arguments);
+    multi_choice_options: {
+      value: '',
+      validate: {
+        validateMultiChoiceOptions: true,
+      },
+    },
+    attribute_type: {
+      validate: {
+        validateMultiChoiceOptions: true,
+      },
+    },
   },
-}, {
   init: function () {
     this._super(...arguments);
   },

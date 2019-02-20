@@ -6,11 +6,7 @@
 import Cacheable from '../cacheable';
 import Workflow from './workflow';
 import TaskGroup from './task-group';
-import {getRole} from '../../plugins/utils/acl-utils';
-import {
-  getClosestWeekday,
-  getDate,
-} from '../../plugins/utils/date-utils';
+import {getClosestWeekday} from '../../plugins/utils/date-utils';
 import contactable from '../mixins/contactable';
 import timeboxed from '../mixins/timeboxed';
 import accessControlList from '../mixins/access-control-list';
@@ -42,41 +38,10 @@ export default Cacheable.extend({
 
   init: function () {
     let that = this;
-    let assigneeRole = getRole('TaskGroupTask', 'Task Assignees');
 
     if (this._super) {
       this._super(...arguments);
     }
-    this.validateNonBlank('title');
-
-    // instance.attr('access_control_list')
-    //   .replace(...) doesn't raise change event
-    // that's why we subscribe on access_control_list.length
-    this.validate('access_control_list.length', function () {
-      let that = this;
-      let hasAssignee = assigneeRole && _.some(that.access_control_list, {
-        ac_role_id: assigneeRole.id,
-      });
-
-      if (!hasAssignee) {
-        return 'No valid contact selected for assignee';
-      }
-    });
-
-    this.validate(['start_date', 'end_date'], function () {
-      let that = this;
-      let datesAreValid = true;
-      let startDate = getDate(that.attr('start_date'));
-      let endDate = getDate(that.attr('end_date'));
-
-      // Handle cases of a workflow with start and end dates
-      datesAreValid = startDate && endDate &&
-        startDate <= endDate;
-
-      if (!datesAreValid) {
-        return 'Start and/or end date is invalid';
-      }
-    });
 
     this.bind('created', function (ev, instance) {
       if (instance instanceof that) {
@@ -106,6 +71,32 @@ export default Cacheable.extend({
     });
   },
 }, {
+  define: {
+    title: {
+      value: '',
+      validate: {
+        required: true,
+      },
+    },
+    access_control_list: {
+      value: [],
+      validate: {
+        validateAssignee: 'TaskGroupTask',
+      },
+    },
+    start_date: {
+      value: '',
+      validate: {
+        validateStartEndDates: true,
+      },
+    },
+    end_date: {
+      value: '',
+      validate: {
+        validateStartEndDates: true,
+      },
+    },
+  },
   init: function () {
     // default start and end date
     let startDate = this.attr('start_date') || new Date();

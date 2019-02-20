@@ -15,12 +15,19 @@ export default Cacheable.extend({
   destroy: 'DELETE /api/comments/{id}',
   create: 'POST /api/comments',
   init: function () {
-    this.validatePresenceOf('description');
     if (this._super) {
       this._super(...arguments);
     }
   },
 }, {
+  define: {
+    description: {
+      value: '',
+      validate: {
+        required: true,
+      },
+    },
+  },
   form_preload: function () {
     let pageInstance = getPageInstance();
     this.attr('comment', pageInstance);

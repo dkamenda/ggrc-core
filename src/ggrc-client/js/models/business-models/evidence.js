@@ -72,10 +72,17 @@ export default Cacheable.extend({
       }],
   },
   init() {
-    this.validateNonBlank('title');
     this._super(...arguments);
   },
 }, {
+  define: {
+    title: {
+      value: '',
+      validate: {
+        required: true,
+      },
+    },
+  },
   kindTitle() {
     let value = this.attr('kind');
     let title = _.find(this.class.kinds, {value}).title;

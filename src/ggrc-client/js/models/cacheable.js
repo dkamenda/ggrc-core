@@ -287,18 +287,6 @@ export default can.Model.extend({
       delete ret.hasFailCallback;
       return ret;
     };
-
-    // Register this type as a custom attributable type if it is one.
-    if (this.is_custom_attributable) {
-      this.validate(
-        '_gca_valid',
-        function () {
-          if (!this._gca_valid) {
-            return 'Missing required global custom attribute';
-          }
-        }
-      );
-    }
   },
 
   findInCacheById: function (id) {
@@ -559,6 +547,15 @@ export default can.Model.extend({
     };
   },
 }, {
+  define: {
+    custom_attribute_values: {
+      validate: {
+        validateGCA: function () {
+          return this;
+        },
+      },
+    },
+  },
   init: function () {
     let cache = this.constructor.cache;
     let idKey = this.constructor.id;

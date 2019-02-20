@@ -5,30 +5,20 @@
 
 import Mixin from './mixin';
 
-export default Mixin({
-  'after:init': function () {
-    this.validate(['title', '_transient.title'], function (newVal, prop) {
-      if (prop === 'title') {
-        return this.attr('_transient.title');
-      } else if (prop === '_transient.title') {
-        return newVal; // the title error is the error
-      }
-    });
-  },
-}, {
+export default Mixin({}, {
   save_error: function (val) {
     if (/title values must be unique\.$/.test(val)) {
-      this.attr('_transient.title', val);
+      this.attr('_transient_title', val);
     }
   },
   after_save: function () {
-    this.removeAttr('_transient.title');
+    this.removeAttr('_transient_title');
   },
   'before:attr': function (key, val) {
     if (key === 'title' &&
       arguments.length > 1 &&
       this._transient) {
-      this.attr('_transient.title', null);
+      this.attr('_transient_title', null);
     }
   },
 });

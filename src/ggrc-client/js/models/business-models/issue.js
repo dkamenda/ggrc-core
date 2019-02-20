@@ -84,37 +84,22 @@ export default Cacheable.extend({
     if (this._super) {
       this._super(...arguments);
     }
-    this.validateNonBlank('title');
-
-    this.validate(
-      'issue_tracker_component_id',
-      function () {
-        if (this.attr('issue_tracker.enabled') &&
-          !this.attr('issue_tracker.component_id')) {
-          return 'cannot be blank';
-        }
-      }
-    );
-    this.validate(
-      'issue_tracker_title',
-      function () {
-        if (this.attr('issue_tracker.enabled') &&
-          !this.attr('issue_tracker.title')) {
-          return 'cannot be blank';
-        }
-      }
-    );
-
-    this.validate(
-      'issue_tracker_issue_id',
-      function () {
-        if (this.attr('issue_tracker.enabled') &&
-          ['Fixed', 'Fixed and Verified', 'Deprecated']
-            .includes(this.attr('status')) &&
-            !this.attr('issue_tracker.issue_id')) {
-          return 'cannot be blank';
-        }
-      }
-    );
   },
-}, {});
+}, {
+  define: {
+    title: {
+      value: '',
+      validate: {
+        required: true,
+      },
+    },
+    issue_tracker: {
+      value: {},
+      validate: {
+        validateIssueTracker: true,
+        validateIssueTrackerTitle: true,
+        validateIssueTrackerIssueId: true,
+      },
+    },
+  },
+});

@@ -80,32 +80,32 @@ export default Cacheable.extend({
    */
   init: function () {
     this._super(...arguments);
-    this.validateNonBlank('title');
-
-    this.validateListNonBlank(
-      'default_people.assignees',
-      function () {
-        return this.attr('default_people.assignees') instanceof can.List;
-      }
-    );
-    this.validateListNonBlank(
-      'default_people.verifiers',
-      function () {
-        return this.attr('default_people.verifiers') instanceof can.List;
-      }
-    );
-    this.validate(
-      'issue_tracker_component_id',
-      function () {
-        if (this.attr('can_use_issue_tracker') &&
-          this.attr('issue_tracker.enabled') &&
-          !this.attr('issue_tracker.component_id')) {
-          return 'cannot be blank';
-        }
-      }
-    );
   },
 }, {
+  define: {
+    title: {
+      value: '',
+      validate: {
+        required: true,
+      },
+    },
+    default_people: {
+      value: {},
+      validate: {
+        validateDefaultAssignees: true,
+        validateDefaultVerifiers: true,
+      },
+    },
+    issue_tracker: {
+      value: {},
+      validate: {
+        validateAssessmentIssueTracker: true,
+      },
+    },
+    can_use_issue_tracker: {
+      value: false,
+    },
+  },
   /**
    * An event handler when the add/edit form is about to be displayed.
    *

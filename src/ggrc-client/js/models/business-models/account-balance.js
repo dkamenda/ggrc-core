@@ -71,7 +71,13 @@ export default Cacheable.extend({
     if (this._super) {
       this._super(...arguments);
     }
-
-    this.validateNonBlank('title');
   },
-}, {});
+}, {
+  title: {
+    value: '',
+    validate: {
+      required: true,
+      validateUniqueTitle: true,
+    },
+  },
+});
