@@ -24,6 +24,7 @@ import {
   getFormattedLocalDate,
   formatDate,
 } from './plugins/utils/date-utils';
+import {isValidAttrProperty} from './plugins/utils/validation-utils';
 
 // Chrome likes to cache AJAX requests for templates.
 let templateUrls = {};
@@ -789,10 +790,25 @@ can.stache.registerHelper('if_recurring_workflow', function (object, options) {
 });
 
 // Sets current "can" context into element data
-can.stache.registerHelper('canData', (key, options) => {
-  key = isFunction(key) ? key() : key;
+can.stache.registerHelper('canData',
+  (key, options) => {
+    key = isFunction(key) ? key() : key;
 
-  return (el) => {
-    $(el).data(key, options.context);
-  };
-});
+    return (el) => {
+      $(el).data(key, options.context);
+    };
+  }
+);
+
+can.stache.registerHelper('isValidAttrProperty',
+  (instance, attrName, propertyName, options) => {
+    instance = isFunction(instance) ? instance() : instance;
+    attrName = isFunction(attrName) ? attrName() : attrName;
+    propertyName = isFunction(propertyName) ? propertyName() : propertyName;
+    const errorMessage = isValidAttrProperty(instance, attrName, propertyName);
+
+    return errorMessage ?
+      options.fn(errorMessage) :
+      options.inverse(options.contexts);
+  }
+);
