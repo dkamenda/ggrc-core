@@ -9,6 +9,7 @@ import '../templates';
 import '../apps/base_widgets';
 import '../tracker';
 import '../plugins/canjs_extensions';
+import '../plugins/jquery_extensions';
 import '../bootstrap/modal-ajax';
 import '../bootstrap/modal-form';
 import '../plugins/lodash_helpers';
