@@ -18,4 +18,7 @@ templates.keys().forEach((key) => {
   let newKey = key.slice(prefixPos + prefix.length, postfixPos);
 
   GGRC.Templates[newKey] = templates(key);
+
+  let id = key.replace('./', `${GGRC.templates_path}/`);
+  can.stache.registerPartial(id, templates(key));
 });
