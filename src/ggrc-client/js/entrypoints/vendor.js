@@ -20,17 +20,33 @@ import 'bootstrap/js/bootstrap-tab.js';
 import 'bootstrap/js/bootstrap-tooltip.js';
 import 'bootstrap/js/bootstrap-popover.js';
 import 'clipboard';
-import 'canjs/amd/can';
-import 'can/construct/super';
-import 'can/control/plugin';
-import 'can/list/sort';
-import 'can/map/attributes';
-import 'can/map/backup';
-import 'can/map/validations';
-import 'can/view/stache';
 import 'moment';
 import 'moment-timezone/builds/moment-timezone-with-data.min';
 import 'spin.js';
 import 'jquery/jquery-ui.css';
 import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';
+
+/* canjs v3 */
+import can3 from 'can-util/namespace';
+
+import 'can-component';
+import 'can-route';
+import 'can-stache';
+import 'can-stache-bindings';
+import 'can-event';
+import 'can-view-model';
+import 'can-map';
+import 'can-list';
+import 'can-model';
+import 'can-map-backup';
+import 'can-control';
+import 'can-construct';
+import 'can-construct-super';
+import 'can-validate-legacy/map/validate/validate';
+import 'can-validate-legacy/shims/validatejs';
+import 'can-map-define';
+import 'can-jquery';
+import 'can-jquery/legacy';
+
+window.can = can3;

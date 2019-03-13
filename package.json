@@ -9,11 +9,27 @@
   "dependencies": {
     "bootstrap": "https://github.com/twbs/bootstrap/archive/v2.0.4.tar.gz",
     "can-util": "^3.14.0",
+    "can-component": "3.3.11",
+    "can-route": "3.3.4",
+    "can-stache": "3.2.0",
+    "can-event": "^3.7.7",
+    "can-view-model": "3.5.2",
+    "can-map": "3.6.0",
+    "can-model": "3.1.0",
+    "can-list": "3.2.2",
+    "can-map-backup": "3.1.1",
+    "can-validate-legacy": "2.0.0",
+    "can-control": "3.2.0",
+    "can-construct": "3.5.4",
+    "can-construct-super": "^3.2.0",
+    "can-map-define": "3.1.2",
+    "can-simple-observable": "2.4.1",
+    "can-jquery": "3.2.5",
     "clipboard": "^1.5.16",
     "components-jqueryui": "^1.12.1",
     "doctoc": "^0.11.0",
     "font-awesome": "^4.7.0",
-    "jquery": "^2.2.4",
+    "jquery": "^3.3.1",
     "lodash": "^4.17.11",
     "moment": "2.19.3",
     "moment-timezone": "^0.5.10",
@@ -72,7 +88,6 @@
     "stats": "export NODE_ENV=production && ./node_modules/.bin/webpack --env.debug"
   },
   "napa": {
-    "canjs": "https://github.com/bitovi/canjs.com/archive/v2.3.27.tar.gz",
     "bootstrap-sass": "https://github.com/twbs/bootstrap-sass/archive/v2.0.4.2.tar.gz"
   },
   "repository": {
