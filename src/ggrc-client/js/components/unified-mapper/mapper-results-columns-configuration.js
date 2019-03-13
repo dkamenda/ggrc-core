@@ -13,7 +13,7 @@ export default can.Component.extend({
   tag: 'mapper-results-columns-configuration',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       selectedColumns: {
         set(newValue, setValue) {
@@ -63,5 +63,5 @@ export default can.Component.extend({
     stopPropagation(context, el, ev) {
       ev.stopPropagation();
     },
-  },
+  }),
 });

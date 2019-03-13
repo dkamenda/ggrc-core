@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'mapper-results-item-status',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     itemData: {},
-  },
+  }),
 });

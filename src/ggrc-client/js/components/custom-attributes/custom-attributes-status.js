@@ -10,7 +10,7 @@ const IS_SAVING_TEXT = 'Saving...';
 export default can.Component.extend({
   tag: 'custom-attributes-status',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       isDirty: {
         type: 'boolean',
@@ -30,5 +30,5 @@ export default can.Component.extend({
         },
       },
     },
-  },
+  }),
 });

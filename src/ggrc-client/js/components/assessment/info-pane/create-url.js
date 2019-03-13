@@ -11,7 +11,7 @@ import Evidence from '../../../models/business-models/evidence';
 export default can.Component.extend({
   tag: 'create-url',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     value: null,
     context: null,
     create: function () {
@@ -44,5 +44,5 @@ export default can.Component.extend({
       this.dispatch({type: 'setEditMode'});
       this.attr('value', null);
     },
-  },
+  }),
 });

@@ -30,7 +30,7 @@ let DOCUMENT_KIND_MAP = {
 export default can.Component.extend({
   tag: 'related-documents',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: {},
     modelType: 'Document',
     kind: '@',
@@ -222,7 +222,7 @@ export default can.Component.extend({
         pageInstance.id
       );
     },
-  },
+  }),
   init: function () {
     let instance = this.viewModel.attr('instance');
     let isNew = instance.isNew();

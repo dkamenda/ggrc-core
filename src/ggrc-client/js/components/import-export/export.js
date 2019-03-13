@@ -36,7 +36,7 @@ export default can.Component.extend({
   tag: 'csv-export',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       exportAllowed: {
         get() {
@@ -255,7 +255,7 @@ export default can.Component.extend({
         }
       }
     },
-  },
+  }),
   events: {
     inserted() {
       this.viewModel.getExports().then(() => {

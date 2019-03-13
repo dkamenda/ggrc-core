@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'people-list',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     peopleList: [],
     instance: null,
     hasEmptyValue: false,
@@ -114,7 +114,7 @@ export default can.Component.extend({
       const data = this.attr('selectedValue');
       return data === 'other' ? this.attr('peopleList') : data;
     },
-  },
+  }),
   init() {
     this.viewModel.unpackPeopleData();
   },

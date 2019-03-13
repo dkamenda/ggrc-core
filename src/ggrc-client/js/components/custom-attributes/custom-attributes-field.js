@@ -15,7 +15,7 @@ export default can.Component.extend({
   tag: 'custom-attributes-field',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       disabled: {
         type: 'htmlbool',
@@ -34,5 +34,5 @@ export default can.Component.extend({
         field: scope,
       });
     },
-  },
+  }),
 });

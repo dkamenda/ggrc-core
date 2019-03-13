@@ -18,7 +18,7 @@ import {notifier} from '../../plugins/utils/notifiers-utils';
 export default can.Component.extend({
   tag: 'snapshot-scope-update',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: null,
     upsertIt: function (scope, el, ev) {
       confirm({
@@ -93,5 +93,5 @@ export default can.Component.extend({
       $('alert-progress').remove();
       notifier('success', message);
     },
-  },
+  }),
 });

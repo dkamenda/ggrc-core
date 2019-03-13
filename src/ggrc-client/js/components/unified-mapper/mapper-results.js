@@ -34,7 +34,7 @@ export default can.Component.extend({
   tag: 'mapper-results',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       paging: {
         value: function () {
@@ -432,7 +432,7 @@ export default can.Component.extend({
       this.attr('relatedAssessments.instance', ev.instance);
       this.attr('relatedAssessments.state.open', true);
     },
-  },
+  }),
   events: {
     '{viewModel} allSelected': function (scope, ev, allSelected) {
       if (allSelected) {

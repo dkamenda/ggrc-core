@@ -9,7 +9,7 @@ import {navigate} from '../../plugins/utils/current-page-utils';
 export default can.Component.extend({
   tag: 'object-cloner',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: null,
     modalTitle: '@',
     modalDescription: '@',
@@ -45,5 +45,5 @@ export default can.Component.extend({
         });
       }.bind(this));
     },
-  },
+  }),
 });

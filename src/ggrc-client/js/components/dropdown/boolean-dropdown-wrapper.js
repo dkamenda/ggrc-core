@@ -6,7 +6,7 @@
 export default can.Component.extend({
   tag: 'boolean-dropdown-wrapper',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     selected: null,
     selectedInternal: null,
     onChange() {
@@ -23,7 +23,7 @@ export default can.Component.extend({
 
       return value !== 'false';
     },
-  },
+  }),
   init() {
     let value = this.viewModel.attr('selected');
     this.viewModel.attr('selectedInternal', value);

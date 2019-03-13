@@ -18,7 +18,7 @@ export default can.Component.extend({
      </div>`
   ),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     CycleTaskGroupObjectTask,
     define: {
       tasksAmount: {
@@ -64,7 +64,7 @@ export default can.Component.extend({
           this.attr('hasOverdue', results.has_overdue);
         }.bind(this));
     },
-  },
+  }),
   events: {
     onModelChange: function (model, event, instance) {
       if (instance instanceof CycleTaskGroupObjectTask) {

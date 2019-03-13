@@ -10,7 +10,7 @@ export default can.Component.extend({
   tag: 'current-exports',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     exports: [],
     disabled: {},
     inProgress: false,
@@ -41,7 +41,7 @@ export default can.Component.extend({
         id,
       });
     },
-  },
+  }),
   helpers: {
     canRemove(status, options) {
       let canRemove = [

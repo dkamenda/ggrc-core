@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'ticket-id-checker',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: null,
     ticketId: null,
     isValid: true,
@@ -64,7 +64,7 @@ export default can.Component.extend({
       this.attr('isValid', hasTicketId);
       return hasTicketId;
     },
-  },
+  }),
   events: {
     '{viewModel} ticketId'() {
       let hasTicketId = !!this.viewModel.attr('ticketId');

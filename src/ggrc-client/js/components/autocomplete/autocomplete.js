@@ -14,7 +14,7 @@ let component = {
   tag: 'autocomplete',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     placeholder: '@',
     searchItemsType: '@',
     className: '@',
@@ -29,7 +29,7 @@ let component = {
         value: false,
       },
     },
-  },
+  }),
 
   _EV_ITEM_SELECTED: 'item-selected',
 

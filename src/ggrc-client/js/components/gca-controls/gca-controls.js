@@ -22,7 +22,7 @@ export default can.Component.extend({
   tag: 'gca-controls',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: {},
     items: [],
     allowHide: false,
@@ -53,7 +53,7 @@ export default can.Component.extend({
       instance.customAttr(caId, caValue);
       this.validateControls();
     },
-  },
+  }),
   helpers: {
     errorMessage(type) {
       type = isFunction(type) ? type() : type;

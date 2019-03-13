@@ -15,7 +15,7 @@ export default can.Component.extend({
   tag: 'dropdown',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       options: {
         get: function () {
@@ -83,7 +83,7 @@ export default can.Component.extend({
     optionsList: [],
     optionsGroups: {},
     isDisabled: false,
-  },
+  }),
   init: function (element, options) {
     let $el = $(element);
     let attrVal = $el.attr('is-disabled');

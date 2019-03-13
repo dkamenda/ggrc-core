@@ -18,7 +18,7 @@ import {reify, isReifiable} from '../plugins/utils/reify-utils';
 export default can.Component.extend({
   tag: 'deferred-mapper',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       instance: {
         set(instance) {
@@ -192,7 +192,7 @@ export default can.Component.extend({
       this.attr('list', []);
       objects.forEach((obj) => this.addListItem(obj));
     },
-  },
+  }),
   events: {
     '{instance} updated'() {
       this.viewModel.deferredUpdate();

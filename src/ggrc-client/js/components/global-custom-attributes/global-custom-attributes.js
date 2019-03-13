@@ -16,7 +16,7 @@ import {isProposableExternally} from '../../plugins/utils/ggrcq-utils';
 export default can.Component.extend({
   tag: 'global-custom-attributes',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     isAttributesDisabled: false,
     define: {
       redirectionEnabled: {
@@ -82,7 +82,7 @@ export default can.Component.extend({
           this.attr('isSaving', false);
         }.bind(this));
     },
-  },
+  }),
   init: function () {
     this.viewModel.initCustomAttributes();
   },

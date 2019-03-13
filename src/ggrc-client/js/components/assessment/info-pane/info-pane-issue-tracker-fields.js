@@ -10,7 +10,7 @@ export default can.Component.extend({
   tag: 'info-pane-issue-tracker-fields',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: {},
-  },
+  }),
 });

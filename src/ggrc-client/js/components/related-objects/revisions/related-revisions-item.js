@@ -16,7 +16,7 @@ export default can.Component.extend({
   tag: 'related-revisions-item',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       revision: {
         set(newValue, setValue) {
@@ -40,5 +40,5 @@ export default can.Component.extend({
     instance: {},
     modifiedBy: {},
     lastRevision: {},
-  },
+  }),
 });

@@ -12,9 +12,9 @@ export default can.Component.extend({
   tag: 'info-pane-footer',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     createdAt: '',
     modifiedAt: '',
     modifiedBy: {},
-  },
+  }),
 });

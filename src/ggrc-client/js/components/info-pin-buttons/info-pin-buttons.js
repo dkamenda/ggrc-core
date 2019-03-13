@@ -10,7 +10,7 @@ export default can.Component.extend({
   tag: 'info-pin-buttons',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     onChangeMaximizedState: null,
     onClose: null,
     define: {
@@ -41,5 +41,5 @@ export default can.Component.extend({
       ev.preventDefault();
       onClose();
     },
-  },
+  }),
 });

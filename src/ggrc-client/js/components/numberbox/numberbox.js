@@ -13,7 +13,7 @@ export default can.Component.extend({
   tag: 'numberbox',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     value: '',
     enableFloat: false,
     enableNegative: false,
@@ -59,7 +59,7 @@ export default can.Component.extend({
         this.attr('value', '');
       }
     },
-  },
+  }),
   events: {
     '.numberbox-input keypress'(el, ev) {
       const key = ev.key;

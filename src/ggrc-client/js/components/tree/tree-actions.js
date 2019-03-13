@@ -23,7 +23,7 @@ export default can.Component.extend({
   tag: 'tree-actions',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       addItem: {
         type: String,
@@ -106,7 +106,7 @@ export default can.Component.extend({
     options: null,
     model: null,
     showedItems: [],
-  },
+  }),
   export() {
     this.dispatch('export');
   },

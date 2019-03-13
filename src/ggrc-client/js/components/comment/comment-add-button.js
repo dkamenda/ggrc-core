@@ -14,7 +14,7 @@ export default can.Component.extend({
      </button>`
   ),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       disabled: {
         get: function () {
@@ -53,5 +53,5 @@ export default can.Component.extend({
         comment: comment,
       });
     },
-  },
+  }),
 });

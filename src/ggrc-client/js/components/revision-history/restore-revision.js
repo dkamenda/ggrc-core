@@ -15,7 +15,7 @@ export default can.Component.extend({
   tag: 'restore-revision',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: {},
     restoredRevision: {},
     loading: false,
@@ -107,5 +107,5 @@ export default can.Component.extend({
       this.attr('instance').restore(true);
       this.attr('loading', false);
     },
-  },
+  }),
 });

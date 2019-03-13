@@ -11,7 +11,7 @@ export default can.Component.extend('exportGroup', {
   tag: 'export-group',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       isRemovable: {
         get() {
@@ -44,7 +44,7 @@ export default can.Component.extend('exportGroup', {
       this.attr('index', index);
       return this.attr('panels').push(new panelModel(data));
     },
-  },
+  }),
   events: {
     inserted: function () {
       this.viewModel.addObjectType({

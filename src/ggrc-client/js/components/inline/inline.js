@@ -18,7 +18,7 @@ export default can.Component.extend({
   tag: 'inline-edit-control',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       isValid: {
         get() {
@@ -110,7 +110,7 @@ export default can.Component.extend({
     fieldValueChanged: function (args) {
       this.attr('context.value', args.value);
     },
-  },
+  }),
   events: {
     init: function () {
       this.viewModel.updateContext();

@@ -11,7 +11,7 @@ export default can.Component.extend({
   tag: 'related-issues',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       orderBy: {
         type: 'string',
@@ -45,5 +45,5 @@ export default can.Component.extend({
       },
     },
     baseInstance: null,
-  },
+  }),
 });

@@ -18,11 +18,11 @@ import Stub from '../../models/stub';
 export default can.Component.extend({
   tag: 'ggrc-quick-update',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: null,
     model: null,
     attributes: {},
-  },
+  }),
   events: {
     init: function () {
       this.viewModel.attr('controller', this);

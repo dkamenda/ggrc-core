@@ -14,10 +14,10 @@ export default can.Component.extend({
   tag: 'assessment-generator-button',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     audit: null,
     button: '@',
-  },
+  }),
   events: {
     'a click': function (el, ev) {
       let instance = this.viewModel.attr('audit') || getPageInstance();

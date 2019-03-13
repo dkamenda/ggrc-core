@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'tree-no-results',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       text: {
         value: 'No results, please check your filter criteria',
@@ -23,5 +23,5 @@ export default can.Component.extend({
         },
       },
     },
-  },
+  }),
 });

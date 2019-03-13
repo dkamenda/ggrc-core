@@ -16,7 +16,7 @@ export default can.Component.extend({
   tag: 'generate-issues-in-bulk-button',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       isAllowedToGenerate: {
         get() {
@@ -137,7 +137,7 @@ export default can.Component.extend({
           this.attr('isGettingInitialStatus', false);
         });
     },
-  },
+  }),
   events: {
     inserted() {
       if (this.viewModel.attr('isAllowedToGenerate')) {

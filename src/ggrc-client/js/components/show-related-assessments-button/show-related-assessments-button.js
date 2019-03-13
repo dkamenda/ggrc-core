@@ -11,7 +11,7 @@ export default can.Component.extend({
   tag: 'show-related-assessments-button',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       cssClasses: {
         type: String,
@@ -53,5 +53,5 @@ export default can.Component.extend({
     isAllowedToShow: function () {
       return hasRelatedAssessments(this.attr('instance.type'));
     },
-  },
+  }),
 });

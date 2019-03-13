@@ -14,7 +14,7 @@ export default can.Component.extend({
   tag: 'access-control-list-roles-helper',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: {},
     isNewInstance: false,
     isProposal: false,
@@ -55,7 +55,7 @@ export default can.Component.extend({
         this.setAutoPopulatedRoles();
       }
     },
-  },
+  }),
   events: {
     inserted() {
       this.viewModel.setupRoles();

@@ -11,6 +11,6 @@ export default can.Component.extend({
      </div>`
   ),
   leakScope: true,
-  viewModel: {},
+  viewModel: can.Map.extend({}),
 });
 

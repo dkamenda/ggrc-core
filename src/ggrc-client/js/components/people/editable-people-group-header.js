@@ -11,7 +11,7 @@ export default can.Component.extend({
   tag: 'editable-people-group-header',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       peopleCount: {
         get: function () {
@@ -38,5 +38,5 @@ export default can.Component.extend({
     openEditMode: function () {
       this.dispatch('editPeopleGroup');
     },
-  },
+  }),
 });

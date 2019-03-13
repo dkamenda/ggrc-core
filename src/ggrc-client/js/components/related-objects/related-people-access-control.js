@@ -9,7 +9,7 @@ import {getRolesForType} from '../../plugins/utils/acl-utils';
 export default can.Component.extend({
   tag: 'related-people-access-control',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: {},
     deferredSave: null,
     includeRoles: [],
@@ -265,7 +265,7 @@ export default can.Component.extend({
 
       return groups;
     },
-  },
+  }),
   events: {
     refreshGroups: function () {
       this.viewModel.attr('groups',

@@ -9,12 +9,12 @@ export default can.Component.extend({
   tag: 'add-object-button',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: null,
     linkclass: '@',
     content: '@',
     text: '@',
     singular: '@',
     plural: '@',
-  },
+  }),
 });

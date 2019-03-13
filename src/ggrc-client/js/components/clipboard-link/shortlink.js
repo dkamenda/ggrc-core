@@ -14,7 +14,7 @@ export default can.Component.extend({
      </clipboard-link>`
   ),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: null,
     define: {
       text: {
@@ -30,5 +30,5 @@ export default can.Component.extend({
         },
       },
     },
-  },
+  }),
 });

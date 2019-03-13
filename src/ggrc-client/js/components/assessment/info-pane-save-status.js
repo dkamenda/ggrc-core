@@ -6,7 +6,7 @@
 export default can.Component.extend({
   tag: 'info-pane-save-status',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     infoPaneSaving: false,
-  },
+  }),
 });

@@ -12,7 +12,7 @@
 export default can.Component.extend({
   tag: 'assessment-template-attributes',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     fields: [],
     types: [{
       type: 'Text',
@@ -58,7 +58,7 @@ export default can.Component.extend({
           field.title + '" title');
       }
     },
-  },
+  }),
   events: {
     inserted: function () {
       let el = $(this.element);

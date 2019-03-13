@@ -6,11 +6,11 @@
 export default can.Component.extend({
   tag: 'checkbox-to-list',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     property: '@',
     instance: null,
     values: {},
-  },
+  }),
   init: function () {
     let viewModel = this.viewModel;
     let values = viewModel.attr('instance.' + viewModel.attr('property'));

@@ -15,7 +15,7 @@ export default can.Component.extend({
   tag: 'assessment-templates-dropdown',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     responses: [],
     instance: null,
     assessmentTemplate: null,
@@ -81,7 +81,7 @@ export default can.Component.extend({
           tracker.USER_ACTIONS.ASSESSMENT.OPEN_ASMT_GEN_MODAL);
       }
     },
-  },
+  }),
   init() {
     const viewModel = this.viewModel;
     const instance = viewModel.attr('instance');

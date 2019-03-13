@@ -11,7 +11,7 @@ export default can.Component.extend({
      </textarea>`
   ),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     array: null,
     className: '@',
     delimeter: ', ',
@@ -23,7 +23,7 @@ export default can.Component.extend({
       let array = this.attr('array') || [];
       this.attr('content', array.join(this.attr('delimeter')));
     },
-  },
+  }),
   events: {
     'textarea change': function (el, ev) {
       let val = $(el).val();

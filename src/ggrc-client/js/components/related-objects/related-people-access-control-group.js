@@ -11,7 +11,7 @@ import Permission from '../../permission';
 export default can.Component.extend({
   tag: 'related-people-access-control-group',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       canEdit: {
         get: function () {
@@ -116,7 +116,7 @@ export default can.Component.extend({
         this.saveChanges();
       }
     },
-  },
+  }),
   events: {
     init: function ($element, options) {
       let vm = this.viewModel;

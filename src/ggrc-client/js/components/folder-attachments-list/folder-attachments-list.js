@@ -21,7 +21,7 @@ export default can.Component.extend({
   tag: 'folder-attachments-list',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       showSpinner: {
         type: 'boolean',
@@ -69,7 +69,7 @@ export default can.Component.extend({
     isAttaching: false,
     isUnmapping: false,
     isListLoading: false,
-  },
+  }),
   events: {
     [`{viewModel.instance} ${BEFORE_DOCUMENT_CREATE.type}`]() {
       this.viewModel.attr('isMapping', true);

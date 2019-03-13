@@ -6,7 +6,7 @@
 export default can.Component.extend({
   tag: 'sort',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     sortedItems: [],
     items: [],
     sort() {
@@ -14,7 +14,7 @@ export default can.Component.extend({
       const sortedItems = items.sort(items);
       this.attr('sortedItems', sortedItems);
     },
-  },
+  }),
   events: {
     '{viewModel.items} change'() {
       this.viewModel.sort();

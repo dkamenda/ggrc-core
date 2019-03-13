@@ -9,8 +9,8 @@ export default can.Component.extend({
   tag: 'date-form-field-view',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     value: null,
     disabled: false,
-  },
+  }),
 });

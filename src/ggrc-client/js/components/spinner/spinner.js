@@ -9,9 +9,9 @@ export default can.Component.extend({
   tag: 'spinner',
   template: can.stache(template),
   leakScope: true,
-  scope: {
+  scope: can.Map.extend({
     extraCssClass: '@',
     size: '@',
     toggle: null,
-  },
+  }),
 });

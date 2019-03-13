@@ -70,7 +70,7 @@ export default can.Component.extend({
   template: can.stache(template),
   requestData: null,
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       isImportStopped: {
         get() {
@@ -389,7 +389,7 @@ export default can.Component.extend({
           });
       }
     },
-  },
+  }),
   events: {
     inserted() {
       this.viewModel.getImportHistory();

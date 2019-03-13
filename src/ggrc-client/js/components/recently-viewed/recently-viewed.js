@@ -11,9 +11,9 @@ export default can.Component.extend({
   tag: 'recently-viewed',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     items: [],
-  },
+  }),
   init() {
     let objects = getRecentlyViewedObjects();
     let items = _.map(objects, (obj) => {

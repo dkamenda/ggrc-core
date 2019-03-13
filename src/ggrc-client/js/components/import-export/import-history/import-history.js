@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'import-history',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     history: [],
     remove(id) {
       this.dispatch({
@@ -24,5 +24,5 @@ export default can.Component.extend({
         title,
       });
     },
-  },
+  }),
 });

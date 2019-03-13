@@ -18,7 +18,7 @@ export default can.Component.extend({
   tag: 'external-data-autocomplete',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       /**
        * The flag indicating that results will be rendered.
@@ -142,5 +142,5 @@ export default can.Component.extend({
         return result;
       });
     },
-  },
+  }),
 });

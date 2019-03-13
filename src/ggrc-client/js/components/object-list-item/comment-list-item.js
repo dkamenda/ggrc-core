@@ -15,7 +15,7 @@ export default can.Component.extend({
   tag: 'comment-list-item',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: {},
     baseInstance: {},
     define: {
@@ -92,5 +92,5 @@ export default can.Component.extend({
         tabId: 'tab-related-proposals',
       });
     },
-  },
+  }),
 });

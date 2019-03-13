@@ -20,7 +20,7 @@ export default can.Component.extend({
   tag: 'detailed-business-object-list-item',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: {},
     customAttributes: null,
     deletableAdmin: false,
@@ -66,5 +66,5 @@ export default can.Component.extend({
         },
       },
     },
-  },
+  }),
 });

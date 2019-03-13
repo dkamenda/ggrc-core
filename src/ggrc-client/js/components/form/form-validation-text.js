@@ -20,7 +20,7 @@ export default can.Component.extend({
      </p>`
   ),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       text: {
         type: String,
@@ -50,5 +50,5 @@ export default can.Component.extend({
     validation: {},
     highlightInvalidFields: '@',
     type: 'input',
-  },
+  }),
 });

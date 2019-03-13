@@ -13,7 +13,7 @@ export default can.Component.extend({
   tag: 'questions-link',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       hasQuestions: {
         type: Boolean,
@@ -36,7 +36,7 @@ export default can.Component.extend({
       },
     },
     instance: null,
-  },
+  }),
   events: {
     '.question-link click': function (el, ev) {
       ev.stopPropagation();

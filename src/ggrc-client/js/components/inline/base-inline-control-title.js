@@ -10,7 +10,7 @@ export default can.Component.extend({
   tag: 'base-inline-control-title',
   template: can.stache(template),
   leakScope: false,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       isEditIconAllowed: {
         get: function () {
@@ -31,7 +31,7 @@ export default can.Component.extend({
     editMode: false,
     isEditIconDenied: false,
     redirectionEnabled: false,
-  },
+  }),
   events: {
     '.inline-edit-icon click': function () {
       this.viewModel.dispatch('setEditModeInline');

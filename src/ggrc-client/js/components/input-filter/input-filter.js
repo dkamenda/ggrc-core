@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'input-filter',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     value: '',
     excludeSymbols: '@',
     placeholder: '@',
@@ -28,7 +28,7 @@ export default can.Component.extend({
 
       el.val(result);
     },
-  },
+  }),
   events: {
     '.input-filter input'(el) {
       this.viewModel.cleanUpInput(el);

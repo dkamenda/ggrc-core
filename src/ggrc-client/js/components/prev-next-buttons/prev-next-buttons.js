@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'prev-next-buttons',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       currentIndex: {
         type: 'number',
@@ -48,5 +48,5 @@ export default can.Component.extend({
         this.attr('currentIndex', current - 1);
       }
     },
-  },
+  }),
 });

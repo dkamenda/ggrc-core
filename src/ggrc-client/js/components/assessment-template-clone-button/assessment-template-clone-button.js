@@ -11,7 +11,7 @@ export default can.Component.extend({
   tag: 'assessment-template-clone-button',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     model: null,
     text: null,
     parentId: null,
@@ -42,5 +42,5 @@ export default can.Component.extend({
         }
       }
     },
-  },
+  }),
 });

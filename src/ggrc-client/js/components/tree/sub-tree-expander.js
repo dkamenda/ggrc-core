@@ -10,7 +10,7 @@ import {
 export default can.Component.extend({
   tag: 'sub-tree-expander',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       contextName: {
         type: String,
@@ -29,5 +29,5 @@ export default can.Component.extend({
       this.attr('expanded', !this.attr('expanded'));
       this.onChangeState(this.attr('expanded'));
     },
-  },
+  }),
 });

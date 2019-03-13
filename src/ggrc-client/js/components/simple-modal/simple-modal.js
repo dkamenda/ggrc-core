@@ -16,7 +16,7 @@ export default can.Component.extend({
   tag: 'simple-modal',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     extraCssClass: '@',
     instance: {},
     modalTitle: '',
@@ -43,7 +43,7 @@ export default can.Component.extend({
         $modalWrapper.modal('hide').off('hidden.bs.modal');
       }
     },
-  },
+  }),
   events: {
     inserted() {
       const viewModel = this.viewModel;

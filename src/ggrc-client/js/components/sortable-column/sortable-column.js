@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'sortable-column',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       isSorted: {
         type: Boolean,
@@ -43,7 +43,7 @@ export default can.Component.extend({
         this.attr('sort.direction', 'asc');
       }
     },
-  },
+  }),
   events: {
     '{$content} click'() {
       this.viewModel.applySort();

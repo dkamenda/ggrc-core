@@ -33,7 +33,7 @@ export default can.Component.extend({
   tag: 'revision-page',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       revisions: {
         set(newValue, setter) {
@@ -654,5 +654,5 @@ export default can.Component.extend({
       roles.unshift('none');
       return _.maxBy(roles, Array.prototype.indexOf.bind(roleOrder));
     },
-  },
+  }),
 });

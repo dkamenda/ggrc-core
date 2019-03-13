@@ -10,7 +10,7 @@ export default can.Component.extend({
   tag: 'assessment-custom-attributes',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     items: [],
     editMode: false,
     modifiedFields: {},
@@ -23,5 +23,5 @@ export default can.Component.extend({
       });
       this.attr('modifiedFields', {}, true);
     },
-  },
+  }),
 });

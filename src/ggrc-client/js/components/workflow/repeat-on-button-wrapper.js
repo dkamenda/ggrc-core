@@ -14,7 +14,7 @@ export default can.Component.extend({
      </repeat-on-button>`
   ),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       autoSave: {
         type: 'boolean',
@@ -55,5 +55,5 @@ export default can.Component.extend({
 
       return $.Deferred().resolve();
     },
-  },
+  }),
 });

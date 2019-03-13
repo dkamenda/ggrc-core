@@ -12,7 +12,7 @@ const EDITABLE_STATES = [
 export default can.Component.extend({
   tag: 'confirm-edit-action',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: {},
     setInProgress: null,
     editMode: false,
@@ -56,5 +56,5 @@ export default can.Component.extend({
         isLastOpenInline: true,
       });
     },
-  },
+  }),
 });

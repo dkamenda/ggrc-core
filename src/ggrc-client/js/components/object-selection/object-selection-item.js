@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'object-selection-item',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     isSaving: false,
     item: null,
     isDisabled: false,
@@ -18,7 +18,7 @@ export default can.Component.extend({
       let event = isSelected ? 'selectItem' : 'deselectItem';
       can.trigger(el, event, [this.attr('item')]);
     },
-  },
+  }),
   events: {
     'input[type="checkbox"] click': function (el, ev) {
       let isSelected = el[0].checked;

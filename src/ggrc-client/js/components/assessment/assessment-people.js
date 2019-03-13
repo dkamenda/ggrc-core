@@ -12,7 +12,7 @@ export default can.Component.extend({
   tag: 'assessment-people',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       emptyMessage: {
         type: 'string',
@@ -24,7 +24,7 @@ export default can.Component.extend({
     instance: {},
     conflictRoles: ['Assignees', 'Verifiers'],
     orderOfRoles: ['Creators', 'Assignees', 'Verifiers'],
-  },
+  }),
   events: {
     [`{instance} ${ROLES_CONFLICT.type}`]: function (ev, args) {
       this.viewModel.attr('rolesConflict', args.rolesConflict);

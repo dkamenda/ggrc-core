@@ -20,7 +20,7 @@ export default can.Component.extend({
        Delete
     </span>`),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       instance: {
         set(instance) {
@@ -112,7 +112,7 @@ export default can.Component.extend({
         relatedToOriginal,
       };
     },
-  },
+  }),
   events: {
     click() {
       this.viewModel.confirmDelete();

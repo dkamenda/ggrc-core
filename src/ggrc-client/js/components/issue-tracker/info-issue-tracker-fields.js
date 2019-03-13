@@ -9,11 +9,11 @@ export default can.Component.extend({
   tag: 'info-issue-tracker-fields',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: {},
     showTitle: false,
     note: '',
     linkingNote: '',
     snowId: false,
-  },
+  }),
 });

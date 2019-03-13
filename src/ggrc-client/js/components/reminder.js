@@ -8,7 +8,7 @@ import {confirm} from '../plugins/utils/modals';
 export default can.Component.extend({
   tag: 'reminder',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: null,
     type: '@',
     modal_title: '@',
@@ -39,5 +39,5 @@ export default can.Component.extend({
           });
         });
     },
-  },
+  }),
 });

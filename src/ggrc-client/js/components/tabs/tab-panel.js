@@ -13,7 +13,7 @@ export default can.Component.extend({
   tag: 'tab-panel',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       cssClasses: {
         type: 'string',
@@ -91,7 +91,7 @@ export default can.Component.extend({
     updateWarningState(event) {
       this.attr('warningState', event.warning);
     },
-  },
+  }),
   events: {
     /**
      * On Components rendering finished add this viewModel to `panels` list

@@ -9,7 +9,7 @@
 export default can.Component.extend({
   tag: 'object-selection',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     selectedItems: [],
     items: [],
     // This is an array by default replace with deferred on actual load
@@ -99,7 +99,7 @@ export default can.Component.extend({
           this.clearSelection();
         }.bind(this));
     },
-  },
+  }),
   events: {
     '{viewModel} refreshSelection': function (scope, ev, refreshSelection) {
       if (refreshSelection) {

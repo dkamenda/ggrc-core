@@ -9,7 +9,7 @@ import Relationship from '../../models/service-models/relationship';
 export default can.Component.extend({
   tag: 'unmap-button',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     destination: {},
     source: {},
     isUnmapping: false,
@@ -49,7 +49,7 @@ export default can.Component.extend({
       return Relationship.findRelationship(
         this.source, this.destination);
     },
-  },
+  }),
   events: {
     click: function () {
       if (this.viewModel.attr('preventClick')) {

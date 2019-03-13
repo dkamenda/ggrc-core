@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'related-proposals',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     baseInstance: {},
     define: {
       predefinedFilter: {
@@ -51,7 +51,7 @@ export default can.Component.extend({
         warning: proposed.length > 0,
       });
     },
-  },
+  }),
   events: {
     '{viewModel.proposals} change'() {
       this.viewModel.checkTabWarning();

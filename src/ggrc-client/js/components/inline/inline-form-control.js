@@ -8,7 +8,7 @@ import {notifierXHR} from '../../plugins/utils/notifiers-utils';
 export default can.Component.extend({
   tag: 'inline-form-control',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     deferredSave: null,
     instance: null,
 
@@ -21,5 +21,5 @@ export default can.Component.extend({
         notifierXHR('error', xhr);
       });
     },
-  },
+  }),
 });

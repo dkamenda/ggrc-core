@@ -8,7 +8,7 @@ import Mappings from '../../models/mappers/mappings';
 export default can.Component.extend({
   tag: 'assessment-object-type-dropdown',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       objectTypes: {
         get: function () {
@@ -26,5 +26,5 @@ export default can.Component.extend({
     },
     assessmentType: '',
     instance: {},
-  },
+  }),
 });

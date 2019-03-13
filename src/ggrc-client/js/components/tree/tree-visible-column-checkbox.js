@@ -9,10 +9,10 @@ export default can.Component.extend({
   tag: 'tree-visible-column-checkbox',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     column: {},
     onChange(attr) {
       attr.attr('selected', !attr.attr('selected'));
     },
-  },
+  }),
 });

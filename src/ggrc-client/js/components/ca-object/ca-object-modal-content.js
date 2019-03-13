@@ -15,7 +15,7 @@ export default can.Component.extend({
   tag: 'ca-object-modal-content',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       comment: {
         get() {
@@ -106,5 +106,5 @@ export default can.Component.extend({
           });
         });
     },
-  },
+  }),
 });

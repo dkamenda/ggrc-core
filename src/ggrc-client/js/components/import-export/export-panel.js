@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'export-panel',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       showAttributes: {
         value: true,
@@ -66,7 +66,7 @@ export default can.Component.extend({
       this.attr('showAttributes', true);
       this.attr('showLocalAttributes', true);
     },
-  },
+  }),
   events: {
     '[data-action=select_toggle] click': function (el, ev) {
       let type = el.data('type');

@@ -6,7 +6,7 @@
 export default can.Component.extend({
   tag: 'tree-header-selector',
   leakScope: true,
-  viewModel: {},
+  viewModel: can.Map.extend({}),
   events: {
     init: function (element, options) {
       this.viewModel.attr('controller', this);

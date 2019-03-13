@@ -13,7 +13,7 @@ export default can.Component.extend({
   tag: 'custom-roles',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       isReadonly: {
         get() {
@@ -71,5 +71,5 @@ export default can.Component.extend({
         this.attr('updatableGroupId', null);
       });
     },
-  },
+  }),
 });

@@ -13,11 +13,11 @@ export default can.Component.extend({
   tag: 'mapper-results-item-attrs',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: null,
     columns: [],
     modelType: '',
-  },
+  }),
   events: {
     click(element, event) {
       if ($(event.target).is('.link')) {

@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'add-template-field',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     selected: [],
     fields: [],
     types: [],
@@ -81,7 +81,7 @@ export default can.Component.extend({
         isReservedByModelAttr.bind(null, title),
       ];
     },
-  },
+  }),
   events: {
     /*
      * Set default dropdown type on init

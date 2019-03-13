@@ -11,7 +11,7 @@ import {notifier} from '../../plugins/utils/notifiers-utils';
 export default can.Component.extend({
   tag: 'external-data-provider',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     /**
      * The search that should be used in request.
      * @type {String}
@@ -73,7 +73,7 @@ export default can.Component.extend({
 
       this.attr('currentRequest', requestNumber);
     },
-  },
+  }),
   /**
    * Launch search when component is initialized.
    */

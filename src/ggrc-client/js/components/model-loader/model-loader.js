@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'model-loader',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       loadedModel: {
         get(last, set) {
@@ -19,5 +19,5 @@ export default can.Component.extend({
       },
     },
     path: '',
-  },
+  }),
 });

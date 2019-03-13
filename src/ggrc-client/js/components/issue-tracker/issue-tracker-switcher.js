@@ -6,7 +6,7 @@
 export default can.Component.extend({
   tag: 'issue-tracker-switcher',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       isIntegrationEnabled: {
         set: function (newValue, setValue) {
@@ -51,5 +51,5 @@ export default can.Component.extend({
         issueTracker.attr('title', value);
       }
     },
-  },
+  }),
 });

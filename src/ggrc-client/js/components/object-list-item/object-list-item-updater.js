@@ -10,7 +10,7 @@ import RefreshQueue from '../../models/refresh_queue';
 export default can.Component.extend({
   tag: 'object-list-item-updater',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       targetInstance: {
         set: function (value) {
@@ -35,5 +35,5 @@ export default can.Component.extend({
           this.attr('instanceUpdated', true);
         }.bind(this));
     },
-  },
+  }),
 });

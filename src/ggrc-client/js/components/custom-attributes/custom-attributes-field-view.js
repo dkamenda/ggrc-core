@@ -14,8 +14,8 @@ export default can.Component.extend({
   tag: 'custom-attributes-field-view',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     type: null,
     value: null,
-  },
+  }),
 });

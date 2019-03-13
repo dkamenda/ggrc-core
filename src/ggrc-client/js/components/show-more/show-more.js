@@ -18,7 +18,7 @@ export default can.Component.extend({
   tag: 'show-more',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       limit: {
         type: 'number',
@@ -74,5 +74,5 @@ export default can.Component.extend({
       newValue = !this.attr('shouldShowAllItems');
       this.attr('shouldShowAllItems', newValue);
     },
-  },
+  }),
 });

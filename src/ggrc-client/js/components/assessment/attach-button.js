@@ -15,7 +15,7 @@ export default can.Component.extend({
   template: can.stache(template),
   confirmationCallback: '@',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       hasPermissions: {
         get: function (prevValue, setValue) {
@@ -81,5 +81,5 @@ export default can.Component.extend({
 
       return findGDriveItemById(folderId);
     },
-  },
+  }),
 });

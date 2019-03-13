@@ -31,7 +31,7 @@ export default can.Component.extend({
     }
   },
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     placement: '@',
     setCurrentPage: function (pageNumber) {
       this.paging.attr('current', pageNumber);
@@ -79,5 +79,5 @@ export default can.Component.extend({
 
       return `Page ${pageNumber}: ${first}-${last}`;
     },
-  },
+  }),
 });

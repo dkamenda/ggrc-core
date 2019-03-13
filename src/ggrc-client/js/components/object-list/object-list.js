@@ -14,7 +14,7 @@ export default can.Component.extend({
   tag: 'object-list',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       itemSelector: {
         type: 'string',
@@ -98,7 +98,7 @@ export default can.Component.extend({
       }
       this.attr('isInnerClick', false);
     },
-  },
+  }),
   events: {
     '.object-list__item click': function () {
       this.viewModel.attr('isInnerClick', true);

@@ -10,7 +10,7 @@ export default can.Component.extend({
   tag: 'request-review-modal',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       isValidForm: {
         get() {
@@ -67,7 +67,7 @@ export default can.Component.extend({
           this.attr('loading', false);
         });
     },
-  },
+  }),
   events: {
     '{viewModel.modalState} open'() {
       if (this.viewModel.attr('modalState.open')) {

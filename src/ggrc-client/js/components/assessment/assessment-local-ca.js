@@ -19,7 +19,7 @@ import {getPlainText} from '../../plugins/ggrc_utils';
 export default can.Component.extend({
   tag: 'assessment-local-ca',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: null,
     fields: [],
     isDirty: false,
@@ -209,7 +209,7 @@ export default can.Component.extend({
         saveDfd: saveDfd,
       });
     },
-  },
+  }),
   events: {
     '{viewModel} evidenceAmount': function () {
       this.viewModel.validateForm();

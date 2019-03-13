@@ -22,7 +22,7 @@ export default can.Component.extend({
   tag: 'issue-unmap-item',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       paging: {
         value() {
@@ -156,7 +156,7 @@ export default can.Component.extend({
         from ${targetType} version (${targetTitle}),
         then mapping with original object will be automatically reverted.`);
     },
-  },
+  }),
   events: {
     async click(el, ev) {
       ev.preventDefault();

@@ -5,7 +5,7 @@
 
 import template from './templates/text-form-field.stache';
 
-const TEXT_FORM_FIELD_VM = {
+const TEXT_FORM_FIELD_VM = can.Map.extend({
   define: {
     inputValue: {
       set(newValue) {
@@ -58,7 +58,7 @@ const TEXT_FORM_FIELD_VM = {
       value: newValue,
     });
   },
-};
+});
 
 export default can.Component.extend({
   template: can.stache(template),

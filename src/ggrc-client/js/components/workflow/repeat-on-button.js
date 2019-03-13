@@ -11,7 +11,7 @@ export default can.Component.extend({
   tag: 'repeat-on-button',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       buttonText: {
         get: function () {
@@ -128,7 +128,7 @@ export default can.Component.extend({
           this.attr('state.open', false);
         }.bind(this));
     },
-  },
+  }),
   events: {
     '{state.result} unit': function () {
       this.viewModel.updateRepeatEveryOptions();

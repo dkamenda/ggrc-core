@@ -13,7 +13,7 @@ export default can.Component.extend({
   tag: 'business-object-list-item',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: {},
     define: {
       type: {
@@ -50,5 +50,5 @@ export default can.Component.extend({
         },
       },
     },
-  },
+  }),
 });

@@ -16,7 +16,7 @@ export default can.Component.extend({
   tag: 'create-proposal',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       isDisabled: {
         type: Boolean,
@@ -85,5 +85,5 @@ export default can.Component.extend({
 
       return isDirty || hasPending;
     },
-  },
+  }),
 });

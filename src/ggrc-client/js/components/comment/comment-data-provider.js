@@ -14,7 +14,7 @@ import Context from '../../models/service-models/context';
 export default can.Component.extend({
   tag: 'comment-data-provider',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: null,
     comments: [],
     isLoading: false,
@@ -91,7 +91,7 @@ export default can.Component.extend({
           this.removeComment(comment);
         });
     },
-  },
+  }),
   init() {
     this.viewModel.loadComments();
   },

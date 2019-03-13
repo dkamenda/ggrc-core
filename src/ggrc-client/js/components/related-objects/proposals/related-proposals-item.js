@@ -19,7 +19,7 @@ export default can.Component.extend({
   tag: 'related-proposals-item',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       proposal: {
         value: {},
@@ -105,5 +105,5 @@ export default can.Component.extend({
         Comment:
         ${comment}`;
     },
-  },
+  }),
 });

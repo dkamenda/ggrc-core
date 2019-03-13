@@ -10,7 +10,7 @@ export default can.Component.extend({
   tag: 'assessment-inline-item',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: {},
     propName: '@',
     value: '',
@@ -25,5 +25,5 @@ export default can.Component.extend({
     onStateChangeDfd: $.Deferred().resolve(),
     mandatory: false,
     isConfirmationNeeded: true,
-  },
+  }),
 });

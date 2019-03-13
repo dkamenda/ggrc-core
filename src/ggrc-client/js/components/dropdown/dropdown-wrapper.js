@@ -6,7 +6,7 @@
 export default can.Component.extend({
   tag: 'dropdown-wrapper',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     value: null,
     selected: '',
     options: [],
@@ -52,5 +52,5 @@ export default can.Component.extend({
 
       this.attr('value', selected || null);
     },
-  },
+  }),
 });

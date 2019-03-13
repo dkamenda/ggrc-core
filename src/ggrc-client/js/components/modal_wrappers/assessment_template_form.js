@@ -35,7 +35,7 @@ const PEOPLE_VALUES_OPTIONS = Object.freeze({
 export default can.Component.extend({
   tag: 'wrapper-assessment-template',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: {},
     define: {
       showCaptainAlert: {
@@ -71,5 +71,5 @@ export default can.Component.extend({
         },
       },
     },
-  },
+  }),
 });

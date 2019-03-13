@@ -14,7 +14,7 @@ export default can.Component.extend({
   tag: 'notifications-menu-item',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       emailDigest: {
         set(newValue) {
@@ -76,7 +76,7 @@ export default can.Component.extend({
         this.attr('isLoading', false);
       }
     },
-  },
+  }),
   events: {
     // Don't close the dropdown if clicked on checkbox
     'click'(el, ev) {

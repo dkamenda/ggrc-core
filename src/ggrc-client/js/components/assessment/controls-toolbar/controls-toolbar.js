@@ -11,7 +11,7 @@ export default can.Component.extend({
   tag: 'assessment-controls-toolbar',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: null,
     verifiers: [],
     isInfoPaneSaving: false,
@@ -24,5 +24,5 @@ export default can.Component.extend({
         undo: event.undo,
       });
     },
-  },
+  }),
 });

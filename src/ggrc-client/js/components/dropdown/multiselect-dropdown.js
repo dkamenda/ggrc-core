@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'multiselect-dropdown',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     disabled: false,
     _stateWasUpdated: false,
     selected: [],
@@ -119,7 +119,7 @@ export default can.Component.extend({
     dropdownBodyClick: function (ev) {
       ev.stopPropagation();
     },
-  },
+  }),
   events: {
     '{window} click': function () {
       if (this.viewModel.attr('disabled')) {

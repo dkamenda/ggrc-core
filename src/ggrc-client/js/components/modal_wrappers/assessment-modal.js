@@ -10,7 +10,7 @@ import {
 export default can.Component.extend({
   tag: 'assessment-modal',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     instance: null,
     isNewInstance: false,
     mappedObjects: [],
@@ -31,7 +31,7 @@ export default can.Component.extend({
           this.attr('mappedObjects', snapshots);
         });
     },
-  },
+  }),
   events: {
     inserted() {
       let vm = this.viewModel;

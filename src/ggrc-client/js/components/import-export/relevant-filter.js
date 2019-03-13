@@ -11,7 +11,7 @@ export default can.Component.extend({
   tag: 'relevant-filter',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     relevant_menu_item: '@',
     operators: [{title: 'AND', value: 'AND'}, {title: 'OR', value: 'OR'}],
     addFilter: function () {
@@ -59,7 +59,7 @@ export default can.Component.extend({
     removeFilter(el, index) {
       this.attr('relevant').splice(index, 1);
     },
-  },
+  }),
   events: {
     init: function () {
       this.setRelevant();

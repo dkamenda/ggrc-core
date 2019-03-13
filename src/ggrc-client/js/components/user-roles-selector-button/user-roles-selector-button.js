@@ -6,7 +6,7 @@
 export default can.Component.extend({
   tag: 'user-roles-selector-button',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     personId: null,
     async openModal(ev) {
       let $trigger = $(ev.target);
@@ -25,5 +25,5 @@ export default can.Component.extend({
       // Trigger the controller
       userRolesModalSelector.launch($trigger, options);
     },
-  },
+  }),
 });

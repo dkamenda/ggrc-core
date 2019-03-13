@@ -9,7 +9,7 @@ import {reify, isReifiable} from '../../plugins/utils/reify-utils';
 export default can.Component.extend({
   tag: 'object-loader',
   leakSkope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       path: {
         set(value) {
@@ -26,5 +26,5 @@ export default can.Component.extend({
       },
     },
     loadedObject: null,
-  },
+  }),
 });

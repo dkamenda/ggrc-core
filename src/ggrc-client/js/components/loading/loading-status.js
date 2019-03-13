@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'loading-status',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       showSpinner: {
         type: 'boolean',
@@ -25,5 +25,5 @@ export default can.Component.extend({
       },
     },
     loadingText: '@',
-  },
+  }),
 });

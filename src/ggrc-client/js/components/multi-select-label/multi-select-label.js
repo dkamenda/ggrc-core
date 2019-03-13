@@ -14,7 +14,7 @@ export default can.Component.extend({
   tag: 'multi-select-label',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       onlyEditMode: {
         type: 'boolean',
@@ -91,7 +91,7 @@ export default can.Component.extend({
       this.attr('labels').splice(index, 1);
       this.valueChanged(this.attr('labels'));
     },
-  },
+  }),
   events: {
     '{viewModel.instance} modal:discard': function () {
       let viewModel = this.viewModel;

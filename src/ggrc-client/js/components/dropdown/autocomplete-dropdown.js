@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'autocomplete-dropdown',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     options: [],
     filteredOptions: [],
     isOpen: false,
@@ -57,7 +57,7 @@ export default can.Component.extend({
       this.attr('value', item.value);
       this.closeDropdown();
     },
-  },
+  }),
   events: {
     '{window} click'() {
       this.viewModel.changeOpenCloseState();

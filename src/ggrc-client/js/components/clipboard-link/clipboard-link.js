@@ -14,9 +14,9 @@ export default can.Component.extend({
      </a>`
   ),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     text: '',
-  },
+  }),
   events: {
     inserted(el, evnt) {
       new Clipboard(el.find('a')[0]).on('success', () => {

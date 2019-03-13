@@ -24,7 +24,7 @@ export default can.Component.extend({
   tag: 'ggrc-gdrive-picker-launcher',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       isInactive: {
         get: function () {
@@ -201,5 +201,5 @@ export default can.Component.extend({
         notifierXHR('error', xhr);
       });
     },
-  },
+  }),
 });

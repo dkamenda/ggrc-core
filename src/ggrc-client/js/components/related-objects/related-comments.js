@@ -9,7 +9,7 @@
 export default can.Component.extend({
   tag: 'related-comments',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       parentInstance: {
         value: {},
@@ -22,5 +22,5 @@ export default can.Component.extend({
         },
       },
     },
-  },
+  }),
 });

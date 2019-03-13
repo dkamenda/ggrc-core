@@ -16,7 +16,7 @@ export default can.Component.extend({
   tag: 'object-popover',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     expanded: false,
     direction: 'left',
     maxInnerHeight: defaultMaxInnerHeight,
@@ -52,7 +52,7 @@ export default can.Component.extend({
       this.attr('openStyle', style);
       this.attr('expanded', false);
     },
-  },
+  }),
   events: {
     '{viewModel.item} el': function (scope, ev, el) {
       this.viewModel.setStyle(el);

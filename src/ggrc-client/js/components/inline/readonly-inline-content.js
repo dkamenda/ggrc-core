@@ -11,8 +11,8 @@ export default can.Component.extend({
   tag: 'readonly-inline-content',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     withReadMore: false,
     value: '@',
-  },
+  }),
 });

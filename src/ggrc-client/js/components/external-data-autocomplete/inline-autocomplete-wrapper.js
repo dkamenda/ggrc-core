@@ -13,7 +13,7 @@
 export default can.Component.extend({
   tag: 'inline-autocomplete-wrapper',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     /**
      * Contains a model.
      * @type {Can.Map}
@@ -82,5 +82,5 @@ export default can.Component.extend({
       }
       instance.attr('_transient.' + path, value);
     },
-  },
+  }),
 });

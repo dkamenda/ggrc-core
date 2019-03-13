@@ -8,7 +8,7 @@ import {reify} from '../../plugins/utils/reify-utils';
 export default can.Component.extend({
   tag: 'review-state',
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     define: {
       reviewState: {
         get: function () {
@@ -33,6 +33,6 @@ export default can.Component.extend({
       },
     },
     instance: null,
-  },
+  }),
 });
 

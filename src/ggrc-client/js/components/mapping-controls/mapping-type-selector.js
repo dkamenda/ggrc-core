@@ -9,12 +9,12 @@ export default can.Component.extend({
   tag: 'mapping-type-selector',
   template: can.stache(template),
   leakScope: true,
-  viewModel: {
+  viewModel: can.Map.extend({
     disabled: false,
     readonly: false,
     types: [],
     selectedType: '',
-  },
+  }),
   init: function () {
     let selectedType = this.viewModel.selectedType;
     let types = this.viewModel.types;
