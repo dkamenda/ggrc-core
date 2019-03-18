@@ -666,15 +666,25 @@ export default can.Model.extend({
   isCustomAttributable() {
     return this.constructor.is_custom_attributable;
   },
+  getInstanceErrors: function () {
+    const errors = this.attr('errors');
+
+    if (!errors) {
+      return null;
+    }
+
+    const serializedErrors = errors.attr();
+    return _.isEmpty(serializedErrors) ? null : serializedErrors;
+  },
   computed_errors: function () {
-    let errors = this.attr('errors');
+    let errors = this.getInstanceErrors();
     if (this.attr('_suppress_errors')) {
       return null;
     }
     return errors;
   },
   computed_unsuppressed_errors: function () {
-    return this.attr('errors');
+    return this.getInstanceErrors();
   },
   refresh: function (params) {
     let dfd;
