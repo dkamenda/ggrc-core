@@ -22,14 +22,14 @@
           {field-id}="{id}"
           {placeholder}="{placeholder}"
           {options}="{options}"
-          (value-changed)="{fieldValueChanged(%event, %context)}"
+          on:valueChanged="fieldValueChanged(%event, %context)"
           class="form-field__content custom-attribute-{{type}}"
         ></custom-attributes-field>
         {{#if validation.hasMissingInfo}}
           <div class="form-field__validation-hint-placeholder">
               <button type="button"
                       class="btn btn-small btn-link btn-link-nopadding"
-                      ($click)="showRequiredInfoModal(%event, %context)">
+                      on:el:click="showRequiredInfoModal(%event, %context)">
                 Add required info
               </button>
           </div>

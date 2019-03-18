@@ -19,7 +19,7 @@
                              {^mapping-items}="*mappingItems"
                              {^filter-items}="*filterItems"
                              {^status-item}="*statusItem"
-                             ($enter)="{onSubmit()}">
+                             on:el:enter="onSubmit()">
       <div class="object-controls">
         <div class="object-controls__row">
           <div class="object-controls__type">
@@ -60,13 +60,13 @@
         <div class="object-controls__actions">
           <div class="object-controls__actions--left">
             {{^if mappingItems.length}}
-              <button type="button" class="btn btn-small btn-white" ($click)="addFilterAttribute">Add Attribute</button>
+              <button type="button" class="btn btn-small btn-white" on:el:click="addFilterAttribute">Add Attribute</button>
             {{/if}}
-            <button type="button" class="btn btn-small btn-white" ($click)="addMappingFilter">Add Mapping Filter</button>
+            <button type="button" class="btn btn-small btn-white" on:el:click="addMappingFilter">Add Mapping Filter</button>
           </div>
           <div class="object-controls__actions--right">
-            <button type="reset" class="btn btn-small btn-white" {{#if is_loading}}disabled="disabled"{{/if}} ($click)="resetFilters()">Reset</button>
-            <button type="submit" class="btn btn-small btn-lightBlue" {{#if is_loading}}disabled="disabled"{{/if}} ($click)="onSubmit()">Search</button>
+            <button type="reset" class="btn btn-small btn-white" {{#if is_loading}}disabled="disabled"{{/if}} on:el:click="resetFilters()">Reset</button>
+            <button type="submit" class="btn btn-small btn-lightBlue" {{#if is_loading}}disabled="disabled"{{/if}} on:el:click="onSubmit()">Search</button>
           </div>
         </div>
       </div>
@@ -90,7 +90,7 @@
                         {(entries)}="{entries}"
                         {filter-items}="*filterItems"
                         {mapping-items}="*mappingItems"
-                        (loaded)="{onLoaded()}"
+                        on:loaded="onLoaded()"
                         {status-item}="*statusItem">
         </mapper-results>
       {{else}}

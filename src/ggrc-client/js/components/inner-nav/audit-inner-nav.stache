@@ -7,11 +7,11 @@
   <nav class="internav">
     {{#if showTabs}}
       {{#priorityTabs}}
-        <inner-nav-item {widget}="{.}" 
+        <inner-nav-item {widget}="{.}"
           {active-widget}="{activeWidget}"
-          {show-title}="{true}" 
+          {show-title}="{true}"
           {show-all-tabs}="{showAllTabs}"
-          (close)="{closeTab(%event)}"></inner-nav-item>
+          on:close="closeTab(%event)"></inner-nav-item>
       {{/priorityTabs}}
     {{/if}}
   </nav>
@@ -23,10 +23,10 @@
       <nav class="internav">
         {{#notPriorityTabs}}
           <inner-nav-item {widget}="{}.}"
-            {active-widget}="{activeWidget}" 
+            {active-widget}="{activeWidget}"
             {show-title}="{false}"
             {show-all-tabs}="{showAllTabs}"
-            (close)="{closeTab(%event)}"></inner-nav-item>
+            on:close="closeTab(%event)"></inner-nav-item>
         {{/notPriorityTabs}}
 
         <add-tab-button

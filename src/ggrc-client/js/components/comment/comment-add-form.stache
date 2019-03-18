@@ -18,6 +18,6 @@
         </label>
         <comment-add-button class="comment-add-form__toolbar-item"
                             {(value)}="*commentValue"
-                            (comment-created)="{onCommentCreated(%event)}"
+                            on:commentCreated="onCommentCreated(%event)"
                             {is-saving}="{isSaving}">Add</comment-add-button>
 </div>

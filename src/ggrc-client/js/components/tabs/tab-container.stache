@@ -23,7 +23,7 @@
         {{#case "panel"}}
           <li class="{{extraClasses}} {{#if active}}active{{/if}}">
             <a class="nav-tabs__panel"
-              ($click)="setActivePanel(tabIndex)">
+              on:el:click="setActivePanel(tabIndex)">
               {{titleText}}
               {{#if canDisplayWarning}}
                 {{#if warningState}}

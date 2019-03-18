@@ -3,7 +3,7 @@
   Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
 }}
 
-<div class="header {{#if expanded}} expanded {{/if}}" ($click)="toggle()">
+<div class="header {{#if expanded}} expanded {{/if}}" on:el:click="toggle()">
   <i class="fa fa-angle-{{#if expanded}}right{{else}}left{{/if}}"></i>
   {{^if expanded}}
     <a href="javascript://">{{title}}</a>

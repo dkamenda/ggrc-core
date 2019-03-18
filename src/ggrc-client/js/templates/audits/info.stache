@@ -69,8 +69,8 @@
                   {(urls)}="{documents}"
                   {is-disabled}="{isLoading}"
                   {is-not-editable}="{instance.archived}"
-                  (createUrl)="{createRelatedDocument(%event.payload)}"
-                  (removeUrl)="{removeRelatedDocument(%event.payload)}">
+                  on:createUrl="createRelatedDocument(%event.payload)"
+                  on:removeUrl="removeRelatedDocument(%event.payload)">
                   <div class="related-urls__heading">
                     <h6 class="related-urls__title">Evidence URL</h6>
                   </div>

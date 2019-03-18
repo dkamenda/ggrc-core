@@ -7,10 +7,10 @@
      {{#if open}} simple-popover_active{{/if}}
      simple-popover_placement_{{placement}}">
     <div class="simple-popover__button">
-        <button type="button" class="btn btn-link" ($click)="toggle">{{buttonText}}</button>
+        <button type="button" class="btn btn-link" on:el:click="toggle">{{buttonText}}</button>
     </div>
     {{#if open}}
-    <div class="simple-popover__content" ($click)="hide">
+    <div class="simple-popover__content" on:el:click="hide">
         <content></content>
     </div>
     {{/if}}

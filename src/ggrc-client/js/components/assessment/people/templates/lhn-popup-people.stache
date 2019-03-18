@@ -18,7 +18,7 @@
 
   <related-people-access-control
     class="width-100"
-    (save-custom-role)="{saveRoles()}"
+    on:saveCustomRole="saveRoles()"
     {^has-conflicts}="{hasConflicts}"
     {conflict-roles}="{conflictRoles}"
     {order-of-roles}="{includeRoles}"
@@ -29,7 +29,7 @@
           <related-people-access-control-group
             class="lhn-people-group"
             {auto-update}="{true}"
-            (update-roles)="{updateRoles(%event)}"
+            on:updateRoles="updateRoles(%event)"
             {is-new-instance}="{isNewInstance}"
             {required}="{required}"
             {group-id}="{groupId}"
@@ -41,7 +41,7 @@
                 <deletable-people-group
                   {show-empty-message}="{true}"
                   {required}="{required}"
-                  (unmap)="{removePerson(%event)}"
+                  on:unmap="removePerson(%event)"
                   {can-unmap}="{canEdit}"
                   {is-loading}="{denyUnmap}"
                   {group-id}="{groupId}"

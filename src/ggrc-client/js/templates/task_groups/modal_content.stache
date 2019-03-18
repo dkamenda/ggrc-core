@@ -26,9 +26,9 @@
         <div class="objective-selector">
           {{^if_config_exist 'external_services.Person'}}
             {{#if loadedObject}}
-              <input id="task_group_assignee" tabindex="2" type="text" 
-                     name="contact.email" class="span10 search-icon" 
-                     data-lookup="Person" placeholder="Enter text to search for Assignee" 
+              <input id="task_group_assignee" tabindex="2" type="text"
+                     name="contact.email" class="span10 search-icon"
+                     data-lookup="Person" placeholder="Enter text to search for Assignee"
                      value="{{loadedObject.email}}">
             {{else}}
               <input disabled type="text" class="span10 search-icon" value=""/>
@@ -43,8 +43,8 @@
                 {type}="'Person'"
                 {extra-css-class}="'span10 search-icon'"
                 {placeholder}="'Enter text to search for Assignee'"
-                (item-selected)="{setItem(%event.selectedItem)}"
-                (criteria-changed)="{setItem(%event.value)}"
+                on:itemSelected="setItem(%event.selectedItem)"
+                on:criteriaChanged="setItem(%event.value)"
                 {auto-clean}="{false}"
                 {min-length}="2"
                 {search-criteria}="{textValue}">

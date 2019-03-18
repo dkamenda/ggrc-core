@@ -4,7 +4,7 @@
 }}
 
 <inline-edit-control
-  (inline-save)="{saveInlineForm(%event)}"
+  on:inlineSave="saveInlineForm(%event)"
   {is-grouped-dropdown}="{isGroupedDropdown}"
   {dropdown-options-groups}="{dropdownOptionsGroups}"
   {is-edit-icon-denied}="{isEditIconDenied}"
@@ -19,8 +19,8 @@
   {mandatory}="{mandatory}"
   {with-read-more}="{withReadMore}">
     <confirm-edit-action
-      (set-edit-mode)="{setEditModeInline(%event)}"
-      (set-in-progress)="{setInProgressState()}"
+      on:setEditMode="setEditModeInline(%event)"
+      on:setInProgress="setInProgressState()"
       {is-edit-icon-denied}="{isEditIconDenied}"
       {instance}="{instance}"
       {is-confirmation-needed}="{isConfirmationNeeded}"
@@ -30,7 +30,7 @@
           class="inline__header"
           {edit-mode}="{editMode}"
           {is-edit-icon-denied}="{isEditIconDenied}"
-          (set-edit-mode-inline)="{confirmEdit()}">
+          on:setEditModeInline="confirmEdit()">
             <content></content>
         </base-inline-control-title>
     </confirm-edit-action>

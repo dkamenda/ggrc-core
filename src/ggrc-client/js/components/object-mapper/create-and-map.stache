@@ -12,8 +12,8 @@
       Do you want to search for an existing document or
       <create-document-button
         {parent-instance}="{source}"
-        (map-objects)="{mapObjects(%event.objects)}"
-        (cancel)="{cancel()}">
+        on:mapObjects="mapObjects(%event.objects)"
+        on:cancel="cancel()">
         Attach new
       </create-document-button>
 
@@ -23,14 +23,14 @@
 
       {{#if destinationModel.isChangeableExternally}} 
 
-        <button class="btn btn-link" ($click)="createExternally()">
+        <button class="btn btn-link" on:el:click="createExternally()">
           Create and map new object
         </button>
 
       {{else}}
 
         <button class="btn btn-link create-control"
-          ($click)="resetEntries()"
+          on:el:click="resetEntries()"
           href="javascript://"
           data-toggle="modal-ajax-form"
           data-modal-class="modal-wide"

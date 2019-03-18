@@ -11,7 +11,7 @@
   <div class="request-review-modal__header">
     <div class="simple-modal__header">
       <div class="simple-modal__header-text">Request Review</div>
-      <button type="button" class="btn btn-small btn-icon" {{#if loading}}disabled{{/if}} ($click)="cancel()">
+      <button type="button" class="btn btn-small btn-icon" {{#if loading}}disabled{{/if}} on:el:click="cancel()">
         <i class="fa fa-times black"></i>
       </button>
     </div>
@@ -51,7 +51,7 @@
         type="button"
         {{#if disabled}}disabled{{/if}}
         class="btn btn-green btn-small"
-        ($click)="save()">
+        on:el:click="save()">
           Request
       </button>
       {{#is(review.status, "Reviewed")}}

@@ -10,7 +10,7 @@
       {{#unless instance.archived}}
         <button type="button"
                 class="btn btn-small btn-green grid-data__toolbar-item"
-                ($click)="reuseSelected()"
+                on:el:click="reuseSelected()"
                 {{#if unableToReuse}}disabled{{/if}}>Reuse</button>
       {{/unless}}
     {{/is_allowed}}

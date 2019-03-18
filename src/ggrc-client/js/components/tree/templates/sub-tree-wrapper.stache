@@ -27,11 +27,11 @@
 
     {{#if needToSplit}}
       <div class="sub-tree-link">
-        <sub-tree-expander (expandNotDirectly)="{expandNotDirectlyRelated()}"
+        <sub-tree-expander on:expandNotDirectly="expandNotDirectlyRelated()"
                            {expanded}="{notDirectlyExpanded}"
                            {disabled}="{disabled}"
                            {display}="{display}">
-          <a ($click)="expandNotDirectly()" href="javascript://">
+          <a on:el:click="expandNotDirectly()" href="javascript://">
             <i class="fa fa-caret-{{#if expanded}}down{{else}}right{{/if}}"></i>
             Show objects not directly related to this {{contextName}}
           </a>

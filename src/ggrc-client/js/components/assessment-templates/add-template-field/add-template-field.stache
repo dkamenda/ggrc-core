@@ -43,6 +43,6 @@
 </div>
 <div class="span2">
   <div class="pull-right">
-    <a ($click)="addField()" class="btn btn-small btn-lightBlue">Add field</a>
+    <a on:el:click="addField()" class="btn btn-small btn-lightBlue">Add field</a>
   </div>
 </div>

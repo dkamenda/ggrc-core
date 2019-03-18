@@ -11,7 +11,7 @@
       <div class="ggrc-form-item {{#is attributeType 'input'}}ggrc-form-item__row{{else}}ggrc-form-item__multiple-row{{/if}}">
         <div class="{{#is attributeType 'input'}}ggrc-form-item__row{{else}}ggrc-form-item__multiple-row{{/if}}">
           <inline-edit-control class="inline-edit-control"
-            (inline-save)="{saveCustomAttributes(%event, %context)}"
+            on:inlineSave="saveCustomAttributes(%event, %context)"
             {instance}="{instance}"
             {dropdown-options}="{multiChoiceOptions}"
             {dropdown-no-value}="{true}"
@@ -28,7 +28,7 @@
                 {edit-mode}="{editMode}"
                 {redirection-enabled}="{redirectionEnabled}"
                 {is-edit-icon-denied}="{isEditIconDenied}"
-                (set-edit-mode-inline)="{setEditModeInline(%event)}">
+                on:setEditModeInline="setEditModeInline(%event)">
                   <div class="info-pane__section-title {{#if mandatory}}form-label form-label__extended{{/if}}">
                     {{title}}
                     {{#if mandatory}}

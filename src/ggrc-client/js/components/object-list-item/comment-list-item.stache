@@ -10,7 +10,7 @@
           {{#if isProposalHeaderLink}}
             <a class="comment-object-item__proposal-link"
               href="javascript:void(0)"
-              ($click)="openProposalTab()">
+              on:el:click="openProposalTab()">
                 CHANGE PROPOSAL
             </a>
           {{else}}

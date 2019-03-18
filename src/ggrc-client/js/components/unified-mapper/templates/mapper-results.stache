@@ -29,13 +29,13 @@
         <div class="list-selection-switcher">
           Select:
           <button type="button" class="btn btn-link"
-                  ($click)="deselectAll"
+                  on:el:click="deselectAll"
                   {{#isLoading}}disabled="disabled"{{/isLoading}}>
             None
           </button>
           |
           <button type="button" class="btn btn-link"
-                  ($click)="selectAll"
+                  on:el:click="selectAll"
                   {{#isLoading}}disabled="disabled"{{/isLoading}}>
             All
           </button>
@@ -49,7 +49,7 @@
                              {search-only}="{searchOnly}"
                              {selected-columns}="{columns.selected}"
                              {draw-related-assessments}="{relatedAssessments.show}"
-                             (show-related-assessments)="{showRelatedAssessments(%event)}">
+                             on:showRelatedAssessments="showRelatedAssessments(%event)">
         </mapper-results-item>
       </object-list>
     </div>

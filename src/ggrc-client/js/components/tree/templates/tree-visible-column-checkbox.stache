@@ -9,13 +9,13 @@
       <input type="checkbox"
         checked="checked"
         {{#mandatory}}disabled{{/mandatory}}
-        ($change)="onChange"
+        on:el:change="onChange"
         value="{{name}}"
         class="attr-checkbox {{#mandatory}}mandatory{{/mandatory}}">
     {{else}}
       <input type="checkbox"
         {{#mandatory}}disabled{{/mandatory}}
-        ($change)="onChange"
+        on:el:change="onChange"
         value="{{name}}"
         class="attr-checkbox {{#mandatory}}mandatory{{/mandatory}}">
     {{/if}}

@@ -15,8 +15,8 @@
                                        {tooltip}="'A new copy of the file will be stored at the destination Audit folder if exists or main gDrive folder of user.'"
                                        {disabled}="{isAttachActionDisabled}"
                                        {confirmation-callback}="{@confirmationCallback}"
-                                       (created)="{created(%event)}"
-                                       (before-attach)="{onBeforeCreate(%event)}">Attach
+                                       on:created="created(%event)"
+                                       on:beforeAttach="onBeforeCreate(%event)">Attach
           </ggrc-gdrive-picker-launcher>
         {{else}}
          <ggrc-gdrive-picker-launcher class="attachment-upload-control__button"
@@ -26,8 +26,8 @@
                                        {tooltip}="'A new copy of the file will be stored at the destination Audit folder if exists or main gDrive folder of user.'"
                                        {disabled}="{isAttachActionDisabled}"
                                        {confirmation-callback}="{@confirmationCallback}"
-                                       (created)="{created(%event)}"
-                                       (before-attach)="{onBeforeCreate(%event)}">Attach
+                                       on:created="created(%event)"
+                                       on:beforeAttach="onBeforeCreate(%event)">Attach
           </ggrc-gdrive-picker-launcher>
           <div class="attachment-upload-control__icon attachment-upload-control__icon__error">
             <i class="fa fa-exclamation-triangle red attachments-list-alert"
@@ -45,7 +45,7 @@
             access.</a>
         {{else}}
             <strong>Warning:</strong> GDrive folder could not be accessed without authorization. <a
-              ($click)="checkFolder()"
+              on:el:click="checkFolder()"
               >Authorize again.
             </a>
         {{/if}}

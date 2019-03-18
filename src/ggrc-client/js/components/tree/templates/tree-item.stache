@@ -6,12 +6,12 @@
 <div class="tree-item-wrapper {{extraClasses}}">
   <div class="flex-box tree-item-content">
     <tree-item-actions {instance}="{instance}"
-                       (expand)="{onExpand()}"
-                       (preview)="{select($element)}"
+                       on:expand="onExpand()"
+                       on:preview="select($element)"
                        {expanded}="{expanded}"
                        {deep-limit}="{limitDepthTree}"
     ></tree-item-actions>
-    <div class="flex-box selectable-attrs width-100" ($click)="onClick($element, %event)">
+    <div class="flex-box selectable-attrs width-100" on:el:click="onClick($element, %event)">
         {{#selectedColumns}}
           <div class="flex-box attr-cell">
             {{#switch attr_type}}
@@ -50,7 +50,7 @@
                         {limit-depth-tree}="{limitDepthTree}"
                         {get-depth-filter}="{@getDepthFilter}"
                         {is-open}="{expanded}"
-                        (collapse-subtree)="{collapseAndHighlightItem()}"
+                        on:collapseSubtree="collapseAndHighlightItem()"
       ></sub-tree-wrapper>
     </div>
   </lazy-render>

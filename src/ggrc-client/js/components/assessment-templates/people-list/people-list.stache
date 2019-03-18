@@ -11,7 +11,7 @@
     {class-name}="'input-block-level js-toggle-field'"
     {options-list}="{peopleValues}"
     {name}="'selectedValue'"
-    ($change)="{dropdownChanged}"
+    on:el:change="dropdownChanged"
     {no-value}="{hasEmptyValue}"
   ></dropdown>
 </div>
@@ -21,14 +21,14 @@
   {{#is(selectedValue, "other")}}
     {{^if_config_exist 'external_services.Person'}}
       <autocomplete {search-items-type}="'Person'"
-                    (item-selected)="{personAdded(%event)}"
+                    on:itemSelected="personAdded(%event)"
                     {placeholder}="'Enter text to search for {{listName}}'"
       ></autocomplete>
     {{else}}
       <external-data-autocomplete {type}="'Person'"
                                   {placeholder}="'Enter text to search for {{listName}}'"
                                   {min-length}="2"
-                                  (item-selected)="{personAdded(%event)}">
+                                  on:itemSelected="personAdded(%event)">
       </external-data-autocomplete>
     {{/if_config_exist}}
     {{#if validationError}}
@@ -36,7 +36,7 @@
     {{/if}}
     {{#each peopleList}}
       <person-data {person-id}="{{.}}">
-        <a href="javascript://" class="unmap" title="Remove" ($click)="removePerson(person)">
+        <a href="javascript://" class="unmap" title="Remove" on:el:click="removePerson(person)">
         <i class="fa fa-trash"></i>
         </a>
       </person-data>

@@ -27,7 +27,7 @@
             on {{dateTime review.last_reviewed_at}}
           </div>
           {{^if isReviewed}}
-            <a href="javascript:void(0)" ($click)="{showLastChanges()}">
+            <a href="javascript:void(0)" on:el:click="showLastChanges()">
               Review History
             </a>
           {{/if}}
@@ -39,7 +39,7 @@
             <button
                 type="button"
                 {{#if loading}}disabled{{/if}}
-                ($click)="{markReviewed()}"
+                on:el:click="markReviewed()"
                 class="btn btn-green btn-small">
               Mark Reviewed
             </button>
@@ -47,7 +47,7 @@
           <button
               type="button"
               {{#if loading}}disabled{{/if}}
-              ($click)="changeReviewers($element)"
+              on:el:click="changeReviewers($element)"
               class="btn btn-white btn-small">
             Request Review
           </button>
@@ -64,7 +64,7 @@
       {review}="{review}"
       {parent-instance}="{instance}"
       {(modal-state)}="{reviewersModalState}"
-      (reviewers-updated)="{reviewersUpdated(%event)}">
+      on:reviewersUpdated="reviewersUpdated(%event)">
     </request-review-modal>
   {{/if}}
 </div>

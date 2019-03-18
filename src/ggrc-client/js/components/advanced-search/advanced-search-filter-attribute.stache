@@ -29,16 +29,16 @@
         name="right"
         type="text"
         {($value)}="{attribute.value}"
-        ($enter)="{setValue($element)}">
+        on:el:enter="setValue($element)">
     </div>
   {{/if}}
   {{#if showActions}}
   <div class="filter-attribute__action">
-    <button type="button" class="filter-attribute__remove" ($click)="remove()">
+    <button type="button" class="filter-attribute__remove" on:el:click="remove()">
       <i class="fa fa-trash"></i>
     </button>
     {{#if extendable}}
-    <a href="javascript:void(0)" class="advanced-filter" ($click)="createGroup()">+ Add Group Expression</a>
+    <a href="javascript:void(0)" class="advanced-filter" on:el:click="createGroup()">+ Add Group Expression</a>
     {{/if}}
   </div>
   {{/if}}

@@ -31,7 +31,7 @@
   <div class="span2">
     <div class="pull-right">
       {{#field}}
-        <a ($click)="removeField()"><i class="fa fa-trash"></i></a>
+        <a on:el:click="removeField()"><i class="fa fa-trash"></i></a>
       {{/field}}
     </div>
   </div>

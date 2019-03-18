@@ -6,7 +6,7 @@
     <div class="ggrc-form-item">
         <div class="{{#if_in attributeType 'input,text'}}ggrc-form-item__row{{else}}ggrc-form-item__multiple-row{{/if}}">
             <inline-edit-control class="inline-edit-control"
-                (inline-save)="{updateGlobalAttribute(%event, %context)}"
+                on:inlineSave="updateGlobalAttribute(%event, %context)"
                 {instance}="{instance}"
                 {dropdown-options}="{multiChoiceOptions}"
                 {dropdown-class}="{dropdownClass}"
@@ -18,15 +18,15 @@
                 {type}="{attributeType}"
                 {with-read-more}="{true}">
                       <confirm-edit-action
-                          (set-edit-mode)="{setEditModeInline(%event)}"
-                          (set-in-progress)="{setInProgressState()}"
+                          on:setEditMode="setEditModeInline(%event)"
+                          on:setInProgress="setInProgressState()"
                           {instance}="{instance}"
                           {on-state-change-dfd}="{onStateChangeDfd}"
                           {edit-mode}="{editMode}">
                             <base-inline-control-title
                                 {edit-mode}="{editMode}"
                                 {is-edit-icon-denied}="{isEditDenied}"
-                                (set-edit-mode-inline)="{confirmEdit()}">
+                                on:setEditModeInline="confirmEdit()">
                               <div class="ggrc-form__title">{{title}}</div>
                             </base-inline-control-title>
                       </confirm-edit-action>

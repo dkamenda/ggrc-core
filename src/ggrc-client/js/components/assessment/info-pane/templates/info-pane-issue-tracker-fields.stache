@@ -7,14 +7,14 @@
   <div class="ggrc-form-item__multiple-row">
     <issue-tracker-switcher
       {set-issue-title}="{true}"
-      (issue-tracker-switcher-changed)="{saveInlineForm(%event)}"
+      on:issueTrackerSwitcherChanged="saveInlineForm(%event)"
       {instance}="{instance}">
       <ticket-id-checker
         {instance}="{instance}"
         {issue-tracker-enabled}="{instance.issue_tracker.enabled}"
-        (value-change)="{inlineDropdownValueChange(%event)}">
+        on:valueChange="inlineDropdownValueChange(%event)">
         <inline-edit-control
-          (inline-save)="{checkTicketId(%event)}"
+          on:inlineSave="checkTicketId(%event)"
           {is-edit-icon-denied}="{isEditDenied}"
           {dropdown-options}="{instance.class.issue_tracker_enable_options}"
           {instance}="{instance}"
@@ -24,7 +24,7 @@
               class="inline__header"
               {edit-mode}="{editMode}"
               {is-edit-icon-denied}="{isEditIconDenied}"
-              (set-edit-mode-inline)="{setEditModeInline(%event)}">
+              on:setEditModeInline="setEditModeInline(%event)">
                 <div class="ticket-info-header">
                   <span class="ggrc-form__title">Ticket Tracker</span>
                   {{#if instance.issueCreated}}

@@ -5,7 +5,7 @@
 
 <div class="multiselect-dropdown flex-box flex-col">
   <!-- HACK: using of tabindex can set styles on focus -->
-  <div tabindex="-1" class="multiselect-dropdown__input-container {{#disabled}}disabled{{/disabled}}" ($click)="openDropdown()">
+  <div tabindex="-1" class="multiselect-dropdown__input-container {{#disabled}}disabled{{/disabled}}" on:el:click="openDropdown()">
     <input
       type="text"
       readonly="readonly"
@@ -20,13 +20,13 @@
   </div>
   {{#if isOpen}}
   <div class="multiselect-dropdown__body-wrapper">
-    <div class="dropdown-menu dropdown-menu-form multiselect-dropdown__body" ($click)="dropdownBodyClick(%event)">
+    <div class="dropdown-menu dropdown-menu-form multiselect-dropdown__body" on:el:click="dropdownBodyClick(%event)">
       <ul class="multiselect-dropdown__list">
         <li class="multiselect-dropdown__element">
           <label class="multiselect-dropdown__label" >
             <input type="checkbox"
               {($checked)}="_selectedAll"
-              ($click)="selectAll()"
+              on:el:click="selectAll()"
               class="multiselect-dropdown__checkbox"/>
             Select all
           </label>
@@ -36,7 +36,7 @@
           <label class="multiselect-dropdown__label">
             <input type="checkbox"
               {($checked)}="{checked}"
-              ($click)="{optionChange(.)}"
+              on:el:click="optionChange(.)"
               value="{{value}}"
               id="{{id}}"
               class="multiselect-dropdown__checkbox {{cssClass}}"

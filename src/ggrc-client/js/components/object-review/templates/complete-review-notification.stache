@@ -4,4 +4,4 @@
 }}
 
 <span>Review is complete.</span>
-<a class="object-review__revert" data-dismiss="alert" ($click)="revertState">Undo</a>
+<a class="object-review__revert" data-dismiss="alert" on:el:click="revertState">Undo</a>

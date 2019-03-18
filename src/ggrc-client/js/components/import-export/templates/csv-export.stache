@@ -6,9 +6,9 @@
   <current-exports {exports}="{currentExports}"
                    {disabled}="{disabledItems}"
                    {in-progress}="{isInProgress}"
-                   (stop-export)="{onStopExport(%event)}"
-                   (remove-item)="{onRemove(%event)}"
-                   (view-content)="{onViewContent(%event)}"
+                   on:stopExport="onStopExport(%event)"
+                   on:removeItem="onRemove(%event)"
+                   on:viewContent="onViewContent(%event)"
   ></current-exports>
 {{/currentExports.length}}
 
@@ -21,7 +21,7 @@
             id="export-csv-button"
             {{^if exportAllowed}} disabled {{/if}}
             class="btn btn-green btn-small"
-            ($click)="exportObjects()">
+            on:el:click="exportObjects()">
       Start Export
     </button>
 </div>

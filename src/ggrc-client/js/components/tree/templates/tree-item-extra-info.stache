@@ -10,8 +10,8 @@
     {{/isOverdue}}
   {{/isShowOverdue}}
   <i class="fa {{cssClasses}} popover-target"
-     ($mouseenter)="onEnter()"
-     ($mouseleave)="onLeave()"></i>
+     on:el:mouseenter="onEnter()"
+     on:el:mouseleave="onLeave()"></i>
   {{^if disablePopover}}
   <div class="tree-item__popover">
     <div class="tree-item__popover-content">
@@ -52,7 +52,7 @@
             <mapped-counter {instance}="{instance}"
                             {type}="'Comment'"
                             {add-content}="{@addContent}"
-                            (deferred-update-counter)="{addDeferredContent(%event)}"
+                            on:deferredUpdateCounter="addDeferredContent(%event)"
             ></mapped-counter>
             <div class="date">
               <i class="fa fa-clock-o {{#if instance.isOverdue}}red{{else}}color{{/if}}"></i> Due On:

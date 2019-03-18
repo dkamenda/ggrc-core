@@ -3,7 +3,7 @@
     Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
 }}
 
-<a ($click)="open(%event)">
+<a on:el:click="open(%event)">
   <span class="menu-item__icon">
     <i class="fa fa-bullhorn" aria-hidden="true"></i>
   </span>

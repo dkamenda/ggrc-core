@@ -9,7 +9,7 @@
         {field-id}="{fieldId}"
         {placeholder}="{placeholder}"
         {disabled}="{disabled}"
-        (value-changed)="{fieldValueChanged(%event)}"
+        on:valueChanged="fieldValueChanged(%event)"
         class="inline-input-form-field"
     ></text-form-field>
   {{/case}}
@@ -18,14 +18,14 @@
 			  {field-id}="{fieldId}"
 			  {placeholder}="{placeholder}"
 			  {disabled}="{disabled}"
-			  (value-changed)="{fieldValueChanged(%event)}"
+			  on:valueChanged="fieldValueChanged(%event)"
     ></rich-text-form-field>
   {{/case}}
   {{#case "checkbox"}}
     <checkbox-form-field {value}="{value}"
 			 {field-id}="{fieldId}"
 			 {disabled}="{disabled}"
-			 (value-changed)="{fieldValueChanged(%event)}"
+			 on:valueChanged="fieldValueChanged(%event)"
     ></checkbox-form-field>
   {{/case}}
   {{#case "dropdown"}}
@@ -33,21 +33,21 @@
 			 {options}="{options}"
 			 {field-id}="{fieldId}"
 			 {disabled}="{disabled}"
-			 (value-changed)="{fieldValueChanged(%event)}"
+			 on:valueChanged="fieldValueChanged(%event)"
     ></dropdown-form-field>
   {{/case}}
   {{#case "date"}}
     <date-form-field {value}="{value}"
 		     {field-id}="{fieldId}"
 		     {disabled}="{disabled}"
-		     (value-changed)="{fieldValueChanged(%event)}"
+		     on:valueChanged="fieldValueChanged(%event)"
     ></date-form-field>
   {{/case}}
   {{#case "person"}}
     <person-form-field {value}="{value}"
 		       {field-id}="{fieldId}"
 		       {disabled}="{disabled}"
-		       (value-changed)="{fieldValueChanged(%event)}"
+		       on:valueChanged="fieldValueChanged(%event)"
     ></person-form-field>
   {{/case}}
 {{/switch}}

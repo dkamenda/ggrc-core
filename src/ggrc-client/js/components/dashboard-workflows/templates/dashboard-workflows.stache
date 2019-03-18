@@ -100,7 +100,7 @@
           href="javascript://"
           class="workflow-trigger"
           role="button"
-          ($click)="toggleWorkflowList"
+          on:el:click="toggleWorkflowList"
         >
           {{#if showAllWorkflows}}
             Show top 5 workflows

@@ -7,5 +7,5 @@
     {type}="{type}"
     {join_object_id}="{join_object_id}"
     {object}="{object}"
-    (refresh-tree-view)="{refreshTreeView(%event)}">
+    on:refreshTreeView="refreshTreeView(%event)">
 </assessment-template-clone>

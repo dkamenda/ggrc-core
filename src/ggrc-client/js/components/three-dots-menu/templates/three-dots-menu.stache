@@ -4,7 +4,7 @@
 }}
 
 <div class="details-wrap">
-  <a class="btn {{#if disabled}}disabled{{/if}} btn-3bbps dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+  <a class="btn {{#if disabled}}disabled{{/if}} btn-3bbps dropdown-toggle" href="javascript:void()" data-toggle="dropdown">
     <span class="bubble"></span>
     <span class="bubble"></span>
     <span class="bubble"></span>

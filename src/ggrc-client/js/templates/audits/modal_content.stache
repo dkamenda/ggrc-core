@@ -160,16 +160,16 @@
             {model-type}="'Evidence'"
             {kind}="'URL'"
             {autorefresh}="{false}"
-            (add-mappings)="{addMappings(%event.objects)}"
-            (remove-mappings)="{removeMappings(%event.object)}">
+            on:addMappings="addMappings(%event.objects)"
+            on:removeMappings="removeMappings(%event.object)">
             <related-urls
               tabindex="20"
               {instance}="{instance}"
               {allow-to-remove}="{new_object_form}"
               {(urls)}="{documents}"
               {is-disabled}="{isLoading}"
-              (createUrl)="{markDocumentForAddition(%event.payload)}"
-              (removeUrl)="{markDocumentForDeletion(%event.payload)}">
+              on:createUrl="markDocumentForAddition(%event.payload)"
+              on:removeUrl="markDocumentForDeletion(%event.payload)">
               <label>
                 Evidence URL
                 <i class="fa fa-question-circle" rel="tooltip" title="Web links to other references."></i>

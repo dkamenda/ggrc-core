@@ -14,7 +14,7 @@
       class="unmap-link">
         <issue-unmap-item
           class="issue-unmap-item"
-          (unmap-issue)="{unmapInstance()}"
+          on:unmapIssue="unmapInstance()"
           {source}="{page_instance}"
           {destination}="{instance}">
             <i class="fa fa-ban"></i>Unmap
@@ -31,15 +31,15 @@
           <i class="fa fa-ban"></i>Unmap
       </unmap-button>
     {{else}}
-      <questionnaire-mapping-link 
-        {instance}="{page_instance}" 
-        {destination-model}="{instance.constructor}" 
+      <questionnaire-mapping-link
+        {instance}="{page_instance}"
+        {destination-model}="{instance.constructor}"
         {type}="'unmap'">
           <i class="fa fa-fw fa-external-link"></i>
           Unmap in new frontend
       </questionnaire-mapping-link>
     {{/if}}
-    
+
   {{/if}}
   </li>
 {{/if}}

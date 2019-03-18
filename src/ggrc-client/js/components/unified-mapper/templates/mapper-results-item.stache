@@ -5,7 +5,7 @@
 <div class="flex-box list-object-item
      {{#isDisabled}} is-disabled{{/isDisabled}}
      {{#showDetails}} expanded{{/showDetails}}">
-  <div class="item-wrapper" ($click)="{toggleDetails()}">
+  <div class="item-wrapper" on:el:click="toggleDetails()">
     {{^isSnapshot}}
       <mapper-results-item-status {item-data}="{itemData}">
       </mapper-results-item-status>

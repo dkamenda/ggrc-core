@@ -22,7 +22,7 @@
       <h4>
         {{firstnonempty title 'export_objects.csv'}}
         {{#canRemove status}}
-          <i class="fa fa-trash-o" ($click)="remove(id)"></i>
+          <i class="fa fa-trash-o" on:el:click="remove(id)"></i>
         {{/canRemove}}
       </h4>
       <div class="flex-box current-exports__actions">
@@ -30,7 +30,7 @@
           {{#case 'In Progress'}}
             Export in Progress:
             <spinner {toggle}="{true}"></spinner>
-            <button type="button" class="btn btn-white btn-small btn-stop" ($click)="stop(id)">
+            <button type="button" class="btn btn-white btn-small btn-stop" on:el:click="stop(id)">
               Cancel Export
             </button>
           {{/case}}
@@ -38,10 +38,10 @@
             Export Stopped
           {{/case}}
           {{#case 'Finished'}}
-            <button type="button" class="btn btn-small btn-white" ($click)="downloadCSV(id, title)">
+            <button type="button" class="btn btn-small btn-white" on:el:click="downloadCSV(id, title)">
               Download CSV
             </button>
-            <button type="button" class="btn btn-small btn-white" ($click)="openSheet(id)">
+            <button type="button" class="btn btn-small btn-white" on:el:click="openSheet(id)">
               Write to Sheet
             </button>
             {{#isDisabled id}}

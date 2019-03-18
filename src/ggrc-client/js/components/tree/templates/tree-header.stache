@@ -7,7 +7,7 @@
   <tree-header-selector class="tree-header-selector">
     {{^if disableConfiguration}}
     <a href="javascript:void(0)" class="dropdown-toggle tview-dropdown-toggle visible-columns-icon"
-      data-toggle="dropdown" ($click)="initializeColumns()">
+      data-toggle="dropdown" on:el:click="initializeColumns()">
       <i class="fa fa-fw fa-bars"></i>
     </a>
     <div class="dropdown-menu dropdown-menu-form visible-columns-list">
@@ -22,7 +22,7 @@
           </li>
         {{/columns}}
       </ul>
-      <a class="btn btn-small btn-lightBlue set-tree-attrs" href="javascript://" ($click)="setColumns">Set fields</a>
+      <a class="btn btn-small btn-lightBlue set-tree-attrs" href="javascript://" on:el:click="setColumns">Set fields</a>
     </div>
     {{/if}}
   </tree-header-selector>

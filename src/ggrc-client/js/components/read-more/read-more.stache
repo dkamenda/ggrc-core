@@ -11,7 +11,7 @@
       </div>
       {{#if overflowing}}
         <div class="read-more__controls">
-            <a ($click)="toggle(%event)" class="read-more__btn">{{btnText}}</a>
+            <a on:el:click="toggle(%event)" class="read-more__btn">{{btnText}}</a>
         </div>
       {{/if}}
   {{else}}

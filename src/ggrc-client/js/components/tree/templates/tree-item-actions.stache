@@ -13,7 +13,7 @@
       <lazy-render {trigger}="{activated}">
         <!-- Link for open instance on info panel at bottom -->
         <li>
-          <a href="javascript://" ($click)="maximizeObject">
+          <a href="javascript://" on:el:click="maximizeObject">
             <i class="fa fa-info-circle"></i>
             View Info
           </a>
@@ -25,7 +25,7 @@
             {{#unless isSnapshot}}
               <!-- Link for open instance on new Browser tab -->
               <li>
-                <a href="{{instance.viewLink}}" target="_blank" ($click)="openObject">
+                <a href="{{instance.viewLink}}" target="_blank" on:el:click="openObject">
                   <i class="fa fa-long-arrow-right"></i>
                   Open in a new tab
                 </a>
@@ -86,7 +86,7 @@
                 </sub-tree-models>
               </li>
             <li>
-              <a href="javascript://" ($click)="expand">
+              <a href="javascript://" on:el:click="expand">
                 <i class="fa fa-{{expandIcon}}"></i>
                 {{expanderTitle}}
               </a>

@@ -17,7 +17,7 @@
     {{/each}}
   </div>
 
-  <button type="button" class="btn btn-small btn-white" ($click)="addObjectType()">
+  <button type="button" class="btn btn-small btn-white" on:el:click="addObjectType()">
     Add Object Type
   </button>
 </div>

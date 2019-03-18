@@ -21,7 +21,7 @@
   <div class="proposal__save-button">
     <spinner class="proposal__spinner" {toggle}="{loading}"></spinner>
     <a class="btn btn-small btn-green {{#if isDisabled}}disabled{{/isDisabled}}"
-       ($click)="create(%element, %event)">
+       on:el:click="create(%element, %event)">
         Propose
     </a>
   </div>

@@ -27,7 +27,7 @@
       can-focus="onFocus"
     >
     {{#if date}}
-    <a class="datepicker__remove-value" ($click)="removeValue(%event)">
+    <a class="datepicker__remove-value" on:el:click="removeValue(%event)">
       <i class="fa fa-times"></i>
     </a>
     {{/if}}

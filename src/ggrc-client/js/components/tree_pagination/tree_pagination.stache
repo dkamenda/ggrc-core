@@ -6,15 +6,15 @@
 <div class="tree-pagination flex-box">
   <div class="pagination dropdown-container">
     <div class="dropdown-container__wrapper">
-      <simple-popover {button-text}="{paging.pageSize}" 
-                      {extra-css-class}="'simple-popover_pagination_items'" 
-                      {placement}="{{placement}}">
+      <simple-popover {button-text}="{paging.pageSize}"
+                      {extra-css-class}="'simple-popover_pagination_items'"
+                      {placement}="placement">
         <div>Items per page:</div>
         <div class="dropdown-container__items-list flex-box flex-row">
           {{#paging.pageSizeSelect}}
-          <div class="dropdown-container__item flex-size-1 
+          <div class="dropdown-container__item flex-size-1
                      {{#is(paging.pageSize, .)}}dropdown-container__item_selected{{/is}}"
-            ($click)="{setPageSize(.)}">{{.}}</div>
+            on:el:click="setPageSize(.)">{{.}}</div>
           {{/paging.pageSizeSelect}}
         </div>
       </simple-popover>
@@ -22,36 +22,36 @@
   </div>
   <div class="pagination">
     <div class="pagination-item {{#is(paging.current, 1)}}disabled{{/is}}">
-      <a ($click)="{setFirstPage}">
+      <a on:el:click="setFirstPage">
         <i class="fa fa-angle-double-left" aria-hidden="true"></i>
       </a>
     </div>
     <div class="pagination-item {{#is(paging.current, 1)}}disabled{{/is}}">
-      <a ($click)="{setPrevPage}">
+      <a on:el:click="setPrevPage">
         <i class="fa fa-angle-left" aria-hidden="true"></i>
       </a>
     </div>
     <div class="pagination-item pagination-item_list">
-      <simple-popover {button-text}="{getPaginationInfo}" 
-                      {extra-css-class}="'simple-popover_pagination_pages'" 
-                      {placement}="{{placement}}">
+      <simple-popover {button-text}="{getPaginationInfo}"
+                      {extra-css-class}="'simple-popover_pagination_pages'"
+                      {placement}="placement">
           {{#pagesList}}
-            <div class="pagination-item__popover-item single-line 
+            <div class="pagination-item__popover-item single-line
                        {{#is(paging.current, .)}}pagination-item__popover-item_selected{{/is}}"
                  title="{{getPageTitle}}"
-                 ($click)="{setCurrentPage(.)}">
+                 on:el:click="setCurrentPage(.)">
               {{getPageTitle}}
             </div>
           {{/pagesList}}
       </simple-popover>
     </div>
     <div class="pagination-item {{#is(paging.current, paging.count)}}disabled{{/is}}">
-      <a ($click)="{setNextPage}">
+      <a on:el:click="setNextPage">
         <i class="fa fa-angle-right" aria-hidden="true"></i>
       </a>
     </div>
     <div class="pagination-item {{#is(paging.current, paging.count)}}disabled{{/is}}">
-      <a ($click)="{setLastPage}">
+      <a on:el:click="setLastPage">
         <i class="fa fa-angle-double-right" aria-hidden="true"></i>
       </a>
     </div>

@@ -22,30 +22,30 @@
                 {available-attributes}="{availableAttributes}"
                 {show-actions}="{false}">
         </advanced-search-filter-attribute>
-        <button type="button" class="mapping-criteria__remove" ($click)="remove()"><i class="fa fa-trash"></i></button>
+        <button type="button" class="mapping-criteria__remove" on:el:click="remove()"><i class="fa fa-trash"></i></button>
       </div>
       <div class="mapping-criteria__action">
         {{#if showPopover}}
           <simple-popover {button-text}="'+ Add'" {extra-css-class}="'advanced-search'" {placement}="'top'">
             <button type="button"
                     class="mapping-criteria__action-button"
-                    ($click)="addRelevant()">
+                    on:el:click="addRelevant()">
               Map Condition
             </button>
             {{^if isClone}}
               <button type="button"
                       class="mapping-criteria__action-button"
-                      ($click)="createGroup()">
+                      on:el:click="createGroup()">
                 Group Expression
               </button>
             {{/if}}
           </simple-popover>
         {{else}}
           {{#if canAddMapping}}
-            <a href="javascript:void(0)" class="advanced-filter" ($click)="addRelevant()">+ Add Map Condition</a>
+            <a href="javascript:void(0)" class="advanced-filter" on:el:click="addRelevant()">+ Add Map Condition</a>
           {{/if}}
           {{#if canBeGrouped}}
-            <a href="javascript:void(0)" class="advanced-filter" ($click)="createGroup()">+ Add Group Expression</a>
+            <a href="javascript:void(0)" class="advanced-filter" on:el:click="createGroup()">+ Add Group Expression</a>
           {{/if}}
         {{/if}}
       </div>
@@ -58,17 +58,17 @@
       {{#case "mappingCriteria"}}
         <advanced-search-mapping-criteria
           {(criteria)}="{criteria.mappedTo.value}"
-          (remove)="{removeRelevant()}"
+          on:remove="removeRelevant()"
           {model-name}="{criteria.objectName}"
           {extendable}="{extendable}"
-          (createGroup)="{relevantToGroup()}"
+          on:createGroup="relevantToGroup()"
           {^can-be-grouped}="{childCanBeGrouped}">
         </advanced-search-mapping-criteria>
       {{/case}}
       {{#case "group"}}
         <advanced-search-mapping-group
           {(items)}="{criteria.mappedTo.value}"
-          (remove)="{removeRelevant()}"
+          on:remove="removeRelevant()"
           {model-name}="{criteria.objectName}"
           {^root}="{childCanBeGrouped}">
         </advanced-search-mapping-group>

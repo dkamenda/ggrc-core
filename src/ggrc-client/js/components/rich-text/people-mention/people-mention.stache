@@ -17,8 +17,8 @@
       {items}="{result}"
       {(show-results)}="{showResults}"
       {show-new-value}="{showNewValue}"
-      (add-new-item)="{createLabel(%event)}"
-      (select-item)="{personSelected(%event)}"
+      on:addNewItem="createLabel(%event)"
+      on:selectItem="personSelected(%event)"
       {action-key}="{actionKey}"
     ></people-autocomplete-results>
 </people-autocomplete-wrapper>

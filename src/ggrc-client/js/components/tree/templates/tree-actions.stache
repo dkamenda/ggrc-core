@@ -19,7 +19,7 @@
       {{/if}}
       {{#if showExport}}
         <li>
-          <span class="section-import" ($click)="export">
+          <span class="section-import" on:el:click="export">
             <i class="fa fa-fw fa-download"></i>
             Export {{model.title_plural}}
           </span>

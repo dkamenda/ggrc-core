@@ -17,7 +17,7 @@
           {{#is_allowed 'create' 'delete' 'UserRole' context=parent_instance.context.id}}
             <li class="border">
               <user-roles-selector-button {person-id}="{id}">
-                <a href="javascript://" ($click)="{openModal(%event)}">
+                <a href="javascript://" on:el:click="openModal(%event)">
                   <i class="fa fa-address-card"></i>
                   Edit Authorizations
                 </a>
@@ -96,7 +96,7 @@
                 <input
                   class="calendar-activation__checkbox"
                   type="checkbox"
-                  ($change)="onSendCalendarEventsChange(%element)"
+                  on:el:change="onSendCalendarEventsChange(%element)"
                   {{#if profile.send_calendar_events}}checked{{/if}}
                   {{#if isSaving}}disabled{{/if}}
                 >

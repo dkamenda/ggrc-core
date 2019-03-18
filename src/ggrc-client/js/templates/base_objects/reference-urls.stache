@@ -14,8 +14,8 @@
           {is-disabled}="{isLoading}"
           {is-not-editable}="{isSnapshot}"
           {is-snapshot}="{isSnapshot}"
-          (createUrl)="{createRelatedDocument(%event.payload)}"
-          (removeUrl)="{removeRelatedDocument(%event.payload)}">
+          on:createUrl="createRelatedDocument(%event.payload)"
+          on:removeUrl="removeRelatedDocument(%event.payload)">
           <div class="related-urls__heading">
             <spinner class="related-urls__spinner" {toggle}="{isLoading}"></spinner>
             <h6 class="related-urls__title">Reference URL</h6>

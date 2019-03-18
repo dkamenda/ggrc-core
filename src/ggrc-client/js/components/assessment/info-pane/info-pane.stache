@@ -52,13 +52,13 @@
                                         <action-toolbar-control>
                                             <map-button-using-assessment-type {instance}="{instance}">
                                                 <confirm-edit-action
-                                                    (set-edit-mode)="{openMapper()}"
-                                                    (set-in-progress)="{setInProgressState()}"
+                                                    on:setEditMode="openMapper()"
+                                                    on:setInProgress="setInProgressState()"
                                                     {is-edit-icon-denied}="{isEditDenied}"
                                                     {instance}="{instance}"
                                                     {on-state-change-dfd}="{onStateChangeDfd}"
                                                     {edit-mode}="{editMode}">
-                                                        <i ($click)="confirmEdit()"
+                                                        <i on:el:click="confirmEdit()"
                                                             class="fa fa-code-fork action-toolbar__item-icon">
                                                         </i>
                                                 </confirm-edit-action>
@@ -100,12 +100,12 @@
                             <object-list {items}="{files}" {empty-message}="{noItemsText}">
                                 <editable-document-object-list-item {document}="{.}">
                                   <confirm-edit-action
-                                      (set-edit-mode)="{removeRelatedItem(document, 'files')}"
-                                      (set-in-progress)="{setInProgressState()}"
+                                      on:setEditMode="removeRelatedItem(document, 'files')"
+                                      on:setInProgress="setInProgressState()"
                                       {is-edit-icon-denied}="{isEditDenied}"
                                       {instance}="{instance}"
                                       {on-state-change-dfd}="{onStateChangeDfd}">
-                                          <a ($click)="{confirmEdit()}">
+                                          <a on:el:click="confirmEdit()">
                                               <action-toolbar-control>
                                                 <i class="fa fa-trash"></i>
                                               </action-toolbar-control>
@@ -114,13 +114,13 @@
                                 </editable-document-object-list-item>
                             </object-list>
                             <confirm-edit-action
-                                        (set-in-progress)="{setInProgressState()}"
+                                        on:setInProgress="setInProgressState()"
                                         {instance}="{instance}"
                                         {on-state-change-dfd}="{onStateChangeDfd}"
                                         {edit-mode}="{editMode}">
                             <attach-button
-                                        (before-create)="{addItems(%event, 'files')}"
-                                        (created)="{addRelatedItem(%event, 'files')}" 
+                                        on:before-create="addItems(%event, 'files')"
+                                        on:created="addRelatedItem(%event, 'files')"
                                         {is-attach-action-disabled}="{isUpdatingFiles}"
                                         {confirmation-callback}="{@confirmEdit}"
                                         {instance}="{instance}"></attach-button>
@@ -134,12 +134,12 @@
                             <object-list {items}="{urls}" {empty-message}="{noItemsText}">
                                 <editable-document-object-list-item {document}="{.}">
                                     <confirm-edit-action
-                                        (set-edit-mode)="{removeRelatedItem(document, 'urls')}"
-                                        (set-in-progress)="{setInProgressState()}"
+                                        on:setEditMode="removeRelatedItem(document, 'urls')"
+                                        on:setInProgress="setInProgressState()"
                                         {is-edit-icon-denied}="{isEditDenied}"
                                         {instance}="{instance}"
                                         {on-state-change-dfd}="{onStateChangeDfd}">
-                                            <a ($click)="confirmEdit">
+                                            <a on:el:click="confirmEdit">
                                                 <action-toolbar-control>
                                                     <i class="fa fa-trash"></i>
                                                 </action-toolbar-control>
@@ -151,17 +151,17 @@
                             {{#if urlsEditMode}}
                                 <create-url
                                     {context}="{instance.context}"
-                                    (set-edit-mode)="{setUrlEditMode(false)}"
-                                    (before-create)="{addItems(%event, 'urls')}"
-                                    (created)="{addRelatedItem(%event, 'urls')}">
+                                    on:setEditMode="setUrlEditMode(false)"
+                                    on:beforeCreate="addItems(%event, 'urls')"
+                                    on:created="addRelatedItem(%event, 'urls')">
                                     <form class="create-form">
                                         <fieldset class="create-form__layout">
                                             <input {($value)}="{value}" class="create-form__input" type="text" placeholder="Add URL" spellcheck="false" autocomplete="false">
                                             <div class="create-form__controls">
-                                                <button type="button" class="create-form__confirm" ($click)="create">
+                                                <button type="button" class="create-form__confirm" on:el:click="create">
                                                     <i class="fa fa-check"></i>
                                                 </button>
-                                                <button type="button" class="create-form__cancel" ($click)="clear">
+                                                <button type="button" class="create-form__cancel" on:el:click="clear">
                                                     <i class="fa fa-times"></i>
                                                 </button>
                                             </div>
@@ -170,13 +170,13 @@
                                 </create-url>
                             {{else}}
                                 <confirm-edit-action
-                                    (set-edit-mode)="{setUrlEditMode(true)}"
-                                    (set-in-progress)="{setInProgressState()}"
+                                    on:setEditMode="setUrlEditMode(true)"
+                                    on:setInProgress="setInProgressState()"
                                     {is-edit-icon-denied}="{isEditDenied}"
                                     {instance}="{instance}"
                                     {on-state-change-dfd}="{onStateChangeDfd}">
                                         <button type="button" class="btn btn-small btn-gray"
-                                            ($click)="confirmEdit()">Add</button>
+                                            on:el:click="confirmEdit()">Add</button>
                                 </confirm-edit-action>
                             {{/if}}
                           {{/unless}}
@@ -191,12 +191,12 @@
                         {edit-mode}="{editMode}"
                         {^saving}="formState.saving"
                         {^is-dirty}="formState.isDirty"
-                        (validation-error)="{setLastErrorTab(tabIndex)}"
-                        (validation-changed)="{showRequiredInfoModal(%event)}">
+                        on:validationError="setLastErrorTab(tabIndex)"
+                        on:validationChanged="showRequiredInfoModal(%event)">
                       <custom-attributes
                             {fields}="{fields}"
                             {edit-mode}="{canEdit}"
-                            (value-changed)="{attributeChanged(%event)}">
+                            on:valueChanged="attributeChanged(%event)">
                       </custom-attributes>
                     </assessment-local-ca>
                     <!-- Modal Window to fix validation issues of CA fields -->
@@ -209,8 +209,8 @@
                                                  {state}="{state}"
                                                  {evidences}="{files}"
                                                  {is-updating-evidences}="{isUpdatingFiles}"
-                                                 (before-comment-created)="{addItems(%event, 'comments')}"
-                                                 (after-comment-created)="{addRelatedItem(%event, 'comments')}"
+                                                 on:beforeCommentCreated="addItems(%event, 'comments')"
+                                                 on:afterCommentCreated="addRelatedItem(%event, 'comments')"
                         ></ca-object-modal-content>
                     </simple-modal>
                     <!-- End of Modal Window -->
@@ -223,7 +223,7 @@
                           {form-state}="{formState}"
                           {is-info-pane-saving}="{isInfoPaneSaving}"
                           {is-undo-button-visible}="{isUndoButtonVisible}"
-                          (on-state-change)="{onStateChange(%event)}"
+                          on:onStateChange="onStateChange(%event)"
                       ></assessment-controls-toolbar>
                     {{/unless}}
                 </div>
@@ -271,8 +271,8 @@
                         class="comment-add-form"
                         {instance}="{instance}"
                         {is-saving}="{isUpdatingComments}"
-                        (after-create)="{addRelatedItem(%event, 'comments')}"
-                        (before-create)="{addItems(%event, 'comments')}"
+                        on:afterCreate="addRelatedItem(%event, 'comments')"
+                        on:beforeCreate="addItems(%event, 'comments')"
                         {notifications-info}="'Notify Assignees and Verifiers'">
                     </comment-add-form>
                 {{/unless}}
@@ -293,8 +293,8 @@
                 <related-assessments
                     {instance}="{instance}"
                     {need-reuse}="{true}"
-                    (refresh-assessment)="{refreshAssessment}"
-                    (after-object-reused)="{updateItems('files', 'urls')}">
+                    on:refreshSssessment="refreshAssessment"
+                    on:afterObjectReused="updateItems('files', 'urls')">
                 </related-assessments>
             {{/instance}}
           </tab-panel>
@@ -311,13 +311,13 @@
           <tab-panel {(panels)}="{panels}"
                      {title-text}="'Other Attributes'"
                      class="assessment-attributes-panel"
-                     (update-active-tab)="{initGlobalAttributes}">
+                     on:updateActiveTab="initGlobalAttributes">
               <div class="assessment-attributes-panel">
                 <custom-roles {exclude-roles}="{assessmentMainRoles}"
                     {instance}="{instance}"
                     {deferred-save}="{deferredSave}">
                 </custom-roles>
-                <assessment-custom-attributes (on-update-attributes)="{saveGlobalAttributes(%event)}"
+                <assessment-custom-attributes on:onUpdateAttributes="saveGlobalAttributes(%event)"
                                               {items}="{globalAttributes}"
                                               {is-edit-denied}="{isEditDenied}"
                                               class="ggrc-form ggrc-form-multiple-columns">
@@ -354,13 +354,13 @@
                                         <action-toolbar-control>
                                             <map-button-using-assessment-type {instance}="{instance}">
                                                 <confirm-edit-action
-                                                    (set-edit-mode)="{openMapper()}"
-                                                    (set-in-progress)="{setInProgressState()}"
+                                                    on:setEditMode="openMapper()"
+                                                    on:setInProgress="setInProgressState()"
                                                     {is-edit-icon-denied}="{isEditDenied}"
                                                     {instance}="{instance}"
                                                     {on-state-change-dfd}="{onStateChangeDfd}"
                                                     {edit-mode}="{editMode}">
-                                                        <i ($click)="confirmEdit()"
+                                                        <i on:el:click="confirmEdit()"
                                                             class="fa fa-code-fork action-toolbar__item-icon">
                                                         </i>
                                                 </confirm-edit-action>

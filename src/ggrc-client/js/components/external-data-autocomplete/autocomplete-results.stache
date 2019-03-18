@@ -8,7 +8,7 @@
   <ul class="autocomplete-results__list">
     {{#each results}}
     <li class="autocomplete-results__list-item">
-      <a ($mousedown)="pickItem(value, %event)">
+      <a on:el:mousedown="pickItem(value, %event)">
         {{title}}
         <span class="autocomplete-results__list-item-info">{{info}}</span>
       </a>

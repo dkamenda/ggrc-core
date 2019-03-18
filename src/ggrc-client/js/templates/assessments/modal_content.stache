@@ -154,7 +154,7 @@
                   </div>
                   <div class="modal-mapped-objects-item__unmap">
                     {{#if new_object_form}}
-                      <a href="javascript://" ($click)="removeMappings(.)">
+                      <a href="javascript://" on:el:click="removeMappings(.)">
                         <i class="fa fa-trash"></i>
                       </a>
                     {{/if}}

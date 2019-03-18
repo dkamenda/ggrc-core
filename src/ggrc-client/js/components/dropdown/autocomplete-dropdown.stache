@@ -5,7 +5,7 @@
 
 <div class="autocomplete-dropdown flex-box flex-col">
   <div class="autocomplete-dropdown__input-container" 
-       ($click)="openDropdown()">
+       on:el:click="openDropdown()">
     <input type="text" 
            readonly="readonly"
            value="{{value}}">
@@ -16,16 +16,16 @@
   {{#if isOpen}}
   <div class="autocomplete-dropdown__body-wrapper">
     <div class="dropdown-menu dropdown-menu-form autocomplete-dropdown__body"
-         ($click)="onBodyClick(%event)">
+         on:el:click="onBodyClick(%event)">
       <input class="autocomplete-dropdown__input"
             type="text"
             placeholder="Lookup attributes..."
-            ($input)="filterOptions($element)"/>
+            on:el:input="filterOptions($element)"/>
         <ul class="autocomplete-dropdown__list">
           {{^if isEmpty}}
             {{#filteredOptions}}
               <li class="autocomplete-dropdown__element">
-                <div ($click)="onChange(.)" 
+                <div on:el:click="onChange(.)" 
                       value="{{value}}">
                   {{value}}
                 </div>

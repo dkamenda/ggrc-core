@@ -9,7 +9,7 @@
       <spinner class="revision-history__spinner" {toggle}="{isLoading}"></spinner>
       <button
         type="button"
-        ($click)="prepareComparerConfig()"
+        on:el:click="prepareComparerConfig()"
         {{#if isLoading}}disabled{{/if}}
         class="btn btn-small btn-white">
           Review &amp; Apply

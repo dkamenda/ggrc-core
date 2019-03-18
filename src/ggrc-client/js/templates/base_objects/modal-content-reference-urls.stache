@@ -10,8 +10,8 @@
       {instance}="{instance}" 
       {kind}="'REFERENCE_URL'" 
       {autorefresh}="{false}"
-      (add-mappings)="{addMappings(%event.objects)}"
-      (remove-mappings)="{removeMappings(%event.object)}">
+      on:addMappings="addMappings(%event.objects)"
+      on:removeMappings="removeMappings(%event.object)">
       <!-- tabindex is necessary to work of 'Hide optional field' function -->
       <related-urls
         tabindex="20"
@@ -19,8 +19,8 @@
         {allow-to-remove}="{new_object_form}"
         {(urls)}="{documents}"
         {is-disabled}="{isLoading}"
-        (createUrl)="{markDocumentForAddition(%event.payload)}"
-        (removeUrl)="{markDocumentForDeletion(%event.payload)}">
+        on:createUrl="markDocumentForAddition(%event.payload)"
+        on:removeUrl="markDocumentForDeletion(%event.payload)">
         <label>
           Reference URL
           <i class="fa fa-question-circle" rel="tooltip" title="Web links to other references."></i>

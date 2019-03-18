@@ -17,64 +17,64 @@
               {no-value}="{dropdownNoValue}"
               {dropdown-options-groups}="{dropdownOptionsGroups}"
               {is-grouped-dropdown}="{isGroupedDropdown}"
-              (value-changed)="{fieldValueChanged(%event)}"
+              on:valueChanged="fieldValueChanged(%event)"
             ></dropdown-form-field>
           {{/case}}
           {{#case "input"}}
             <text-form-field {value}="{value}"
               class="inline__content-input inline-input-form-field"
               {placeholder}="{placeholder}"
-              (value-changed)="{fieldValueChanged(%event)}"
+              on:valueChanged="fieldValueChanged(%event)"
             ></text-form-field>
           {{/case}}
           {{#case "text"}}
             <rich-text-form-field {value}="{value}"
               class="inline__content-input"
               {placeholder}="{placeholder}"
-              (value-changed)="{fieldValueChanged(%event)}"
+              on:valueChanged="fieldValueChanged(%event)"
             ></rich-text-form-field>
           {{/case}}
            {{#case "checkbox"}}
             <checkbox-form-field {value}="{value}"
               class="inline__content-input"
-              (value-changed)="{fieldValueChanged(%event)}"
+              on:valueChanged="fieldValueChanged(%event)"
             ></checkbox-form-field>
           {{/case}}
            {{#case "date"}}
             <date-form-field {value}="{value}"
               class="inline__content-input"
-              (value-changed)="{fieldValueChanged(%event)}"
+              on:valueChanged="fieldValueChanged(%event)"
             ></date-form-field>
           {{/case}}
           {{#case "person"}}
             <person-form-field {value}="{value}"
               class="inline__content-input"
-              (value-changed)="{fieldValueChanged(%event)}"
+              on:valueChanged="fieldValueChanged(%event)"
             ></person-form-field>
           {{/case}}
           {{#case "number"}}
             <numberbox-form-field {value}="{value}"
               class="inline__content-input inline-input-form-field"
               {placeholder}="{placeholder}"
-              (value-changed)="{fieldValueChanged(%event)}"
+              on:valueChanged="fieldValueChanged(%event)"
             ></numberbox-form-field>
           {{/case}}
           {{#case "multi-select-label"}}
             <multi-select-label {labels}="{value}"
                 {edit-mode}="{true}"
-                (value-changed)="{fieldValueChanged(%event)}">
+                on:valueChanged="fieldValueChanged(%event)">
             </multi-select-label>
           {{/case}}
         {{/switch}}
 
         <ul class="inline__controls">
           <li class="inline__controls-item">
-            <a class="inline__controls-link" href="javascript://" ($click)="save()">
+            <a class="inline__controls-link" href="javascript://" on:el:click="save()">
               <i class="fa fa-check"></i>
             </a>
           </li>
           <li class="inline__controls-item">
-            <a class="inline__controls-link" href="javascript://" ($click)="cancel()">
+            <a class="inline__controls-link" href="javascript://" on:el:click="cancel()">
               <i class="fa fa-times"></i>
             </a>
           </li>

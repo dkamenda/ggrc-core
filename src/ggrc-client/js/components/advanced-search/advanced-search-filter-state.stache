@@ -18,7 +18,7 @@
   <div class="filter-state__value">
     <multiselect-dropdown
             {options}="{filterStates}"
-            (selected-changed)="{statesChanged(%event)}"
+            on:selectedChanged="statesChanged(%event)"
             {placeholder}="'Filter by State'">
     </multiselect-dropdown>
   </div>

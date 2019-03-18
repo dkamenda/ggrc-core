@@ -9,7 +9,7 @@
       <div class="revision-log__last-updates">
         <label class="flex-box">
           <input type="checkbox"
-                 ($change)="{changeLastUpdatesFilter(%element)}"
+                 on:el:change="changeLastUpdatesFilter(%element)"
                  {($checked)}="{options.showLastReviewUpdates}"/>
           Show updates after last review
         </label>

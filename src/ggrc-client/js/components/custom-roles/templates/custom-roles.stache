@@ -8,7 +8,7 @@
   <related-people-access-control
     class="width-100"
     {deferred-save}="{deferredSave}"
-    (save-custom-role)="{save(%event)}"
+    on:saveCustomRole="save(%event)"
     {conflict-roles}="{conflictRoles}"
     {order-of-roles}="{orderOfRoles}"
     {include-roles}="{includeRoles}"
@@ -22,7 +22,7 @@
         {{#groups}}
           <related-people-access-control-group
             class="people-group"
-            (update-roles)="{updateRoles(%event)}"
+            on:updateRoles="updateRoles(%event)"
             {required}="{required}"
             {group-id}="{groupId}"
             {title}="{title}"
@@ -34,10 +34,10 @@
               <div>
                   <editable-people-group
                     {required}="{required}"
-                    (unmap)="{removePerson(%event)}"
-                    (change-editable-mode)="{changeEditableGroup(%event)}"
-                    (save-changes)="{saveChanges()}"
-                    (person-selected)="{personSelected(%event)}"
+                    on:unmap="removePerson(%event)"
+                    on:changeEditableMode="changeEditableGroup(%event)"
+                    on:saveChanges="saveChanges()"
+                    on:personSelected="personSelected(%event)"
                     {can-unmap}="{canEdit}"
                     {can-edit}="{canEdit}"
                     {is-loading}="{isLoading}"
@@ -55,7 +55,7 @@
                         {required}="{required}"
                         {people}="{people}"
                         {single-user-role}="{singleUserRole}"
-                        (edit-people-group)="{changeEditableMode(true)}">
+                        on:editPeopleGroup="changeEditableMode(true)">
                       </editable-people-group-header>
                   </editable-people-group>
               </div>

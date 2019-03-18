@@ -10,7 +10,7 @@
     <div class="release-notes__date">{{releaseNotesDate}}</div>
   </div>
 
-  <button type="button" class="btn btn-small btn-icon" ($click)="hide">
+  <button type="button" class="btn btn-small btn-icon" on:el:click="hide">
     <i class="fa fa-times black"></i>
   </button>
 </div>
@@ -22,7 +22,7 @@
     <div class="simple-modal__toolbar">
       <button type="button"
               class="btn btn-small btn-white simple-modal__toolbar-item"
-              ($click)="hide">Close</button>
+              on:el:click="hide">Close</button>
     </div>
   </div>
 </div>

@@ -17,7 +17,7 @@
           {{/if}}
         {{/uncountable}}
         {{#showCloseButton}}
-          <span class="closed" ($click)="closeTab()"><i class="fa fa-times"></i></span>
+          <span class="closed" on:el:click="closeTab()"><i class="fa fa-times"></i></span>
         {{/showCloseButton}}
       </a>
     </span>

@@ -10,7 +10,7 @@ Copyright (C) 2019 Google Inc.
             <h6>title</h6>
         {{/if}}
             <inline-edit-control
-                (inline-save)="{saveInlineForm(%event)}"
+                on:inlineSave="saveInlineForm(%event)"
                 {prop-name}="'title'"
                 {type}="'input'"
                 {hide-content-in-edit-mode}="{true}"
@@ -21,8 +21,8 @@ Copyright (C) 2019 Google Inc.
                 {is-edit-icon-denied}="{isEditDenied}">
                     {{#unless editMode}}
                         <confirm-edit-action
-                            (set-edit-mode)="{setEditModeInline(%event)}"
-                            (set-in-progress)="{setInProgressState()}"
+                            on:setEditMode="setEditModeInline(%event)"
+                            on:setInProgress="setInProgressState()"
                             {is-edit-icon-denied}="{isEditIconDenied}"
                             {instance}="{instance}"
                             {on-state-change-dfd}="{onStateChangeDfd}"
@@ -31,7 +31,7 @@ Copyright (C) 2019 Google Inc.
                                     class="inline__header"
                                     {edit-mode}="{editMode}"
                                     {is-edit-icon-denied}="{isEditIconDenied}"
-                                    (set-edit-mode-inline)="{confirmEdit()}">
+                                    on:setEditModeInline="confirmEdit()">
                                         <h3 class="pane-header__title-name">{{instance.title}}</h3>
                                         <div class="pane-header__title-item">
                                           <div class="state-value {{addclass 'state' currentState}} {{#if instance.verified}}verified{{/if}}">
@@ -60,7 +60,7 @@ Copyright (C) 2019 Google Inc.
     </div>
         <div class="pane-header__toolbar">
           {{#is_info_pin}}
-            <info-pin-buttons {maximized}="{maximized}" 
+            <info-pin-buttons {maximized}="{maximized}"
                               {on-change-maximized-state}="{@onChangeMaximizedState}"
                               {on-close}="{@onClose}">
             </info-pin-buttons>
@@ -106,7 +106,7 @@ Copyright (C) 2019 Google Inc.
                                         {type}="{statusToPerson}"
                                         {modal_title}="'Reminder for Assignees set'"
                                         {modal_description}="'Tomorrow all Assignees will receive a notification to look at this Assessment if they didn't move it to 'Finished' in between.'">
-                                <a href="javascript://" ($click)="reminder">
+                                <a href="javascript://" on:el:click="reminder">
                                     <i class="fa fa-bell-o"></i>
                                     Send reminder to assignees
                                 </a>
@@ -116,7 +116,7 @@ Copyright (C) 2019 Google Inc.
                                         {type}="{statusToPerson}"
                                         {modal_title}="'Reminder for Assignees set'"
                                         {modal_description}="'Tomorrow all Assignees will receive a notification to look at this Assessment if they didn't move it to 'Final' in between.'">
-                                <a href="javascript://" ($click)="reminder">
+                                <a href="javascript://" on:el:click="reminder">
                                     <i class="fa fa-bell-o"></i>
                                     Send reminder to assignees
                                 </a>
@@ -134,14 +134,14 @@ Copyright (C) 2019 Google Inc.
                                   {{#is(instance.status, "Deprecated")}}
                                       {{! Set default state }}
                                       <object-change-state {to-state}="{initialState}"
-                                                           (on-state-change)="{onStateChange(%event)}">
+                                                           on:onStateChange="onStateChange(%event)">
                                           <a href="javascript:void(0)">
                                               <i class="fa fa-reply"></i> Restore
                                           </a>
                                       </object-change-state>
                                   {{else}}
                                       <object-change-state {to-state}="{deprecatedState}"
-                                                           (on-state-change)="{onStateChange(%event)}"
+                                                           on:onStateChange="onStateChange(%event)"
                                       >
                                           <a href="javascript:void(0)">
                                               <i class="fa fa-times-circle"></i> Deprecate
@@ -150,7 +150,7 @@ Copyright (C) 2019 Google Inc.
                                   {{/is}}
                               {{else}}
                                   <object-change-state {to-state}="{deprecatedState}"
-                                                       (on-state-change)="{onStateChange(%event)}"
+                                                       on:onStateChange="onStateChange(%event)"
                                   >
                                       <a href="javascript:void(0)">
                                           <i class="fa fa-times-circle"></i> Deprecate
@@ -173,7 +173,7 @@ Copyright (C) 2019 Google Inc.
                       </li>
                       {{/if}}
                   {{/is_allowed}}
-            </three-dots-menu> 
+            </three-dots-menu>
 
             {{#is_info_pin}}
                 {{#unless options.isSubTreeItem}}
@@ -192,7 +192,7 @@ Copyright (C) 2019 Google Inc.
                                           {disabled}="{isInfoPaneSaving}"
                                           {instance-state}="{currentState}"
                                           {is-undo-button-visible}="{isUndoButtonVisible}"
-                                          (on-state-change)="{onStateChange(%event)}">
+                                          on:onStateChange="onStateChange(%event)">
                     </object-state-toolbar>
             {{/unless}}
             <div class="form-status">

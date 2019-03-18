@@ -13,7 +13,7 @@
           {{#unless isDisabled}}
             {{#unmapablePerson}}
               <div class="action-toolbar__controls">
-                <a href="javascript://" ($click)="unmap(person)">
+                <a href="javascript://" on:el:click="unmap(person)">
                   <action-toolbar-control>
                     <i class="fa fa-trash"></i>
                   </action-toolbar-control>

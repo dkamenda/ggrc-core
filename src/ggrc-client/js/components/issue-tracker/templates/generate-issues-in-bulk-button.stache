@@ -9,7 +9,7 @@
     <button   type="button"
               class="btn btn-green btn-small generate-issues-in-bulk"
               {{#if disableButton}} disabled {{/if}}
-              ($click)="generate()"
+              on:el:click="generate()"
       >
         Generate
       </button>

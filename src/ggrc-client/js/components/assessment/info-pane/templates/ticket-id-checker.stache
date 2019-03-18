@@ -13,7 +13,7 @@
         <div class="simple-modal__header-text">
           Ticket ID
         </div>
-        <button type="button" class="btn btn-small btn-icon" ($click)="cancel">
+        <button type="button" class="btn btn-small btn-icon" on:el:click="cancel">
             <i class="fa fa-times black"></i>
         </button>
     </div>
@@ -34,11 +34,11 @@
     <div class="simple-modal__footer">
         <div class="simple-modal__toolbar">
             <button type="button" class="btn btn-small btn-green simple-modal__toolbar-item"
-                    ($click)="linkWithExistingTicket">
+                    on:el:click="linkWithExistingTicket">
                 Link with existing Ticket
             </button>
             <button type="button" class="btn btn-small btn-link simple-modal__toolbar-item"
-                    ($click)="generateNewTicket">
+                    on:el:click="generateNewTicket">
                 Generate new Ticket
             </button>
         </div>

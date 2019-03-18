@@ -5,7 +5,7 @@
 
 <div class="filter-group">
   <div class="filter-group__header">
-    <a class="close-btn" href="javascript://" ($click)="remove()">
+    <a class="close-btn" href="javascript://" on:el:click="remove()">
       <i class="fa fa-remove"></i>
     </a>
   </div>
@@ -16,7 +16,7 @@
         <div class="filter-group__attribute">
           <advanced-search-filter-attribute
             {(attribute)}="{value}"
-            (remove)="{removeItem(., true)}"
+            on:remove="removeItem(., true)"
             {available-attributes}="{availableAttributes}">
           </advanced-search-filter-attribute>
         </div>
@@ -35,7 +35,7 @@
     <div>
       <button type="button"
               class="btn btn-small btn-white"
-              ($click)="addFilterCriterion()">
+              on:el:click="addFilterCriterion()">
         Add Attribute
       </button>
     </div>

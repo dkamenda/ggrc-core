@@ -14,14 +14,14 @@
 
     <ul>
       {{#each _items}}
-        <li class="autocomplete-item" ($click)="selectItem({{_index}})">
+        <li class="autocomplete-item" on:el:click="selectItem({{_index}})">
           {{name}}
         </li>
       {{/each}}
     </ul>
 
     {{#if showNewValue}}
-      <div class="add-new-item" ($click)="addNewItem()">
+      <div class="add-new-item" on:el:click="addNewItem()">
         {{currentValue}} (New Label)
       </div>
     {{else}}

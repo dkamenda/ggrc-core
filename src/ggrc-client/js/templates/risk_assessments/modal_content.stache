@@ -40,8 +40,8 @@
           <a href="javascript://" class="field-hide" tabindex="-1">hide</a>
         </label>
         {{^if_config_exist 'external_services.Person'}}
-          <input tabindex="4" type="text" class="input-block-level" 
-                 name="ra_manager.email" data-lookup="Person" 
+          <input tabindex="4" type="text" class="input-block-level"
+                 name="ra_manager.email" data-lookup="Person"
                  placeholder="Enter email address"
                  value="{{firstexist loadedObject.email ''}}"/>
         {{else}}
@@ -53,8 +53,8 @@
             <external-data-autocomplete
               {type}="'Person'"
               {placeholder}="'Enter email address'"
-              (item-selected)="{setItem(%event.selectedItem)}"
-              (criteria-changed)="{setItem(%event.value)}"
+              on:itemSelected="setItem(%event.selectedItem)"
+              on:criteriaChanged="setItem(%event.value)"
               {auto-clean}="{false}"
               {min-length}="2"
               {search-criteria}="{textValue}">
@@ -72,9 +72,9 @@
           <a href="javascript://" class="field-hide" tabindex="-1">hide</a>
         </label>
         {{^if_config_exist 'external_services.Person'}}
-          <input tabindex="5" class="input-block-level" 
-                 name="ra_counsel.email" data-lookup="Person" 
-                 placeholder="Enter email address" type="text" 
+          <input tabindex="5" class="input-block-level"
+                 name="ra_counsel.email" data-lookup="Person"
+                 placeholder="Enter email address" type="text"
                  value="{{firstexist loadedObject.email ''}}" />
         {{else}}
           <inline-autocomplete-wrapper
@@ -85,8 +85,8 @@
             <external-data-autocomplete
               {type}="'Person'"
               {placeholder}="'Enter email address'"
-              (item-selected)="{setItem(%event.selectedItem)}"
-              (criteria-changed)="{setItem(%event.value)}"
+              on:itemSelected="setItem(%event.selectedItem)"
+              on:criteriaChanged="setItem(%event.value)"
               {auto-clean}="{false}"
               {min-length}="2"
               {search-criteria}="{textValue}">

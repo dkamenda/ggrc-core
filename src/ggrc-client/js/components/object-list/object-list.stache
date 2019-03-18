@@ -14,7 +14,7 @@
   {{#if items.length}}
       {{#if showMore}}
         <show-more class="list-more" {items}="{items}" {limit}="3">
-          <div class="object-list__item {{#isSelected}}object-list__item-selected{{/isSelected}}" ($click)="modifySelection">
+          <div class="object-list__item {{#isSelected}}object-list__item-selected{{/isSelected}}" on:el:click="modifySelection">
             <content>No item component or template is provided</content>
           </div>
         </show-more>
@@ -23,7 +23,7 @@
             correctly render 2 versions of the same component with the same data}}
         <div class="object-list__items {{_cid}}">
         {{#each items}}
-          <div class="object-list__item {{#isSelected}}object-list__item-selected{{/isSelected}}" ($click)="modifySelection">
+          <div class="object-list__item {{#isSelected}}object-list__item-selected{{/isSelected}}" on:el:click="modifySelection">
               <content>No item component or template is provided</content>
           </div>
         {{/each}}

@@ -16,30 +16,30 @@
             {{#is(instance.status, "Assigned")}}
               <button type="button"
                       class="btn btn-mini btn-lightBlue"
-                      ($click)="changeStatus"
+                      on:el:click="changeStatus"
                       data-value="In Progress">Start</button>
             {{/is}}
             {{#is(instance.status, "In Progress")}}
               <button type="button"
                       class="btn btn-mini btn-white"
-                      ($click)="changeStatus"
+                      on:el:click="changeStatus"
                       data-value="Finished">Finish</button>
             {{/is}}
             {{#is(instance.status, "Declined")}}
               <button type="button"
                       class="btn btn-mini btn-white"
-                      ($click)="changeStatus"
+                      on:el:click="changeStatus"
                       data-value="Finished">Finish</button>
             {{/is}}
             {{#is(instance.status, "Finished")}}
               {{#if instance.is_verification_needed}}
                 <button type="button"
                         class="btn btn-mini btn-red"
-                        ($click)="changeStatus"
+                        on:el:click="changeStatus"
                         data-value="Declined">Decline</button>
                 <button type="button"
                         class="btn btn-mini btn-green"
-                        ($click)="changeStatus"
+                        on:el:click="changeStatus"
                         data-value="Verified">Verify</button>
               {{/if}}
             {{/is}}
@@ -47,7 +47,7 @@
       {{/if}}
       {{#if oldValues.length}}
         <a href="javascript://" data-name="status"
-           ($click)="undo"
+           on:el:click="undo"
            data-undo="true"
            class="undo">Undo</a>
       {{/if}}

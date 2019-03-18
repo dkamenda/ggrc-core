@@ -13,5 +13,5 @@
                       {instance-state}="{currentState}"
                       {disabled}="{isInfoPaneSaving}"
                       {is-undo-button-visible}="{isUndoButtonVisible}"
-                      (on-state-change)="{onStateChange(%event)}">
+                      on:onStateChange="onStateChange(%event)">
 </object-state-toolbar>

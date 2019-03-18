@@ -10,6 +10,6 @@
   <div class="flex-box flex-row limit-button-container">
     <button type="button"
             class="btn btn-link"
-            ($click)="toggleShowAll(%event)">{{showAllButtonText}}</button>
+            on:el:click="toggleShowAll(%event)">{{showAllButtonText}}</button>
   </div>
 {{/if}}

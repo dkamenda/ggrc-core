@@ -11,8 +11,8 @@
     <div class="flex-box import-history__title">
       <span>{{title}}</span>
 
-      <i class="fa fa-download" ($click)="download(id, title)"></i>
-      <i class="fa fa-trash-o" ($click)="remove(id)"></i>
+      <i class="fa fa-download" on:el:click="download(id, title)"></i>
+      <i class="fa fa-trash-o" on:el:click="remove(id)"></i>
     </div>
   </div>
 {{/history}}

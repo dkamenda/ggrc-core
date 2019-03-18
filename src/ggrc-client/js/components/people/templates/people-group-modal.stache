@@ -7,7 +7,7 @@
               {state}="{modalState}"
               {replace-content}="{true}"
               {extra-css-class}="'people-group-modal'"
-              (hide)="{cancel()}">
+              on:hide="cancel()">
   <div class="simple-modal__header flex-box flex-row">
     <div class="simple-modal__header-text flex-size-1">
       <div class="simple-modal__title">
@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-small btn-icon" ($click)="cancel()">
+    <button type="button" class="btn btn-small btn-icon" on:el:click="cancel()">
       <i class="fa fa-times black"></i>
     </button>
   </div>
@@ -33,11 +33,11 @@
           <external-data-autocomplete {type}="'Person'"
                                       {placeholder}="'Type person'"
                                       {min-length}="2"
-                                      (item-selected)="{personSelected(%event.selectedItem)}">
+                                      on:itemSelected="personSelected(%event.selectedItem)">
           </external-data-autocomplete>
         {{else}}
           <autocomplete {search-items-type}="'Person'"
-                        (item-selected)="{personSelected(%event.selectedItem)}"
+                        on:itemSelected="personSelected(%event.selectedItem)"
                         {placeholder}="'Type person'">
           </autocomplete>
         {{/if_config_exist}}
@@ -52,7 +52,7 @@
               {{#unmapablePerson}}
                 <a href="javascript://"
                   class="people-group-modal__unmap {{#if isDisabled}}disabled{{/if}}"
-                  ($click)="unmap(person)">
+                  on:el:click="unmap(person)">
                     <i class="fa fa-close"></i>
                 </a>
               {{/unmapablePerson}}
@@ -66,13 +66,13 @@
     <div class="simple-modal__toolbar people-group-modal__footer">
       <button type="button"
               class="btn btn-green people-group-modal__button"
-              ($click)="save()"
+              on:el:click="save()"
         {{#if isLoading}}disabled{{/if}}>
         Save &amp; Close
       </button>
       <button type="button"
               class="btn btn-small people-group-modal__button btn-white"
-              ($click)="cancel()"
+              on:el:click="cancel()"
         {{#if isLoading}}disabled{{/if}}>
         Cancel
       </button>

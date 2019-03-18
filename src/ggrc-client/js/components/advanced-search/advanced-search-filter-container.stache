@@ -26,10 +26,10 @@
         <div class="filter-container__attribute">
           <advanced-search-filter-attribute
             {(attribute)}="{value}"
-            (remove)="{removeItem(.)}"
+            on:remove="removeItem(.)"
             {available-attributes}="{availableAttributes}"
             {extendable}="{true}"
-            (createGroup)="{createGroup(.)}">
+            on:createGroup="createGroup(.)">
           </advanced-search-filter-attribute>
         </div>
         {{/case}}
@@ -37,7 +37,7 @@
         <div class="filter-container__group">
           <advanced-search-filter-group
             {(items)}="{value}"
-            (remove)="{removeItem(.)}"
+            on:remove="removeItem(.)"
             {available-attributes}="{availableAttributes}">
           </advanced-search-filter-group>
         </div>
@@ -50,7 +50,7 @@
     <div>
       <button type="button"
               class="btn btn-small btn-white"
-              ($click)="addFilterCriterion()">
+              on:el:click="addFilterCriterion()">
         Add Attribute
       </button>
     </div>

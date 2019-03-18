@@ -33,7 +33,7 @@
     {{#if showEditToolbar}}
       <div class="action-toolbar__controls">
         <action-toolbar-control>
-          <i class="fa fa-pencil" ($click)="openEditMode()"></i>
+          <i class="fa fa-pencil" on:el:click="openEditMode()"></i>
         </action-toolbar-control>
       </div>
     {{/if}}

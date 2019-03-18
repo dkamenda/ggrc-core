@@ -16,7 +16,7 @@
 
     {{#if showSeeMoreLink}}
       <div class="editable-people-group__see-more">
-        <a href="javascript://" ($click)="changeEditableMode(true)">See more</a>
+        <a href="javascript://" on:el:click="changeEditableMode(true)">See more</a>
       </div>
     {{/if}}
   {{else}}
@@ -26,8 +26,8 @@
         {is-loading}="{isLoading}"
         {empty-list-message}="{emptyListMessage}"
         {(people)}="{people}"
-        (save)="{save()}"
-        (cancel)="{cancel()}">
+        on:save="save()"
+        on:cancel="cancel()">
       </people-group-modal>
     {{else}}
       <div class="inline-edit inline-edit--active">
@@ -40,7 +40,7 @@
                 {{#unmapablePerson}}
                   <a href="javascript://"
                     class="editable-people-group__unmap {{#if isDisabled}}disabled{{/if}}"
-                    ($click)="unmap(person)">
+                    on:el:click="unmap(person)">
                     <i class="fa fa-trash"></i>
                   </a>
                 {{/unmapablePerson}}
@@ -52,26 +52,26 @@
             {{else}}
               {{^if_config_exist 'external_services.Person'}}
               <autocomplete {search-items-type}="'Person'"
-                            (item-selected)="{personSelected(%event.selectedItem)}"
+                            on:itemSelected="personSelected(%event.selectedItem)"
                             {placeholder}="{placeholder}">
               </autocomplete>
               {{else}}
               <external-data-autocomplete {type}="'Person'"
                                           {placeholder}="{placeholder}"
                                           {min-length}="2"
-                                          (item-selected)="{personSelected(%event.selectedItem)}">
+                                          on:itemSelected="personSelected(%event.selectedItem)">
               </external-data-autocomplete>
               {{/if_config_exist}}
             {{/if}}
             </div>
             <ul class="inline-edit__controls inline-edit__controls--edit-mode">
                 <li>
-                    <a href="javascript://" ($click)="save()">
+                    <a href="javascript://" on:el:click="save()">
                         <i class="fa fa-check"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript://" ($click)="cancel()">
+                    <a href="javascript://" on:el:click="cancel()">
                         <i class="fa fa-times"></i>
                     </a>
                 </li>

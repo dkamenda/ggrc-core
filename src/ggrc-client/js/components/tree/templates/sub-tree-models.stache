@@ -3,16 +3,16 @@
     Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
 }}
 
-<a href="javascript://" ($click)="activate()">
+<a href="javascript://" on:el:click="activate()">
   <i class="fa fa-filter"></i>
   Filter sub tree
 </a>
 
-<div class="sub-tree-models flex-box flex-col {{#if isActive}}active{{/if}}" style="" ($click)="innerClick(%event)">
+<div class="sub-tree-models flex-box flex-col {{#if isActive}}active{{/if}}" style="" on:el:click="innerClick(%event)">
   <h5>Select child tree object type for {{title}}</h5>
   <div class="flex-box sub-tree-models_select" style="justify-content: flex-end">
-    <span ($click)="selectNone(%event)">Select none</span>
-    <span ($click)="selectAll(%event)">Select all</span>
+    <span on:el:click="selectNone(%event)">Select none</span>
+    <span on:el:click="selectAll(%event)">Select all</span>
   </div>
   <div class="flex-box flex-box-multi">
     {{#uniqueModelsList}}
@@ -26,6 +26,6 @@
     {{/uniqueModelsList}}
   </div>
   <div class="flex-box sub-tree-models_footer">
-    <a class="btn btn-small btn-lightBlue" href="javascript://" ($click)="setVisibility(%event)">Set Visibility</a>
+    <a class="btn btn-small btn-lightBlue" href="javascript://" on:el:click="setVisibility(%event)">Set Visibility</a>
   </div>
 </div>

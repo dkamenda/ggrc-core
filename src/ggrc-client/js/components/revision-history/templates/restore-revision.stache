@@ -7,17 +7,16 @@
   <div class="revision-history__restore-button">
     <spinner class="revision-history__spinner" {toggle}="{loading}"></spinner>
     <a class="btn btn-small btn-green {{#if loading}}disabled{{/if}}"
-       ($click)="restore(%element)">
+       on:el:click="restore(%element)">
       Restore Version
     </a>
   </div>
 </div>
 
-<mandatory-fields-modal
-    {state}="{modalState}"
-    {instance}="{instance}"
-    {revision-modified-by}="{restoredRevision.modified_by}"
-    {revision-updated-at}="{restoredRevision.updated_at}"
-    (save)="{saveInstance($element)}"
-    (cancel)="{revertChanges}">
+<mandatory-fields-modal {state}="{modalState}"
+                        {instance}="{instance}"
+                        {revision-modified-by}="{restoredRevision.modified_by}"
+                        {revision-updated-at}="{restoredRevision.updated_at}"
+                        on:save="saveInstance($element)"
+                        on:cancel="revertChanges()">
 </mandatory-fields-modal>

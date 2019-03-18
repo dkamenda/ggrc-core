@@ -9,7 +9,7 @@ export default can.Component.extend({
   tag: 'comment-add-button',
   template: can.stache(
     `<button type="button" class="btn btn-small btn-gray"
-       ($click)="createComment()">
+       on:el:click="createComment()">
        <content></content>
      </button>`
   ),

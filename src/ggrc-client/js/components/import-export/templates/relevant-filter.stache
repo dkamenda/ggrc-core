@@ -6,7 +6,7 @@
 <h6>
   Filter by mapping
   {{^readOnly}}
-    <a href="javascript://" ($click)="{addFilter()}" class="add-filter-rule">
+    <a href="javascript://" on:el:click="addFilter()" class="add-filter-rule">
       <i class="fa fa-fw fa-plus-circle"></i>
     </a>
   {{/readOnly}}
@@ -14,7 +14,7 @@
 {{#each relevant}}
   <div class="single-line-filter">
     {{^readOnly}}
-      <i class="fa fa-trash" ($click)="{removeFilter(%element, @index)}"></i>
+      <i class="fa fa-trash" on:el:click="removeFilter(%element, @index)"></i>
     {{/readOnly}}
     {{#if @index}}
       <dropdown {options-list}="{operators}"

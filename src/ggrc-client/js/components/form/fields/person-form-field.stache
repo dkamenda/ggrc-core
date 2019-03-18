@@ -6,7 +6,7 @@
 <div class="input-wrapper">
   {{#if inputValue}}
     <div class="person-info-wrapper">
-      <a class="person-info-wrapper__remove-value" href="javascript:void(0)" ($click)="unsetPerson">
+      <a class="person-info-wrapper__remove-value" href="javascript:void(0)" on:el:click="unsetPerson">
         <i class="fa fa-times" aria-hidden="true"></i>
       </a>
       <person-data {person-id}="{inputValue}"></person-data>
@@ -14,7 +14,7 @@
   {{else}}
     {{^if_config_exist 'external_services.Person'}}
     <autocomplete {search-items-type}="'Person'"
-                  (item-selected)="{setPerson(%event)}"
+                  on:itemSelected="setPerson(%event)"
                   {placeholder}="'Select person'"
                   {{#if disabled}}disabled{{/if}}>
     </autocomplete>
@@ -22,7 +22,7 @@
     <external-data-autocomplete {type}="'Person'"
                                 {placeholder}="'Select person'"
                                 {min-length}="2"
-                                (item-selected)="setPerson(%event)">
+                                on:itemSelected="setPerson(%event)">
     </external-data-autocomplete>
     {{/if_config_exist}}
   {{/if}}

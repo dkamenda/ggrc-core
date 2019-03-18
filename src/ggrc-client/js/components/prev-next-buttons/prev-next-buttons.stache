@@ -5,13 +5,13 @@
 
 <div class="navigation-wrap">
     <div class="navigation-item">
-        <a ($click)="setPrev()" rel="tooltip" title="Open previous Assessment"
+        <a on:el:click="setPrev()" rel="tooltip" title="Open previous Assessment"
            class="{{#unless hasPrev}}disabled{{/unless}}">
             Prev
         </a>
     </div>
     <div class="navigation-item">
-        <a ($click)="setNext()" rel="tooltip" title="Open next Assessment"
+        <a on:el:click="setNext()" rel="tooltip" title="Open next Assessment"
            class="{{#unless hasNext}}disabled{{/unless}}">
             Next
         </a>

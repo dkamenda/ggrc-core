@@ -198,7 +198,7 @@
                               <template-field
                                 {field}="{.}"
                                 {types}="{types}"
-                                (remove)="{fieldRemoved}"></template-field>
+                                on:remove="fieldRemoved()"></template-field>
                           </li>
                       {{/if _pending_delete}}
                     {{/fields}}

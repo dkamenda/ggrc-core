@@ -5,10 +5,10 @@
 
 <input type="text"
        class="input-block-level {{extraCssClass}}"
-       ($input)="setSearchCriteria($element)"
+       on:el:input="setSearchCriteria($element)"
        {($value)}="{searchCriteria}"
-       ($focus)="{openResults}"
-       ($blur)="{closeResults}"
+       on:el:focus="openResults()"
+       on:el:blur="closeResults()"
        placeholder="{{placeholder}}">
 </input>
 <spinner {extra-css-class}="'saving'" {toggle}="{saving}"></spinner>
@@ -20,7 +20,7 @@
                           {info-field-path}="'email'"
                           {loading}="{loading}"
                           {values}="{values}"
-                          (item-picked)="{onItemPicked(%event.data)}">
+                          on:itemPicked="onItemPicked(%event.data)">
     </autocomplete-results>
 </external-data-provider>
 {{/if}}

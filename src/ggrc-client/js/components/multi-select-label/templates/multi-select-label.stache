@@ -9,14 +9,14 @@
       {{#each _labels}}
         <div class="label-box">
           {{name}}
-          <a class="remove-label" ($click)="removeLabel({{_index}})">
+          <a class="remove-label" on:el:click="removeLabel({{_index}})">
             <i class="fa fa-times"></i>
           </a>
         </div>
       {{/each}}
 
       {{#if editMode}}
-        <autocomplete-input (input-changed)="{getResult(%event)}"
+        <autocomplete-input on:inputChanged="getResult(%event)"
                             {(show-results)}="{showResults}"
         ></autocomplete-input>
       {{else}}
@@ -30,8 +30,8 @@
                                   {items}="{result}"
                                   {(show-results)}="{showResults}"
                                   {show-new-value}="{showNewValue}"
-                                  (add-new-item)="{createLabel(%event)}"
-                                  (select-item)="{labelSelected(%event)}">
+                                  on:addNewItem="createLabel(%event)"
+                                  on:selectItem="labelSelected(%event)">
       </label-autocomplete-results>
     {{/if}}
   </label-autocomplete-wrapper>

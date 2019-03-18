@@ -4,7 +4,7 @@
 }}
 
 <a  class="{{class}}"
-    ($click)="openCloneModal(%element)"
+    on:el:click="openCloneModal(%element)"
     {{#if text}}
     rel="tooltip"
     data-placement="bottom"

@@ -5,7 +5,7 @@
 
 <ul class="pin-action">
   <li>
-    <a href="javascript:void(0)" class="normal" ($click)="toggleSize(%element, %event)">
+    <a href="javascript:void(0)" class="normal" on:el:click="toggleSize(%element, %event)">
       {{#if maximized}}
         <i class="fa fa-fw fa-compress" rel="tooltip" data-placement="left" title="Minimize height"></i>
       {{else}}
@@ -14,7 +14,7 @@
     </a>
   </li>
   <li>
-    <a href="javascript:void(0)" class="close-pane" ($click)="close(%element, %event)" data-trigger="close">
+    <a href="javascript:void(0)" class="close-pane" on:el:click="close(%element, %event)" data-trigger="close">
       <i class="fa fa-fw fa-times" rel="tooltip" data-placement="left" title="Close info pane"></i>
     </a>
   </li>

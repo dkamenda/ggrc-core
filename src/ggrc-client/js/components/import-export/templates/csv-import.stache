@@ -26,7 +26,7 @@
           <spinner {toggle}="{isLoading}"></spinner>
 
           <button type="button"
-                  ($click)="selectFile()"
+                  on:el:click="selectFile()"
                   class="btn btn-small btn-green"
                   {{#if isLoading}}disabled{{/if}}>
             {{#if importStatus}}
@@ -51,12 +51,12 @@
           </label>
           <button type="button"
                   class="btn btn-small btn-green"
-                  ($click)="proceed()"
+                  on:el:click="proceed()"
                   {{^if isConfirm}}disabled{{/if}}>
             Proceed
           </button>
           <button type="button"
-                  ($click)="selectFile()"
+                  on:el:click="selectFile()"
                   class="btn btn-small btn-white">
             Choose new file to import
           </button>
@@ -66,24 +66,24 @@
           <div>Analyzing file in Progress: <spinner {toggle}="{true}"></spinner></div>
           <button type="button"
                   class="btn btn-small btn-white margin-top-20"
-                  ($click)="stopImport(jobId)">
+                  on:el:click="stopImport(jobId)">
             Cancel
           </button>
         {{/case}}
 
         {{#case 'Blocked'}}
           <button type="button"
-                  ($click)="proceedWithWarnings()"
+                  on:el:click="proceedWithWarnings()"
                   class="btn btn-small btn-green">
               Proceed in spite of warnings
           </button>
           <button type="button"
-                  ($click)="downloadImportContent(jobId, fileName)"
+                  on:el:click="downloadImportContent(jobId, fileName)"
                   class="btn btn-small btn-white">
             Download import file for edit
           </button>
           <button type="button"
-                  ($click)="selectFile()"
+                  on:el:click="selectFile()"
                   class="btn btn-small btn-white">
             Choose new file to import
           </button>
@@ -91,12 +91,12 @@
 
         {{#case 'Analysis Failed'}}
           <button type="button"
-                  ($click)="downloadImportContent(jobId, fileName)"
+                  on:el:click="downloadImportContent(jobId, fileName)"
                   class="btn btn-small btn-green">
             Download import file for edit
           </button>
           <button type="button"
-                  ($click)="selectFile()"
+                  on:el:click="selectFile()"
                   class="btn btn-small btn-white">
             Choose new file to import
           </button>
@@ -104,12 +104,12 @@
 
         {{#case 'Failed'}}
           <button type="button"
-                  ($click)="downloadImportContent(jobId, fileName)"
+                  on:el:click="downloadImportContent(jobId, fileName)"
                   class="btn btn-small btn-green">
             Download import file for edit
           </button>
           <button type="button"
-                  ($click)="selectFile()"
+                  on:el:click="selectFile()"
                   class="btn btn-small btn-white">
             Choose new file to import
           </button>
@@ -178,8 +178,8 @@
   {{#history.length}}
   <div class="csv-import__import-history">
     <import-history {history}="{history}"
-                    (remove-item)="{onRemove(%event)}"
-                    (download-csv)="{onDownload(%event)}"
+                    on:removeItem="onRemove(%event)"
+                    on:downloadCsv="onDownload(%event)"
     ></import-history>
   </div>
   {{/history.length}}

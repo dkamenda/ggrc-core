@@ -8,7 +8,7 @@
   <div class="export-panel__header">
     <h4> Object {{panelNumber}}
       {{#if removable}}
-        <i class="fa fa-trash-o" ($click)="removeFilterGroup(%element)"></i>
+        <i class="fa fa-trash-o" on:el:click="removeFilterGroup(%element)"></i>
       {{/if}}
     </h4>
 

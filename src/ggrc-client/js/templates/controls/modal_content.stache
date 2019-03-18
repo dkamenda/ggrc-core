@@ -126,7 +126,7 @@
                               {(value)}="{instance.kind}" 
                               {role}="'control_kind'">
               <dropdown {options-list}="{options}"
-                        ($change)="{selectedChanged()}" {name}="'selected'"
+                        on:el:change="selectedChanged()" {name}="'selected'"
                         {no-value}="{true}" {no-value-label}="'---'">
               </dropdown>
             </dropdown-wrapper>
@@ -146,7 +146,7 @@
                     {name}="'selectedInternal'"
                     {no-value}="{true}"
                     {no-value-label}="'---'"
-                    ($change)="{onChange}"
+                    on:el:change="onChange()"
                     {tab-index}="8">
           </dropdown>
           </boolean-dropdown-wrapper>
@@ -163,7 +163,7 @@
                     {name}="'selectedInternal'"
                     {no-value}="{true}"
                     {no-value-label}="'---'"
-                    ($change)="{onChange}"
+                    on:el:change="onChange()"
                     {tab-index}="9">
           </dropdown>
           </boolean-dropdown-wrapper>
@@ -180,7 +180,7 @@
                               {(value)}="{instance.means}"
                               {role}="'control_means'">
               <dropdown {options-list}="{options}" 
-                        ($change)="{selectedChanged}" {name}="'selected'"
+                        on:el:change="selectedChanged()" {name}="'selected'"
                         {no-value}="{true}" {no-value-label}="'---'">
               </dropdown>
             </dropdown-wrapper>
@@ -207,7 +207,7 @@
                               {(value)}="{instance.verify_frequency}"
                               {role}="'verify_frequency'">
               <dropdown {options-list}="{options}"
-                        ($change)="{selectedChanged}" {name}="'selected'"
+                        on:el:change="selectedChanged()" {name}="'selected'"
                         {no-value}="{true}" {no-value-label}="'---'">
               </dropdown>
             </dropdown-wrapper>
@@ -229,7 +229,7 @@
                 {(value)}="{instance.assertions}">
                 <multiselect-dropdown {options}="{options}"
                                       {selected}="{selected}"
-                                      (selected-changed)="{selectedChanged(%event)}"
+                                      on:selectedChanged="selectedChanged(%event)"
                                       {placeholder}="'Select Assertions'">
                 </multiselect-dropdown>
               </dropdown-multiselect-wrapper>
@@ -249,7 +249,7 @@
                                             {(value)}="{instance.categories}">
                 <multiselect-dropdown {options}="{options}"
                                       {selected}="{selected}"
-                                      (selected-changed)="{selectedChanged(%event)}"
+                                      on:selectedChanged="selectedChanged(%event)"
                                       {placeholder}="'Select Categories'">
                 </multiselect-dropdown>
               </dropdown-multiselect-wrapper>

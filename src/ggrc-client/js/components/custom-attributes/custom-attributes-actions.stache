@@ -5,12 +5,12 @@
 
 {{#unless formEditMode}}
 <confirm-edit-action
-  (set-in-progress)="edit()"
+  on:setInProgress="edit()"
   {instance}="{instance}">
   <button type="button"
           class="btn btn-small btn-gray custom-attributes-actions__edit-button"
           {{#if disabled}}disabled{{/if}}
-          ($click)="confirmEdit()">
+          on:el:click="confirmEdit()">
     Edit Answers
   </button>
 </confirm-edit-action>

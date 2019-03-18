@@ -8,9 +8,9 @@
     <div class="flex-box tree-filter">
       <tree-filter-input class="flex-size-1"
                          {register-filter}="{@registerFilter}"
-                         (submit)="{onFilter}"
-                         (openAdvanced)="{openAdvancedFilter}"
-                         (removeAdvanced)="{removeAdvancedFilters}"
+                         on:submit="onFilter()"
+                         on:openAdvanced="openAdvancedFilter()"
+                         on:removeAdvanced="removeAdvancedFilters()"
                          {show-advanced}="{statusFilterVisible}"
                          {disabled}="{advancedSearch.filter}"
                          {depth}="{options.depth}"
@@ -21,12 +21,12 @@
                             {widget-id}="{options.widgetId}"
                             {model-name}="{modelName}"
                             {register-filter}="{@registerFilter}"
-                            (filter)="{onFilter}"
+                            on:filter="onFilter"
                             {disabled}="{advancedSearch.filter}">
           <multiselect-dropdown {options}="{filterStates}"
                                 {placeholder}="'Filter by State'"
                                 {disabled}="{advancedSearch.filter}"
-                                (dropdown-close)="{selectItems(%event)}">
+                                on:dropdownClose="selectItems(%event)">
           </multiselect-dropdown>
           {{#if statusTooltipVisible}}
             <i class="fa fa-question-circle" rel="tooltip"
@@ -43,7 +43,7 @@
                   {options}="{options}"
                   {model}="{model}"
                   {showed-items}="{showedItems}"
-                  (export)="{export}">
+                  on:export="export()">
     </tree-actions>
 
     <simple-modal {state}="{advancedSearch}"
@@ -54,7 +54,7 @@
           <advanced-search-filter-container {(items)}="{advancedSearch.filterItems}"
                                             {available-attributes}="{columns.available}"
                                             {model-name}="{modelName}"
-                                            ($enter)="{applyAdvancedFilters()}">
+                                            on:el:enter="applyAdvancedFilters()">
           </advanced-search-filter-container>
         </div>
         <div class="advanced-search__mapping-header">
@@ -63,14 +63,14 @@
         <div class="simple-modal__body">
           <advanced-search-mapping-container {(items)}="{advancedSearch.mappingItems}"
                                              {model-name}="{modelName}"
-                                             ($enter)="{applyAdvancedFilters()}">
+                                             on:el:enter="applyAdvancedFilters()">
           </advanced-search-mapping-container>
         </div>
       </div>
       <div class="simple-modal__footer">
         <div class="advanced-search__controls">
-          <button type="reset" class="btn btn-white" ($click)="resetAdvancedFilters()">Reset to Defaults</button>
-          <button type="submit" class="btn btn-lightBlue" ($click)="applyAdvancedFilters()">Apply</button>
+          <button type="reset" class="btn btn-white" on:el:click="resetAdvancedFilters()">Reset to Defaults</button>
+          <button type="submit" class="btn btn-lightBlue" on:el:click="applyAdvancedFilters()">Apply</button>
         </div>
       </div>
     </simple-modal>
@@ -81,8 +81,8 @@
                  {disable-configuration}="{columns.disableConfiguration}"
                  {sorting-info}="{sortingInfo}"
                  {model}="{model}"
-                 (sort)="{onSort(%event)}"
-                 (update-columns)="{onUpdateColumns(%event)}">
+                 on:sort="onSort(%event)"
+                 on:updateColumns="onUpdateColumns(%event)">
     </tree-header>
 
   </div>

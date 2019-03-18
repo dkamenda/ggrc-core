@@ -147,7 +147,7 @@
             {can-display-warning}="{true}"
             {pre-render-content}="{true}">
               <related-proposals
-                (update-proposals-warning)="{updateWarningState(%event)}"
+                on:updateProposalsWarning="updateWarningState(%event)"
                 {base-instance}="{instance}">
               </related-proposals>
           </tab-panel>

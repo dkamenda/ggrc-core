@@ -12,7 +12,7 @@
     data-placement="bottom"
     data-original-title="{{tooltip}}"
   {{/if}}
-  ($click)="onClickHandler"
-  ($keyup)="onKeyup(%element, %event)">
+  on:el:click="onClickHandler"
+  on:el:keyup="onKeyup(%element, %event)">
   <content></content>
 </button>

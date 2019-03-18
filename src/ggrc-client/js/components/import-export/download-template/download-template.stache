@@ -3,7 +3,7 @@
     Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
 }}
 
-<button type="button" class="btn btn-white btn-small" ($click)="showDialog">
+<button type="button" class="btn btn-white btn-small" on:el:click="showDialog">
   Download import template
 </button>
 
@@ -13,7 +13,7 @@
               {extra-css-class}="'download-template'">
   <div class="simple-modal__header">
     <div class="simple-modal__header-text">{{modalTitle}}</div>
-    <button type="button" class="btn btn-small btn-icon" ($click)="close()">
+    <button type="button" class="btn btn-small btn-icon" on:el:click="close()">
       <i class="fa fa-times black"></i>
     </button>
   </div>
@@ -33,23 +33,23 @@
     <h4>Choose Templates</h4>
     <multiselect-dropdown {options}="{importableModels}"
                           {placeholder}="'Choose Templates'"
-                          (selected-changed)="{selectItems(%event)}">
+                          on:selectedChanged="selectItems(%event)">
     </multiselect-dropdown>
   </div>
 
   <div class="simple-modal__footer">
     <div class="simple-modal__toolbar {{#if isLoading}}disabled{{/if}}">
-      <button type="button" class="btn btn-small btn-white simple-modal__toolbar-item" ($click)="close()">
+      <button type="button" class="btn btn-small btn-white simple-modal__toolbar-item" on:el:click="close()">
         Cancel
       </button>
       <button type="button" class="btn btn-small btn-green simple-modal__toolbar-item"
               {{^if selected.length}}disabled="disabled"{{/if}}
-              ($click)="downloadCSV">
+              on:el:click="downloadCSV">
         Download CSV
       </button>
       <button type="button" class="btn btn-small btn-green simple-modal__toolbar-item"
               {{^if selected.length}}disabled="disabled"{{/if}}
-              ($click)="downloadSheet">
+              on:el:click="downloadSheet">
         Download Sheet
       </button>
       {{#if isLoading}}<spinner {toggle}="{true}"></spinner>{{/if}}

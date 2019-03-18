@@ -19,7 +19,7 @@
           <related-people-access-control-group
             class="people-group"
             {auto-update}="{true}"
-            (update-roles)="{updateRoles(%event)}"
+            on:updateRoles="updateRoles(%event)"
             {is-new-instance}="{isNewInstance}"
             {required}="{required}"
             {group-id}="{groupId}"
@@ -40,7 +40,7 @@
                 <deletable-people-group
                   {show-empty-message}="{false}"
                   {required}="{required}"
-                  (unmap)="{removePerson(%event)}"
+                  on:unmap="removePerson(%event)"
                   {can-unmap}="{canEdit}"
                   {is-loading}="{isLoading}"
                   {group-id}="{groupId}"
@@ -66,7 +66,7 @@
                       {{^if_config_exist 'external_services.Person'}}
                       <autocomplete
                           {search-items-type}="'Person'"
-                          (item-selected)="{addPerson(%event.selectedItem, @groupId)}"
+                          on:itemSelected="addPerson(%event.selectedItem, @groupId)"
                           {placeholder}="{placeholder}">
                       </autocomplete>
                       {{else}}
@@ -74,7 +74,7 @@
                         {type}="'Person'"
                         {placeholder}="{placeholder}"
                         {min-length}="2"
-                        (item-selected)="{addPerson(%event.selectedItem, @groupId)}">
+                        on:itemSelected="addPerson(%event.selectedItem, @groupId)">
                       </external-data-autocomplete>
                       {{/if_config_exist}}
                     {{else}}

@@ -31,7 +31,7 @@
                 </div>
                 <object-list {items}="{evidences}" {empty-message}="{noItemsText}">
                     <editable-document-object-list-item {document}="{.}">
-                        <a ($click)="removeRelatedItem(document, 'files')">
+                        <a on:el:click="removeRelatedItem(document, 'files')">
                             <action-toolbar-control>
                                 <i class="fa fa-trash"></i>
                             </action-toolbar-control>
@@ -39,8 +39,8 @@
                     </editable-document-object-list-item>
                 </object-list>
                 <attach-button
-                    (before-create)="{addItems(%event, 'files')}"
-                    (created)="{addRelatedItem(%event, 'files')}" 
+                    on:beforeCreate="addItems(%event, 'files')"
+                    on:created="addRelatedItem(%event, 'files')"
                     {is-attach-action-disabled}="{isUpdatingEvidences}"
                     {instance}="{instance}">
                 </attach-button>
@@ -51,7 +51,7 @@
                 <div class="simple-modal__section-title">Evidence url</div>
                 <object-list {items}="{urls}" {empty-message}="{noItemsText}">
                     <editable-document-object-list-item {document}="{.}">
-                        <a ($click)="removeRelatedItem(document, 'urls')">
+                        <a on:el:click="removeRelatedItem(document, 'urls')">
                             <action-toolbar-control>
                                 <i class="fa fa-trash"></i>
                             </action-toolbar-control>
@@ -61,17 +61,17 @@
                 {{#if urlsEditMode}}
                     <create-url {type}="{documentTypes.urls}"
                                 {context}="{instance.context}"
-                                (set-edit-mode)="{setUrlEditMode(false)}"
-                                (before-create)="{addItems(%event, 'urls')}"
-                                (created)="{addRelatedItem(%event, 'urls')}">
+                                on:setEditMode="setUrlEditMode(false)"
+                                on:beforeCreate="addItems(%event, 'urls')"
+                                on:created="addRelatedItem(%event, 'urls')">
                         <form class="create-form">
                             <fieldset class="create-form__layout">
                                 <input {($value)}="{value}" class="create-form__input" type="text" placeholder="Add URL" spellcheck="false" autocomplete="false">
                                 <div class="create-form__controls">
-                                    <button type="button" class="create-form__confirm" ($click)="create">
+                                    <button type="button" class="create-form__confirm" on:el:click="create">
                                         <i class="fa fa-check"></i>
                                     </button>
-                                    <button type="button" class="create-form__cancel" ($click)="clear">
+                                    <button type="button" class="create-form__cancel" on:el:click="clear">
                                         <i class="fa fa-times"></i>
                                     </button>
                                 </div>
@@ -80,7 +80,7 @@
                     </create-url>
                 {{else}}
                     <button type="button" class="btn btn-small btn-gray"
-                        ($click)="setUrlEditMode(true)">Add</button>
+                        on:el:click="setUrlEditMode(true)">Add</button>
                 {{/if}}
             </div>
         {{/if}}
@@ -93,12 +93,12 @@
             <comment-add-button class="simple-modal__toolbar-item"
                                 {(value)}="*commentValue"
                                 {^is-saving}="*isSaving"
-                                (comment-created)="{onCommentCreated(%event)}"
+                                on:commentCreated="onCommentCreated(%event)"
                                 {is-disabled}="{isUpdatingEvidences}">
               Save
             </comment-add-button>
         {{/if}}
-            <button type="button" class="btn btn-small btn-white simple-modal__toolbar-item" ($click)="hide; setUrlEditMode(false)">Close</button>
+            <button type="button" class="btn btn-small btn-white simple-modal__toolbar-item" on:el:click="hide; setUrlEditMode(false)">Close</button>
         </div>
     </div>
 </div>

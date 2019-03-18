@@ -3,7 +3,7 @@
     Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
 }}
 
-<a href="javascript://" ($click)="showDialog"
+<a href="javascript://" on:el:click="showDialog"
    class="btn btn-small {{#if unit}}btn-green{{else}}btn-white{{/if}}">
     {{buttonText}}
 </a>
@@ -46,7 +46,7 @@
             <div class="confirm-buttons">
                 <button type="button"
                         class="btn btn-small btn-green"
-                        ($click)="save()"
+                        on:el:click="save()"
                         {{^canSave}}disabled{{/canSave}}
                         {{#if isSaving}}disabled{{/if}}>
                         {{#if isSaving}}

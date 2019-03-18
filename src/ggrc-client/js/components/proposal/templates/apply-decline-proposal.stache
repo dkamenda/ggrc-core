@@ -23,7 +23,7 @@
     {{#if canDisplayApplyButton}}
       <button type="button"
         class="btn btn-green proposal-confirm__button"
-        ($click)="confirm(true)"
+        on:el:click="confirm(true)"
         {{#if isLoading}}disabled{{/if}}>
           Apply
       </button>
@@ -31,14 +31,14 @@
     {{#if canDisplayDeclineButton}}
       <button type="button"
         class="btn btn-red proposal-confirm__button"
-        ($click)="confirm()"
+        on:el:click="confirm()"
         {{#if isLoading}}disabled{{/if}}>
           Decline
       </button>
     {{/if}}
     <button type="button"
       class="btn btn-small proposal-confirm__button btn-white"
-      ($click)="closeModal()"
+      on:el:click="closeModal()"
       {{#if isLoading}}disabled{{/if}}>
         Cancel
     </button>

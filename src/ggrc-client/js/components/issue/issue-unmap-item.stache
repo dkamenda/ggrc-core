@@ -31,7 +31,7 @@
             </div>
             <div class="related-snapshots__audit-container">
                 <business-object-list-item
-                    ($click)="{openObject({relatedAudit})}"
+                    on:el:click="openObject({relatedAudit})"
                     {instance}="{relatedAudit}">
                 </business-object-list-item>
             </div>
@@ -50,7 +50,7 @@
                     <div class="modal-mapped-objects-item">
                         <div class="modal-mapped-objects-item__details">
                             <business-object-list-item
-                                ($click)="{openObject({.})}"
+                                on:el:click="openObject({.})"
                                 {instance}="{.}">
                             </business-object-list-item>
                         </div>
@@ -64,12 +64,12 @@
     <div class="simple-modal__footer">
         <div class="simple-modal__toolbar">
             <button type="button" class="btn btn-small btn-red simple-modal__toolbar-item"
-                    ($click)="unmap"
+                    on:el:click="unmap"
                     {{#if isLoading}}disabled{{/if}}>
                 Unmap
             </button>
             <button type="button" class="btn btn-small btn-white simple-modal__toolbar-item"
-                    ($click)="hide"
+                    on:el:click="hide"
                     {{#if isLoading}}disabled{{/if}}>
                 Close
             </button>

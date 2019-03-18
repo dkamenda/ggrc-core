@@ -50,7 +50,7 @@
           <div class="oneline">
             <a
               href="javascript://"
-              ($click)="removeMappings(.)">
+              on:el:click="removeMappings(.)">
               <i class="fa fa-trash"></i>
             </a>
             <a class="url" href="{{viewLink}}" target="_blank">

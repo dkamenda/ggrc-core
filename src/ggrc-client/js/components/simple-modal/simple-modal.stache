@@ -15,7 +15,7 @@
                     <button type="button"
                             class="btn btn-small btn-icon"
                             {{#isDisabled}}disabled{{/isDisabled}}
-                            ($click)="hide">
+                            on:el:click="hide">
                         <i class="fa fa-times black"></i>
                     </button>
                 </div>

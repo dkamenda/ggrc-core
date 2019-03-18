@@ -37,7 +37,7 @@
       {field-id}="{customAttributeId}"
       {placeholder}="{placeholder}"
       {options}="{multiChoiceOptions}"
-      (value-changed)="{updateGlobalAttribute(%event, %context)}"
+      on:valueChanged="updateGlobalAttribute(%event, %context)"
       class="form-field__content custom-attribute-{{attributeType}}"
     ></custom-attributes-field>
     {{#if_helpers '\n #if' validationState.hasGCAErrors '\n and #if' instance.computed_errors.custom_attribute_values}}

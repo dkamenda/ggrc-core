@@ -39,12 +39,12 @@
   }
 </style>
 
-<button type="button" ($click)="open()">Bulk enable of Issue Tracker</button>
+<button type="button" on:el:click="open()">Bulk enable of Issue Tracker</button>
 
 <simple-modal {state}="{state}" {replace-content}="{true}" {extra-css-class}="'related-assessments'">
   <div class="simple-modal__header">
     <div class="simple-modal__header-text">Enable Issue Tracker</div>
-    <button type="button" class="btn btn-small btn-icon" {{^done}}disabled{{/done}} ($click)="hide">
+    <button type="button" class="btn btn-small btn-icon" {{^done}}disabled{{/done}} on:el:click="hide">
       <i class="fa fa-times black"></i>
     </button>
   </div>
@@ -54,20 +54,20 @@
       To <input type="text" {($value)}="{to}">
     </div>
     <div class="flex-box" style="margin-bottom: 10px">
-      <button type="button" ($click)="enableITForAll()" >
+      <button type="button" on:el:click="enableITForAll()" >
         Enable IT for All
       </button>
 
-      <button type="button" ($click)="stop()" style="margin-left: auto; margin-right: 10px">
+      <button type="button" on:el:click="stop()" style="margin-left: auto; margin-right: 10px">
         Stop
       </button>
-      <button type="button" ($click)="showLog()">
+      <button type="button" on:el:click="showLog()">
         Show Log
       </button>
     </div>
 
     <textarea {($value)}="{slugsString}" style="width: 100%"></textarea>
-    <button type="button" ($click)="enableForSlugs()">Enable By Slugs</button>
+    <button type="button" on:el:click="enableForSlugs()">Enable By Slugs</button>
   </div>
   <div class="flex-box flex-box-multi it-update">
     <div style="height: 30px; width: 100%; display: flex; flex-flow: wrap;">

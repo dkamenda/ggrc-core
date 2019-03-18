@@ -5,7 +5,7 @@
 {{#if instance}}
   {{#if isAllowedToShow}}
       <a class="{{cssClasses}}"
-         ($click)="{showRelatedAssessments()}"
+         on:el:click="showRelatedAssessments()"
          {{#if showTitle}}
          title="Show Related Assessments"
          {{/if}}>

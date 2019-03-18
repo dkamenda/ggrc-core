@@ -25,8 +25,8 @@
         </div>
 
         <div class="pane-header__toolbar">
-          <info-pin-buttons {maximized}="{maximized}" 
-                            {on-change-maximized-state}="{@onChangeMaximizedState}" 
+          <info-pin-buttons {maximized}="{maximized}"
+                            {on-change-maximized-state}="{@onChangeMaximizedState}"
                             {on-close}="{@onClose}">
           </info-pin-buttons>
           <div class="info-pane-utility">
@@ -44,7 +44,7 @@
                   <li>
                     {{#is(instance.status, "Deprecated")}}
                       <object-change-state {to-state}="{initialState}"
-                                           (on-state-change)="{onStateChange(%event)}">
+                                           on:onStateChange="onStateChange(%event)">
                         <a href="javascript:void(0)">
                           <i class="fa fa-reply"></i>
                           Restore
@@ -52,7 +52,7 @@
                       </object-change-state>
                     {{else}}
                       <object-change-state {to-state}="'Deprecated'"
-                                           (on-state-change)="{onStateChange(%event)}">
+                                           on:onStateChange="onStateChange(%event)">
                         <a href="javascript:void(0)">
                           <i class="fa fa-times-circle"></i> Deprecate
                         </a>
@@ -231,8 +231,8 @@
               <comment-add-form class="comment-add-form"
                                 {instance}="{instance}"
                                 {is-saving}="{isLoading}"
-                                (before-create)="{addComment(%event)}"
-                                (after-create)="{processComment(%event)}"
+                                on:beforeCreate="addComment(%event)"
+                                on:afterCreate="processComment(%event)"
                                 {notifications-info}="'Notify Task Assignees and Task Secondary Assignees'">
               </comment-add-form>
             {{/unless}}

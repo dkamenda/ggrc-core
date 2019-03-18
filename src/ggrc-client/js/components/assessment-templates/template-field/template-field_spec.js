@@ -107,7 +107,7 @@ describe('template-field component', function () {
           '<template-field',
           '  {field}="{fieldDefinition}"',
           '  {types}="{types}"',
-          '  (remove)="{fieldRemoved}">',
+          '  on:remove="fieldRemoved()">',
           '</template-field>',
         ].join('');
 

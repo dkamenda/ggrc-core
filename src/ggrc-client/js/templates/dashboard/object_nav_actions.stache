@@ -30,7 +30,7 @@
               type="submit"
               href="#workflowActivate"
               class="btn btn-lightBlue btn-small"
-              ($click)="activateWorkflow"
+              on:el:click="activateWorkflow"
               {{^if instance.can_start_cycle}}disabled="disabled"{{/if}}>
               Activate Workflow
             </button>

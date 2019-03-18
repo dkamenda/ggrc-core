@@ -7,7 +7,7 @@
     {{^if parent_instance.archived}}
       <assessment-template-clone-button
         {class}="'btn btn-small btn-darkBlue'"
-        (refresh-tree)="{loadItems()}"
+        on:refreshTree="loadItems()"
         {object-type}="{model.model_singular}"
         {parent-id}="{parent_instance.id}"
         {parent-type}="{parent_instance.class.model_singular}">
