@@ -570,6 +570,17 @@ export default can.Model.extend({
     if (this.isCustomAttributable()) {
       this._customAttributeAccess = new CustomAttributeAccess(this);
     }
+
+    /*
+    * Trigger validation after each "change" event of instance
+    * to have actual "instance.errors" object
+    */
+    this.on('change', (ev, fieldName) => {
+      if (fieldName === 'errors') {
+        return;
+      }
+      this.validate();
+    });
   },
   /**
    * Updates custom attribute objects with help custom
