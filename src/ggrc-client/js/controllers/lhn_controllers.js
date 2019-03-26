@@ -19,6 +19,7 @@ import Relationship from '../models/service-models/relationship';
 import '../components/recently-viewed/recently-viewed';
 import '../components/questionnaire-create-link/questionnaire-create-link';
 import {InfiniteScrollControl, LhnTooltipsControl} from '../controllers/infinite-scroll-controller';
+import * as canBatch from 'can-event/batch/batch';
 
 const LhnControl = can.Control.extend({}, {
   init: function () {
@@ -804,10 +805,10 @@ const LhnSearchControl = can.Control.extend({
       });
 
       function finishDisplay(results) {
-        can.Map.startBatch();
+        canBatch.start();
         self.options.visible_lists[modelName].attr('is_loading', false);
         self.options.visible_lists[modelName].replace(results);
-        can.Map.stopBatch();
+        canBatch.stop();
         setTimeout(function () {
           $list.trigger('list_displayed', modelName);
         }, 1);
