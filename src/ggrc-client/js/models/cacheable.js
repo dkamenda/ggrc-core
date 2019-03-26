@@ -94,6 +94,7 @@ function makeDateSerializer(type, key) {
 }
 
 export default can.Model.extend({
+  ajax: $.ajax,
   root_object: '',
   attr_list: [
     {

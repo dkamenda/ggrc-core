@@ -4,6 +4,7 @@
 */
 
 export default can.Model.extend({
+  ajax: $.ajax,
   root_object: 'search',
   findOne: 'GET /search',
   init: function () {
