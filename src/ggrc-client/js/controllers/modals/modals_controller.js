@@ -135,9 +135,9 @@ export default can.Control.extend({
       this.element.html(content);
     }
 
-    this.options.attr('$header', this.element.find('.modal-header'));
-    this.options.attr('$content', this.element.find('.modal-body'));
-    this.options.attr('$footer', this.element.find('.modal-footer'));
+    this.options.attr('headerEl', this.element.find('.modal-header')[0]);
+    this.options.attr('contentEl', this.element.find('.modal-body')[0]);
+    this.options.attr('footerEl', this.element.find('.modal-footer')[0]);
     this.on();
     this.fetch_all()
       .then(() => this.apply_object_params())
@@ -400,19 +400,19 @@ export default can.Control.extend({
     }
     if (header !== null) {
       header = can.stache(header)(context);
-      this.options.$header.find('h2').html(header);
+      $(this.options.headerEl).find('h2').html(header);
     }
     if (content !== null) {
       content = can.stache(content)(context);
-      this.options.$content.html(content).removeAttr('style');
+      $(this.options.contentEl).html(content).removeAttr('style');
     }
     if (footer !== null) {
       footer = can.stache(footer)(context);
-      this.options.$footer.html(footer);
+      $(this.options.footerEl).html(footer);
     }
     if (customAttributes !== null && (isObjectModal || isProposal)) {
       customAttributes = can.stache(customAttributes)(context);
-      this.options.$content.append(customAttributes);
+      $(this.options.contentEl).append(customAttributes);
     }
 
     // Update UI status array
@@ -473,7 +473,7 @@ export default can.Control.extend({
   },
 
   serialize_form: function () {
-    let $form = this.options.$content.find('form');
+    let $form = $(this.options.contentEl).find('form');
     let $elements = $form
       .find(':input');
 
@@ -526,7 +526,7 @@ export default can.Control.extend({
         new this.options.model(instance && instance.serialize ?
           instance.serialize() : instance);
     }
-    $elem = this.options.$content
+    $elem = $(this.options.contentEl)
       .find("[name='" + item.name + "']");
     model = $elem.attr('model');
 
@@ -605,7 +605,7 @@ export default can.Control.extend({
     });
   },
 
-  "{$footer} a.btn[data-toggle='modal-submit-addmore'] click":
+  "{footerEl} a.btn[data-toggle='modal-submit-addmore'] click":
     function (el, ev) {
       if (el.hasClass('disabled')) {
         return;
@@ -615,7 +615,7 @@ export default can.Control.extend({
       this.triggerSave(el, ev);
     },
 
-  "{$footer} a.btn[data-toggle='modal-submit'] click": function (el, ev) {
+  "{footerEl} a.btn[data-toggle='modal-submit'] click": function (el, ev) {
     let options = this.options;
     let instance = options.attr('instance');
     let oldData = options.attr('oldData');
@@ -649,7 +649,7 @@ export default can.Control.extend({
     }
   },
 
-  '{$content} a.field-hide click': function (el, ev) { // field hide
+  '{contentEl} a.field-hide click': function (el, ev) { // field hide
     let $el = $(el);
     let totalInner = $el.closest('.hide-wrap.hidable')
       .find('.inner-hide').length;
@@ -687,7 +687,7 @@ export default can.Control.extend({
     return false;
   },
 
-  '{$content} #formHide click': function () {
+  '{contentEl} #formHide click': function () {
     if (this.wasDestroyed()) {
       return false;
     }
@@ -724,7 +724,7 @@ export default can.Control.extend({
     return false;
   },
 
-  '{$content} #formRestore click': function () {
+  '{contentEl} #formRestore click': function () {
     if (this.wasDestroyed()) {
       return false;
     }
@@ -1072,7 +1072,7 @@ export default can.Control.extend({
    *  @param {boolean} isDisabled
    */
   disableEnableContentUI(isDisabled = false) {
-    const content = this.options.attr('$content');
+    const content = $(this.options.attr('contentEl'));
 
     if (!content) {
       return;
