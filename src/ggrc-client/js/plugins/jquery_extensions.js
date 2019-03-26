@@ -3,9 +3,20 @@
     Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
 */
 
+const originalViewModel = $.fn.viewModel;
+
 $.fn.extend({
   load: function (callback) {
     $(window).on('load', callback);
+  },
+
+  // Get component's viewModel from jQuery element
+  viewModel: function () {
+    if (!this.length) {
+      return new can.Map();
+    }
+
+    return originalViewModel.apply(this, arguments);
   },
 
   /*
