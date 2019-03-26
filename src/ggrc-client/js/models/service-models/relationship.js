@@ -5,6 +5,7 @@
 
 import Cacheable from '../cacheable';
 import Stub from '../stub';
+import {trigger} from 'can-event';
 
 export default Cacheable.extend({
   root_object: 'relationship',
@@ -59,7 +60,7 @@ export default Cacheable.extend({
         '?cascade=' + cascade,
     })
       .done(function () {
-        can.trigger(this.constructor, 'destroyed', this);
+        trigger.call(this.constructor, 'destroyed', this);
       }.bind(this));
   },
 });

@@ -7,6 +7,7 @@ import BaseTreeItemVM from './tree-item-base-vm';
 import './tree-item-extra-info';
 import template from './templates/sub-tree-item.stache';
 import CycleTaskGroupObjectTask from '../../models/business-models/cycle-task-group-object-task';
+import {trigger} from 'can-event';
 
 let viewModel = BaseTreeItemVM.extend({
   define: {
@@ -76,7 +77,7 @@ export default can.Component.extend({
     '{viewModel.instance} destroyed'() {
       const element = $(this.element)
         .closest('tree-widget-container');
-      can.trigger(element, 'refreshTree');
+      trigger.call(element[0], 'refreshTree');
     },
   },
 });

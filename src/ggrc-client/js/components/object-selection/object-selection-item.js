@@ -4,6 +4,7 @@
  */
 
 import template from './object-selection-item.stache';
+import {trigger} from 'can-event';
 
 export default can.Component.extend({
   tag: 'object-selection-item',
@@ -16,7 +17,7 @@ export default can.Component.extend({
     isSelected: false,
     toggleSelection: function (el, isSelected) {
       let event = isSelected ? 'selectItem' : 'deselectItem';
-      can.trigger(el, event, [this.attr('item')]);
+      trigger.call(el[0], event, [this.attr('item')]);
     },
   }),
   events: {

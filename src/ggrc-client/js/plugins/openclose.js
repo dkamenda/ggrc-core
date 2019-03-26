@@ -2,6 +2,9 @@
  Copyright (C) 2019 Google Inc.
  Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
  */
+
+import {trigger} from 'can-event';
+
 (function ($) {
   function openclose(command) {
     let $that = $(this);
@@ -34,7 +37,7 @@
           $parentTree.removeClass('tree-open');
         }
         $content.removeClass('content-open');
-        can.trigger($peopleInfo, 'close');
+        trigger.call($peopleInfo[0], 'close');
       } else if (cmd === 'open') {
         if (useSlide) {
           $content.slideDown('fast');
@@ -45,7 +48,7 @@
         $li.addClass('item-open');
         $parentTree.addClass('tree-open');
         $content.addClass('content-open');
-        can.trigger($peopleInfo, 'open');
+        trigger.call($peopleInfo[0], 'open');
       }
     });
 

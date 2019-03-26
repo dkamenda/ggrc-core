@@ -7,6 +7,7 @@ import {
   getPageType,
 } from '../../plugins/utils/current-page-utils';
 import tracker from '../../tracker';
+import {trigger} from 'can-event';
 
 export default can.Map.extend({
   define: {
@@ -73,7 +74,6 @@ export default can.Map.extend({
     }
 
     $element = $element.closest(itemSelector);
-
-    can.trigger($element, 'selectTreeItem', [$element, instance]);
+    trigger.call($element[0], 'selectTreeItem', [$element, instance]);
   },
 });

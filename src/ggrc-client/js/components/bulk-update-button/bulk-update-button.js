@@ -6,6 +6,7 @@
 import template from './bulk-update-button.stache';
 import updateService from '../../plugins/utils/bulk-update-service';
 import {notifier} from '../../plugins/utils/notifiers-utils';
+import {trigger} from 'can-event';
 
 export default can.Component.extend({
   tag: 'bulk-update-button',
@@ -40,7 +41,7 @@ export default can.Component.extend({
           notifier('info', message);
 
           if (updatedCount > 0) {
-            can.trigger(el.closest('tree-widget-container'), 'refreshTree');
+            trigger.call(el.closest('tree-widget-container')[0], 'refreshTree');
           }
         }.bind(this));
     },

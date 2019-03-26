@@ -8,6 +8,7 @@ import {
 } from '../../plugins/utils/current-page-utils';
 import {initCounts} from '../../plugins/utils/widgets-utils';
 import {countsMap as workflowCountsMap} from '../../apps/workflows';
+import {trigger} from 'can-event';
 
 /**
  * A component that wraps a button for ending a Workflow cycle, and
@@ -40,7 +41,7 @@ export default can.Component.extend({
         })
         .then(function () {
           let pageInstance = getPageInstance();
-          can.trigger(el, 'refreshTree');
+          trigger.call(el[0], 'refreshTree');
 
           return initCounts(
             [workflowCountsMap.history],

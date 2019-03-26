@@ -94,7 +94,7 @@ const viewModel = can.Map.extend({
     ev.stopPropagation();
   },
   subTreeTypes() {
-    can.trigger(this.attr('$el'), 'childTreeTypes');
+    trigger.call(this.attr('$el'), 'childTreeTypes');
   },
   instance: null,
   childOptions: null,
