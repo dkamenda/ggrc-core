@@ -17,15 +17,12 @@
   {{/if}}
   <div class="datepicker__input-wrapper">
     <i class="fa fa-calendar"></i>
-    <input
-      {{#if disabled}} disabled {{/if}}
-      {{#if readonly}} readonly {{/if}}
-      placeholder="{{MOMENT_DISPLAY_FMT}}"
-      type="text"
-      class="datepicker__input date {{#if readonly}}datepicker__input--denied{{/if}}"
-      {(value)}="{_date}"
-      can-focus="onFocus"
-    >
+    <input type="text" class="datepicker__input date {{#if readonly}}datepicker__input--denied{{/if}}"
+           placeholder="{{MOMENT_DISPLAY_FMT}}"
+           {(value)}="{_date}"
+           on:el:focus="onFocus"
+           {{#if disabled}} disabled {{/if}}
+           {{#if readonly}} readonly {{/if}}/>
     {{#if date}}
     <a class="datepicker__remove-value" on:el:click="removeValue(%event)">
       <i class="fa fa-times"></i>
