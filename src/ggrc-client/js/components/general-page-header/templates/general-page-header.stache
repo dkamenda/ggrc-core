@@ -101,7 +101,7 @@
                     {instance}="{instance}"
                     {left-revision-id}="{leftRevisionId}"
                     {right-revision}="{rightRevision}">
-                      <a href="javascript://" can-click="compareIt">Get the latest version</a>
+                      <a href="javascript://" on:el:click="compareIt">Get the latest version</a>
                   </revisions-comparer>
               </snapshot-comparer-config>
           </div>

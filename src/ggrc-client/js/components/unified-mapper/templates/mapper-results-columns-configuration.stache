@@ -7,7 +7,7 @@
    data-toggle="dropdown" on:el:click="initializeColumns()">
   <i class="fa fa-fw fa-bars"></i>
 </a>
-<div class="dropdown-menu dropdown-menu-form" can-click="stopPropagation">
+<div class="dropdown-menu dropdown-menu-form" on:el:click="stopPropagation">
   <tree-header-selector>
     <button type="button" class="pull-right close-dropdown">
       <i class="fa fa-times black"></i>
@@ -21,9 +21,8 @@
         </li>
       {{/columns}}
     </ul>
-    <button type="button"
-            class="btn btn-small btn-lightBlue set-tree-attrs"
-            can-click="setColumns">
+    <button type="button" class="btn btn-small btn-lightBlue set-tree-attrs"
+            on:el:click="setColumns">
       Set fields
     </button>
   </tree-header-selector>

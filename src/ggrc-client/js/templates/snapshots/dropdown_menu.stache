@@ -20,7 +20,7 @@
                         {instance}="{instance}"
                         {left-revision-id}="{leftRevisionId}"
                         {right-revision}="{rightRevision}">
-                        <a href="javascript://" can-click="compareIt">
+                        <a href="javascript://" on:el:click="compareIt">
                           <i class="fa fa-refresh"></i>
                           Get the latest version
                         </a>

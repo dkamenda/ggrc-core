@@ -9,7 +9,7 @@
       {{#if instance.is_snapshotable}}
         <li>
           <snapshot-scope-update {instance}="{instance}">
-            <a href="javascript://" can-click="upsertIt">
+            <a href="javascript://" on:el:click="upsertIt">
               <i class="fa fa-refresh"></i>
               Update objects to latest version</a>
           </snapshot-scope-update>
@@ -36,7 +36,7 @@
           <object-cloner {instance}="{instance}"
                          {modal-title}="'Clone {{ instance.type }}''"
                          {modal-description}="'Select all that you would like to clone as well?'">
-            <a href="javascript://" can-click="cloneObject">
+            <a href="javascript://" on:el:click="cloneObject">
               <i class="fa fa-clone"></i>
               Clone {{ instance.type }}
             </a>

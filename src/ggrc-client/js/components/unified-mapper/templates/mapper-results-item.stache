@@ -25,7 +25,7 @@
   <div class="related-assessments-button">
     <button type="button"
             class="btn btn-mini btn-lightBlue"
-            can-click="showRelatedAssessments"
+            on:el:click="showRelatedAssessments"
             title="Show Related Assessments">
       Assessments
     </button>

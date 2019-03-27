@@ -53,7 +53,7 @@
                 {instance}="{instance}"
                 {left-revision-id}="{leftRevisionId}"
                 {right-revision}="{rightRevision}">
-                  <a href="javascript://" class="btn btn-small btn-white" can-click="compareIt">
+                  <a href="javascript://" class="btn btn-small btn-white" on:el:click="compareIt">
                     Review &amp; Restore
                   </a>
               </revisions-comparer>
