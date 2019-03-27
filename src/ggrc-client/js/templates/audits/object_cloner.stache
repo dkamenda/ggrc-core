@@ -8,6 +8,6 @@
 <i>{{instance.instance.title}}</i></p>
 <br />
 <label>
-  <input type="checkbox" can-value="instance.includeObjects.AssessmentTemplate"/>
+  <input type="checkbox" el:checked:bind="instance.includeObjects.AssessmentTemplate"/>
   Also clone Assessment Templates
 </label>

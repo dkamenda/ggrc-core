@@ -201,8 +201,7 @@
             <a href="javascript://" class="field-hide" tabindex="-1">hide</a>
           </label>
           <label class="input-label">
-            <input type="checkbox"
-                   can-value="instance.manual_snapshots">
+            <input type="checkbox" el:checked:bind="instance.manual_snapshots"/>
             <span>Manually map snapshots</span>
           </label>
         </div>

@@ -7,7 +7,7 @@
     <div class="attribute-selector__group">
       <div class="attribute-selector__header">
         <div class="attribute-selector__checkbox">
-          <input can-value="showAttributes" type="checkbox" checked/>
+          <input type="checkbox" el:checked:bind="showAttributes" checked/>
         </div>
         <div class="attribute-selector__title">
           Attributes
@@ -34,7 +34,8 @@
         <div class="attribute-wrap">
             {{#each attributes}}
               <label title="{{display_name}}">
-                <input can-value="isSelected" type="checkbox" name="{{key}}" checked>
+                <input type="checkbox" name="{{key}}" checked
+                       el:checked:bind="isSelected"/>
                 {{display_name}}
               </label>
             {{/each}}
@@ -45,7 +46,8 @@
     <div class="attribute-selector__group">
       <div class="attribute-selector__header">
         <div class="attribute-selector__checkbox">
-          <input can-value="showMappings" type="checkbox" checked/>
+          <input type="checkbox" checked 
+                 el:checked:bind="showMappings"/>
         </div>
         <div class="attribute-selector__title">
           Mappings
@@ -72,7 +74,8 @@
         <div class="attribute-wrap">
           {{#each mappings}}
             <label title="{{display_name}}">
-              <input can-value="isSelected" type="checkbox" name="{{key}}" checked>
+              <input type="checkbox" name="{{key}}" checked
+                     el:checked:bind="isSelected"/>
               {{display_name}}
             </label>
           {{/each}}
@@ -84,7 +87,8 @@
       <div class="attribute-selector__group">
         <div class="attribute-selector__header">
           <div class="attribute-selector__checkbox">
-            <input can-value="showLocalAttributes" type="checkbox" checked/>
+            <input type="checkbox" checked 
+                   el:checked:bind="showLocalAttributes"/>
           </div>
           <div class="attribute-selector__title">
             Assessment Specific Custom Attributes
@@ -111,7 +115,8 @@
           <div class="attribute-wrap">
             {{#each localAttributes}}
               <label title="{{display_name}}">
-                <input can-value="isSelected" type="checkbox" name="{{key}}" checked>
+                <input type="checkbox" name="{{key}}" checked
+                       el:checked:bind="isSelected"/>
                 {{display_name}}
               </label>
             {{/each}}

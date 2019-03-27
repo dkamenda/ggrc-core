@@ -373,7 +373,7 @@ const LhnSearchControl = can.Control.extend({
   display: function () {
     let lhnPrefs = getLHNState();
 
-    // 2-way binding is set up in the view using can-value, directly connecting the
+    // 2-way binding is set up in the view using value:bind, directly connecting the
     //  search box and the display prefs to save the search value between page loads.
     //  We also listen for this value in the controller
     //  to trigger the search.

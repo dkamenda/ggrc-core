@@ -1,18 +1,18 @@
 {{!
-    Copyright (C) 2019 Google Inc.
-    Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
+  Copyright (C) 2019 Google Inc.
+  Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
 }}
 <content></content>
 {{#if reuseAllowed}}
-<div class="reusable-objets-item__control">
-  {{#is_allowed 'update' baseInstance context='for'}}
-    {{#is_allowed 'update' instance context='for'}}
-      {{^if baseInstance.archived}}
+  <div class="reusable-objets-item__control">
+    {{#is_allowed 'update' baseInstance context='for'}}
+      {{#is_allowed 'update' instance context='for'}}
+        {{^if baseInstance.archived}}
           <input type="checkbox"
-                  can-value="isChecked"
-                  {{#if disabled}}disabled{{/if}}/>
-      {{/if}}
+                 el:checked:bind="isChecked"
+                 {{#if disabled}} disabled{{/if}}/>
+        {{/if}}
+      {{/is_allowed}}
     {{/is_allowed}}
-  {{/is_allowed}}
-</div>
+  </div>
 {{/if}}

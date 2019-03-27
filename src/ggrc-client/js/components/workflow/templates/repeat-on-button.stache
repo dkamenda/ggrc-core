@@ -14,8 +14,8 @@
         <div class="ggrc-form">
           <div class="row-fluid">
               <label class="input--inline repeat-options__toggle" for="repeat-checkbox">
-                  <input type="checkbox" can-value="repeatEnabled" id="repeat-checkbox"/>
-                  Repeat Workflow
+                <input type="checkbox" el:checked:bind="repeatEnabled" id="repeat-checkbox"/>
+                Repeat Workflow
               </label>
           </div>
 

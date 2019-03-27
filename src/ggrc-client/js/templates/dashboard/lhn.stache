@@ -14,7 +14,8 @@
       <a href="javascript://" class="lhn-pin"><i class="fa fa-thumb-tack"></i></a>
       <form class="form-search">
         <div class="lhs-search">
-          <input class="widgetsearch" placeholder="Filter my objects..." type="text" can-value="search_text">
+          <input type="text" class="widgetsearch" placeholder="Filter my objects..."
+                 el:value:bind="search_text"/>
           <button type="submit" class="widgetsearch-submit" value="">
             <i class="fa fa-search"></i>
           </button>

@@ -51,7 +51,7 @@
 	<div class="ggrc-form-item__checkbox-item">
 	  <label class="inline-check pull-left">
 	    <input type="checkbox" class="js-toggle-controlplans"
-             can-value="instance.test_plan_procedure">
+             el:checked:bind="instance.test_plan_procedure"/>
 	      Copy Assessment Procedure from mapped object
 	  </label>
 	</div>
@@ -105,21 +105,21 @@
             </div>
             <div class="ggrc-form-item__checkbox-item">
               <label class="input--inline">
-                    <input tabindex="5" type="checkbox" can-value="values.Creators">
-                    Notify creators
-                </label>
-            </div>
-            <div class="ggrc-form-item__checkbox-item">
-              <label class="input--inline">
-                    <input tabindex="6" type="checkbox" can-value="values.Assignees">
-                    Notify assignees
+                <input type="checkbox" el:checked:bind="values.Creators" tabindex="5">
+                Notify creators
               </label>
             </div>
             <div class="ggrc-form-item__checkbox-item">
               <label class="input--inline">
-                    <input tabindex="7" type="checkbox" can-value="values.Verifiers">
-                    Notify verifiers
-                </label>
+                <input type="checkbox" el:checked:bind="values.Assignees" tabindex="6">
+                Notify assignees
+              </label>
+            </div>
+            <div class="ggrc-form-item__checkbox-item">
+              <label class="input--inline">
+                <input type="checkbox" el:checked:bind="values.Verifiers" tabindex="7">
+                Notify verifiers
+              </label>
             </div>
           </checkbox-to-list>
         </div>

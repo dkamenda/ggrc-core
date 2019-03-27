@@ -13,20 +13,20 @@
                 <span class="block single-line" title="{{value}}">{{value}}</span>
             </div>
             <div class="span4 centered checkbox-wrap">
-                <input can-value="attachment" type="checkbox">
+                <input type="checkbox" el:checked:bind="attachment"/>
             </div>
             <div class="span2 centered checkbox-wrap">
-                <input can-value="url" type="checkbox">
+                <input type="checkbox" el:checked:bind="url"/>
             </div>
             <div class="span2 centered checkbox-wrap">
-                <input can-value="comment" type="checkbox">
+                <input type="checkbox" el:checked:bind="comment"/>
             </div>
         </div>
     {{/attrs}}
   </div>
 
   <div class="span1 centered checkbox-wrap">
-    <input type="checkbox" can-value="field.mandatory">
+    <input type="checkbox" el:checked:bind="field.mandatory"/>
   </div>
   <div class="span2">
     <div class="pull-right">

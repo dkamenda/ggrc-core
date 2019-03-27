@@ -4,10 +4,9 @@
 }}
 
 <div class="span-custom2-and-half{{#if selected.invalidTitleError}} field-failure{{/if}}">
-  <input class="input-block-level"
-    type="text"
-    can-value="selected.title"
-    placeholder="Enter title">
+  <input type="text" class="input-block-level" 
+         el:value:bind="selected.title"
+         placeholder="Enter title"/>
     {{#if selected.invalidTitleError}}
       <label class="warning">{{selected.invalidTitleError}}</label>
     {{/if}}
@@ -23,14 +22,13 @@
             field-failure{{/selected.invalidValues}}
             ca-values">
   {{#in_array selected.type valueAttrs}}
-    <input class="input-block-level"
-      can-value="selected.values"
-      type="text"
-      placeholder="{{placeholder}}">
+    <input type="text" class="input-block-level"
+           el:value:bind="selected.values"
+           placeholder="{{placeholder}}"/>
       <i class="fa fa-question-circle" rel="tooltip" title="{{placeholder}}"></i>
-    {{#selected.invalidValues}}
+      {{#selected.invalidValues}}
         <label class="warning">Cannot be blank</label>
-    {{/selected.invalidValues}}
+      {{/selected.invalidValues}}
   {{else}}
     N/A
   {{/in_array}}

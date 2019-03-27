@@ -4,8 +4,7 @@
 }}
 
 <div class="input-wrapper">
-  <input type="checkbox"
-         id="form-field-{{fieldId}}"
-         can-value="inputValue"
-        {{#if disabled}}disabled{{/if}}>
+  <input type="checkbox" id="form-field-{{fieldId}}"
+         el:checked:bind="inputValue"
+        {{#if disabled}}disabled{{/if}}/>
 </div>

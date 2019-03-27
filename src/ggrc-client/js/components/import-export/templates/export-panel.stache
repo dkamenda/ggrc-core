@@ -48,7 +48,8 @@
     <h6>Filter Query</h6>
     <div class="tree-filter__inline-filtering tree-filter__inline-filtering--transparent">
       <div class="tree-filter__expression-holder{{#isFilterActive}} tree-filter__expression-holder--active{{/isFilterActive}}">
-        <input can-value="item.filter" name="filter_query" type="text" class="tree-filter__input tree-filter__input--wide">
+        <input type="text" class="tree-filter__input tree-filter__input--wide"
+               el:value:bind="item.filter" name="filter_query"/>
         <span class="tree-filter__expression-holder__is-expression">
           <i class="fa {{#if isFilterActive}}fa-check-circle green{{else}}fa-check-circle-o{{/if}}"></i>
         </span>

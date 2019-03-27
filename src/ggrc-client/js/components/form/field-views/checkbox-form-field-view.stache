@@ -4,7 +4,5 @@
 }}
 
 <div class="view-wrapper">
-  <input type="checkbox"
-         can-value="value"
-         disabled>
+  <input type="checkbox" el:checked:bind="value" disabled/>
 </div>

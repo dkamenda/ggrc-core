@@ -6,9 +6,9 @@
 <select
   tabindex="{{tabIndex}}"
   class="{{firstnonempty className 'input-block-level'}}"
-  can-value="{{name}}"
-  null-if-empty="null-if-empty"
+  el:value:bind="name"
   on:el:change="onChange"
+  null-if-empty="null-if-empty"
   {{#isDisabled}}disabled="disabled"{{/isDisabled}}
   {{#controlId}}id="{{controlId}}"{{/controlId}}
   >

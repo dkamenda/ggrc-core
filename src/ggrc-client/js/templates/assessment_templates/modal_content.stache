@@ -26,9 +26,8 @@
         </assessment-object-type-dropdown>
 
         <label class="inline-check pull-left">
-          <input class="js-toggle-controlplans"
-                 type="checkbox"
-                 can-value="instance.test_plan_procedure">
+          <input type="checkbox" class="js-toggle-controlplans"
+                 el:checked:bind="instance.test_plan_procedure"/>
 	        Copy Assessment Procedure from mapped object
         </label>
 

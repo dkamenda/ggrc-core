@@ -61,22 +61,17 @@
           Email preferences
           <i class="fa fa-question-circle" rel="tooltip" title="This setting will override user email preferences"></i>
         </label>
-        <input tabindex="3"
-               type="checkbox"
-               can-value="instance.notify_on_change">
+        <input type="checkbox" el:checked:bind="instance.notify_on_change" tabindex="3"/>
         Force real-time email updates
       </div>
       <div class="ggrc-form-item__multiple-row">
         <label class="ggrc-form-item__label">
           Need Verification for tasks?
         </label>
-        <input
-          type="checkbox"
-          can-value="instance.is_verification_needed"
-          {{#if instance.status}}
-            {{^is instance.status 'Draft'}}disabled{{/is}}
-          {{/if}}
-          tabindex="4">
+        <input type="checkbox" el:checked:bind="instance.is_verification_needed" tabindex="4"
+               {{#if instance.status}}
+                 {{^is instance.status 'Draft'}}disabled{{/is}}
+               {{/if}}/>
         Show Verify button next to tasks
       </div>
     </div>

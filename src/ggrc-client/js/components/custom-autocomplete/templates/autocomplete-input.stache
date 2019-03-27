@@ -3,8 +3,7 @@
     Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
 }}
 
-<input type="text"
-  null-if-empty="true"
-  can-value="value"
-  class="autocomplete-input"
-  placeholder="{{placeholder}}">
+<input type="text" class="autocomplete-input"
+       el:value:bind="value"
+       null-if-empty="true"
+       placeholder="{{placeholder}}"/>

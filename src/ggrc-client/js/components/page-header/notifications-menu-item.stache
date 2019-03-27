@@ -9,8 +9,9 @@
 </span>
 <div class="inner-list">
   <label>
-    <input type="checkbox" name="notifications" can-value="emailDigest"
-      {{#if isSaving}} disabled="disabled" {{/if}}>
+    <input type="checkbox" name="notifications"
+           el:checked:bind="emailDigest"
+           {{#if isSaving}} disabled{{/if}}/>
     Daily email digest
   </label>
 </div>
