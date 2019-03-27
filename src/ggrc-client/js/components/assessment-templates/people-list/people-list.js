@@ -4,6 +4,7 @@
 */
 
 import template from './people-list.stache';
+import {isValidAttrProperty} from '../../../plugins/utils/validation-utils';
 
 export default can.Component.extend({
   tag: 'people-list',
@@ -42,9 +43,8 @@ export default can.Component.extend({
       validationError: {
         type: String,
         get() {
-          let errors = this.instance.computed_errors();
-          let attr = this.attr('peopleListAttr');
-          return errors && errors[attr] ? errors[attr] : '';
+          let attr = this.attr('listName');
+          return isValidAttrProperty(this.instance, 'default_people', attr);
         },
       },
     },
