@@ -812,3 +812,11 @@ can.stache.registerHelper('isValidAttrProperty',
       options.inverse(options.contexts);
   }
 );
+
+can.stache.registerHelper('isArray', (items, options) => {
+  items = isFunction(items) ? items() : items;
+
+  return _.isArray(items) || items instanceof can.List ?
+    options.fn(options.contexts) :
+    options.inverse(options.contexts);
+});

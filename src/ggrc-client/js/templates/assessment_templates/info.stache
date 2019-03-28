@@ -66,7 +66,7 @@
               <div class="span4">
                 <h6>Default Assignees</h6>
                 {{#if default_people.assignees}}
-                  {{#if default_people.assignees.length}}
+                  {{#isArray default_people.assignees}}
                     <ul class="person-info-list">
                       {{#each default_people.assignees}}
                         <li><person-data {person-id}="{{.}}"></person-data></li>
@@ -74,7 +74,7 @@
                     </ul>
                   {{else}}
                     {{defaultAssigneeLabel}}
-                  {{/if}}
+                  {{/isArray}}
                 {{else}}
                   <span class="empty-message">None</span>
                 {{/if}}
@@ -83,7 +83,7 @@
               <div class="span4">
                 <h6>Default Verifiers</h6>
                 {{#if default_people.verifiers}}
-                  {{#if default_people.verifiers.length}}
+                  {{#isArray default_people.verifiers}}
                     <ul class="person-info-list">
                       {{#each default_people.verifiers}}
                         <li><person-data {person-id}="{{.}}"></person-data></li>
@@ -91,7 +91,7 @@
                     </ul>
                   {{else}}
                     {{defaultVerifierLabel}}
-                  {{/if}}
+                  {{/isArray}}
                 {{else}}
                   <span class="empty-message">None</span>
                 {{/if}}
