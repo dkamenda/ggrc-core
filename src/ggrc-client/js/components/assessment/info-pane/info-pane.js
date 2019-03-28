@@ -271,7 +271,7 @@ export default can.Component.extend({
     requestQuery: function (query, type) {
       let dfd = $.Deferred();
       type = type || '';
-      this.attr('isUpdating' + can.capitalize(type), true);
+      this.attr('isUpdating' + _.capitalize(type), true);
 
       batchRequests(query)
         .done(function (response) {
@@ -283,7 +283,7 @@ export default can.Component.extend({
           dfd.resolve([]);
         })
         .always(function () {
-          this.attr('isUpdating' + can.capitalize(type), false);
+          this.attr('isUpdating' + _.capitalize(type), false);
 
           tracker.stop(this.attr('instance.type'),
             tracker.USER_JOURNEY_KEYS.INFO_PANE,
@@ -305,7 +305,7 @@ export default can.Component.extend({
     },
     updateItems: function () {
       can.makeArray(arguments).forEach(function (type) {
-        this.attr(type).replace(this['load' + can.capitalize(type)]());
+        this.attr(type).replace(this['load' + _.capitalize(type)]());
       }.bind(this));
     },
     removeItems: function (event, type) {
@@ -324,7 +324,7 @@ export default can.Component.extend({
     },
     addItems: function (event, type) {
       let items = event.items;
-      this.attr('isUpdating' + can.capitalize(type), true);
+      this.attr('isUpdating' + _.capitalize(type), true);
       return this.attr(type).unshift(...can.makeArray(items));
     },
     getEvidenceAdditionFilter: function (kind) {
@@ -393,7 +393,7 @@ export default can.Component.extend({
         })
         .always(function (assessment) {
           assessment.removeAttr('actions');
-          self.attr('isUpdating' + can.capitalize(type), false);
+          self.attr('isUpdating' + _.capitalize(type), false);
 
           // dispatching event on instance to pass to the auto-save-form
           self.attr('instance').dispatch(RELATED_ITEMS_LOADED);
@@ -411,7 +411,7 @@ export default can.Component.extend({
       };
       let items = self.attr(type);
       let index = items.indexOf(item);
-      this.attr('isUpdating' + can.capitalize(type), true);
+      this.attr('isUpdating' + _.capitalize(type), true);
       items.splice(index, 1);
 
       this.attr('deferredSave').push(function () {
@@ -423,7 +423,7 @@ export default can.Component.extend({
         })
         .always(function (assessment) {
           assessment.removeAttr('actions');
-          self.attr('isUpdating' + can.capitalize(type), false);
+          self.attr('isUpdating' + _.capitalize(type), false);
 
           self.refreshCounts(['Evidence']);
         });
