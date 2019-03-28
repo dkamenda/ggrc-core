@@ -129,7 +129,7 @@ export default can.Model.extend({
   findOne: 'GET {href}',
 
   makeDestroy: function (destroy) {
-    return (id) => destroy(id);
+    return (id) => destroy.call(this, id);
   },
 
   makeFindAll: function (finder) {
