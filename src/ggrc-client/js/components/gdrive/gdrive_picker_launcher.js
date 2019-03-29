@@ -67,12 +67,13 @@ export default can.Component.extend({
       });
     },
     trigger_upload: function (scope, el) {
+      let $el = $(el);
       let stopFn = () => {};
 
       this.attr('isUploading', true);
       uploadFiles({
-        parentId: el.data('folder-id'),
-        pickFolder: el.data('type') === 'folders',
+        parentId: $el.data('folder-id'),
+        pickFolder: $el.data('type') === 'folders',
       })
         .then((files) => {
           let filesCount = files && files.length ? files.length : 0;
@@ -92,7 +93,7 @@ export default can.Component.extend({
         .fail((err) => {
           stopFn(true);
           if ( err && err.type === GDRIVE_PICKER_ERR_CANCEL ) {
-            el.trigger('rejected');
+            $el.trigger('rejected');
           }
         });
     },
