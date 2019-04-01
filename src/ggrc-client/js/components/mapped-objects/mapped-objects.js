@@ -69,7 +69,7 @@ export default can.Component.extend({
       },
     },
     isLoading: false,
-    mapping: '@',
+    mapping: '',
     parentInstance: null,
     selectedItem: {},
     filter: {

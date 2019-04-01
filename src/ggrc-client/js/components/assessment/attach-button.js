@@ -13,7 +13,7 @@ import {
 export default can.Component.extend({
   tag: 'attach-button',
   template: can.stache(template),
-  confirmationCallback: '@',
+  confirmationCallback: '',
   leakScope: true,
   viewModel: can.Map.extend({
     define: {

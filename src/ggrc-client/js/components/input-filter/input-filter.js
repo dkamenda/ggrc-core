@@ -11,9 +11,9 @@ export default can.Component.extend({
   leakScope: true,
   viewModel: can.Map.extend({
     value: '',
-    excludeSymbols: '@',
-    placeholder: '@',
-    name: '@',
+    excludeSymbols: '',
+    placeholder: '',
+    name: '',
     tabindex: 0,
     autofocus: false,
     exclude(value, symbols) {

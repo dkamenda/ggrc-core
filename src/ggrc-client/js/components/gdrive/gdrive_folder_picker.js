@@ -40,10 +40,10 @@ export default can.Component.extend({
       },
     },
     _folder_change_pending: false,
-    no_detach: '@',
-    deferred: '@',
-    tabindex: '@',
-    placeholder: '@',
+    no_detach: '',
+    deferred: '',
+    tabindex: '',
+    placeholder: '',
     instance: null,
     /**
      * Helper method for unlinking folder currently linked to the

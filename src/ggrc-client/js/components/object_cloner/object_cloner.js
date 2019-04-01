@@ -11,8 +11,8 @@ export default can.Component.extend({
   leakScope: true,
   viewModel: can.Map.extend({
     instance: null,
-    modalTitle: '@',
-    modalDescription: '@',
+    modalTitle: '',
+    modalDescription: '',
     includeObjects: {},
     getIncluded: function () {
       let included = this.attr('includeObjects');

@@ -16,7 +16,7 @@ export default can.Component.extend({
   leakScope: true,
   viewModel: can.Map.extend({
     audit: null,
-    button: '@',
+    button: '',
   }),
   events: {
     'a click': function (el, ev) {

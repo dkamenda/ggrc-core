@@ -13,9 +13,9 @@ export default can.Component.extend({
   leakScope: true,
   viewModel: can.Map.extend({
     array: null,
-    className: '@',
+    className: '',
     delimeter: ', ',
-    placeholder: '@',
+    placeholder: '',
     init: function () {
       this.updateContent();
     },

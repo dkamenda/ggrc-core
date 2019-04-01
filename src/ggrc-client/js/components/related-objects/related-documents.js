@@ -33,7 +33,7 @@ export default can.Component.extend({
   viewModel: can.Map.extend({
     instance: {},
     modelType: 'Document',
-    kind: '@',
+    kind: '',
     documents: [],
     isLoading: false,
     pubsub,

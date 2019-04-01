@@ -50,14 +50,14 @@ export default can.Component.extend({
     },
     tabType: 'panel',
     active: false,
-    titleText: '@',
-    tabId: '@', // used in REFRESH_TAB_CONTENT event handler
+    titleText: '',
+    tabId: '', // used in REFRESH_TAB_CONTENT event handler
     panels: [],
     tabIndex: null,
     canDisplayWarning: false,
     warningState: false,
-    warningText: '@',
-    extraClasses: '@',
+    warningText: '',
+    extraClasses: '',
     clearCache: function () {
       this.attr('forceClearContent', true);
       this.attr('forceClearContent', false);

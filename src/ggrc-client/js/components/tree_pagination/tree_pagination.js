@@ -32,7 +32,7 @@ export default can.Component.extend({
   },
   leakScope: true,
   viewModel: can.Map.extend({
-    placement: '@',
+    placement: '',
     setCurrentPage: function (pageNumber) {
       this.paging.attr('current', pageNumber);
     },

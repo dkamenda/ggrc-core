@@ -88,8 +88,9 @@ export default Cacheable.extend({
   },
   save() {
     let baseSave = this._super;
+    let save = baseSave.bind(this);
     return backendGdriveClient.withAuth(() => {
-      return baseSave.call(this);
+      return save();
     });
   },
 });

@@ -56,7 +56,7 @@ export default can.Component.extend({
         },
       },
     },
-    listType: '@',
+    listType: '',
     isDisabled: false,
     showMore: false,
     /**

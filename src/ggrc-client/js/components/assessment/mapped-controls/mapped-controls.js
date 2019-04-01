@@ -68,12 +68,12 @@ const viewModel = can.Map.extend({
   regulations: [],
   customAttributes: [],
   state: {},
-  titleText: '@',
-  mapping: '@',
-  mappingType: '@',
+  titleText: '',
+  mapping: '',
+  mappingType: '',
   selectedItem: {},
   snapshot: {},
-  assessmentType: '@',
+  assessmentType: '',
   withoutDetails: false,
   /**
    * Generate params required for Query API

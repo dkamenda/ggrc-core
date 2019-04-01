@@ -15,7 +15,7 @@ export default can.Component.extend({
       },
     },
     instance: {},
-    leftRevisionId: '@',
+    leftRevisionId: '',
     rightRevisions: [],
     modalTitle: 'Compare with the latest version',
     modalConfirm: 'Update',

@@ -13,6 +13,6 @@ export default can.Component.extend({
   leakScope: true,
   viewModel: can.Map.extend({
     withReadMore: false,
-    value: '@',
+    value: '',
   }),
 });

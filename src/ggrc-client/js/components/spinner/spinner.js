@@ -10,8 +10,8 @@ export default can.Component.extend({
   template: can.stache(template),
   leakScope: true,
   scope: can.Map.extend({
-    extraCssClass: '@',
-    size: '@',
+    extraCssClass: '',
+    size: '',
     toggle: null,
   }),
 });

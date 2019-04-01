@@ -9,7 +9,7 @@ export default can.Component.extend({
   viewModel: can.Map.extend({
     instance: {},
     rightRevision: {},
-    leftRevisionId: '@',
+    leftRevisionId: '',
     modalTitle: 'Restore Version: Compare to Current',
     buttonView: `${GGRC.templates_path}/modals/restore_revision.stache`,
     leftRevisionDescription: 'Current version:',

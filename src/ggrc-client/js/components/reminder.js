@@ -10,9 +10,9 @@ export default can.Component.extend({
   leakScope: true,
   viewModel: can.Map.extend({
     instance: null,
-    type: '@',
-    modal_title: '@',
-    modal_description: '@',
+    type: '',
+    modal_title: '',
+    modal_description: '',
 
     /**
      * Create reminder notifications for all assessors of an Assessment.

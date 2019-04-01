@@ -46,7 +46,7 @@ export default can.Component.extend({
     },
     exportable: GGRC.Bootstrap.exportable,
     snapshotable_objects: GGRC.config.snapshotable_objects,
-    panel_index: '@',
+    panel_index: '',
     has_parent: false,
     removable: false,
     item: null,

@@ -42,9 +42,9 @@ export default can.Component.extend({
     },
     baseInstance: null,
     modelConstructor: null,
-    relatedItemsType: '@',
+    relatedItemsType: '',
     orderBy: {},
-    initialOrderBy: '@',
+    initialOrderBy: '',
     selectedItem: {},
     getFilters: function (id, type) {
       let predefinedFilter = this.attr('predefinedFilter');

@@ -8,7 +8,7 @@ export default can.Component.extend({
   template: can.stache('<a href="javascript:void(0)"><content></content></a>'),
   leakScope: true,
   viewModel: can.Map.extend({
-    notify: '@',
+    notify: '',
     instance: null,
     notifyText: 'was unarchived successfully',
   }),

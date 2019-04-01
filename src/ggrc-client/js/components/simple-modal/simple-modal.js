@@ -17,7 +17,7 @@ export default can.Component.extend({
   template: can.stache(template),
   leakScope: true,
   viewModel: can.Map.extend({
-    extraCssClass: '@',
+    extraCssClass: '',
     instance: {},
     modalTitle: '',
     replaceContent: false,

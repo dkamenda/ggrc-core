@@ -11,10 +11,10 @@ export default can.Component.extend({
   leakScope: true,
   viewModel: can.Map.extend({
     instance: null,
-    linkclass: '@',
-    content: '@',
-    text: '@',
-    singular: '@',
-    plural: '@',
+    linkclass: '',
+    content: '',
+    text: '',
+    singular: '',
+    plural: '',
   }),
 });

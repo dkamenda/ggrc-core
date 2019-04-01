@@ -24,6 +24,6 @@ export default can.Component.extend({
         value: false,
       },
     },
-    loadingText: '@',
+    loadingText: '',
   }),
 });

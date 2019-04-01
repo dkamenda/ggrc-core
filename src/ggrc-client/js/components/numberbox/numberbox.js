@@ -18,9 +18,9 @@ export default can.Component.extend({
     enableFloat: false,
     enableNegative: false,
     disabled: false,
-    attrDataId: '@',
-    additionalClass: '@',
-    placeholder: '@',
+    attrDataId: '',
+    additionalClass: '',
+    placeholder: '',
     ckeckKey(positivePattern, negativePattern, key) {
       return this.attr('enableNegative') ?
         !!key.match(negativePattern) :

@@ -16,8 +16,8 @@ let viewModel = can.Map.extend({
       value: [],
     },
   },
-  titleText: '@',
-  type: '@',
+  titleText: '',
+  type: '',
 });
 /**
  * Specific Wrapper Component to present Controls only inner popover data.

@@ -35,9 +35,9 @@ export default can.Component.extend({
     modelType: 'Document',
     tooltip: null,
     instance: {},
-    link_class: '@',
-    click_event: '@',
-    confirmationCallback: '@',
+    link_class: '',
+    click_event: '',
+    confirmationCallback: '',
     disabled: false,
     isUploading: false,
 

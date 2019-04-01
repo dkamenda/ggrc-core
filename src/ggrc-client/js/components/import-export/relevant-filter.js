@@ -12,7 +12,7 @@ export default can.Component.extend({
   template: can.stache(template),
   leakScope: true,
   viewModel: can.Map.extend({
-    relevant_menu_item: '@',
+    relevant_menu_item: '',
     operators: [{title: 'AND', value: 'AND'}, {title: 'OR', value: 'OR'}],
     addFilter: function () {
       let menu = this.menu();

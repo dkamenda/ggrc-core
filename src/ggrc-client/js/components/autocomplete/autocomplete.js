@@ -15,9 +15,9 @@ let component = {
   template: can.stache(template),
   leakScope: true,
   viewModel: can.Map.extend({
-    placeholder: '@',
-    searchItemsType: '@',
-    className: '@',
+    placeholder: '',
+    searchItemsType: '',
+    className: '',
     value: null,
 
     // disable automatically mapping the picked item from the live search

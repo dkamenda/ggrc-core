@@ -15,9 +15,9 @@ export default can.Component.extend({
   template: can.stache(template),
   leakScope: true,
   viewModel: can.Map.extend({
-    format: '@',
-    helptext: '@',
-    label: '@',
+    format: '',
+    helptext: '',
+    label: '',
     setMinDate: null,
     setMaxDate: null,
     _date: null, // the internal value of the text input field

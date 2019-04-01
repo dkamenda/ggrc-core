@@ -62,7 +62,7 @@ let viewModel = BaseTreeItemVM.extend({
     },
   },
   itemSelector: '.sub-item-content',
-  extraCss: '@',
+  extraCss: '',
 });
 
 export default can.Component.extend({

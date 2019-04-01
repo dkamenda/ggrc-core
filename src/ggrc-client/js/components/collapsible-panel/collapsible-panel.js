@@ -8,9 +8,9 @@ import './collapsible-panel-body';
 import template from './collapsible-panel.stache';
 
 let viewModel = can.Map.extend({
-  titleText: '@',
-  titleIcon: '@',
-  extraCssClass: '@',
+  titleText: '',
+  titleIcon: '',
+  extraCssClass: '',
   softMode: false,
   define: {
     /**

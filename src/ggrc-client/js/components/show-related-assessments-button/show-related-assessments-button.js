@@ -43,8 +43,8 @@ export default can.Component.extend({
     state: {
       open: false,
     },
-    extraBtnCss: '@',
-    text: '@',
+    extraBtnCss: '',
+    text: '',
     modalTitle: 'Related Assessments',
     showRelatedAssessments: function () {
       this.attr('state.open', true);

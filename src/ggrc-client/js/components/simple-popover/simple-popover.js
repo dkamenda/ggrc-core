@@ -13,8 +13,8 @@ export default can.Component.extend({
   },
   leakScope: true,
   viewModel: can.Map.extend({
-    extraCssClass: '@',
-    placement: '@',
+    extraCssClass: '',
+    placement: '',
     buttonText: '',
     open: false,
     show: function () {

@@ -7,7 +7,7 @@ export default can.Component.extend({
   tag: 'checkbox-to-list',
   leakScope: true,
   viewModel: can.Map.extend({
-    property: '@',
+    property: '',
     instance: null,
     values: {},
   }),

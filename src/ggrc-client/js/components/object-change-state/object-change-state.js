@@ -4,7 +4,7 @@
 */
 
 let viewModel = can.Map.extend({
-  toState: '@',
+  toState: '',
   changeState: function (newState) {
     this.dispatch({
       type: 'onStateChange',
