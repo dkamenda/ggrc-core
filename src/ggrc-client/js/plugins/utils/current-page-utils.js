@@ -21,12 +21,7 @@ import {changeUrl, reloadPage} from '../../router';
  */
 
 let relatedToCurrentInstance = new can.Map({
-  define: {
-    initialized: {
-      type: 'boolean',
-      value: false,
-    },
-  },
+  initialized: false,
 });
 
 function getPageModel() {
