@@ -63,7 +63,7 @@ let viewModel = can.Map.extend({
   disabled: false,
   oldValues: [],
   async changeStatus(ctx, el, ev) {
-    let status = el.data('value');
+    let status = $(el).data('value');
     let instance = this.attr('instance');
     let oldValue = {
       status: instance.attr('status'),
