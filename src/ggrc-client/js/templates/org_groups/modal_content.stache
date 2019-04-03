@@ -102,9 +102,9 @@
           <i class="fa fa-question-circle" rel="tooltip" title="Indicates the status of this object."></i>
           <a data-id="hide_state_lk" href="javascript://" class="field-hide" tabindex="-1">hide</a>
         </label>
-          <dropdown {options-list}="{model.statuses}"
-                    {name}="'instance.status'"
-                    tabindex="23">
+          <dropdown optionsList:from="model.statuses"
+                    name:bind="instance.status"
+                    tabIndex:from="23">
           </dropdown>
       </div>
     </div>

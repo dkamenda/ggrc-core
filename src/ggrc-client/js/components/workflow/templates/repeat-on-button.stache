@@ -26,7 +26,7 @@
                   </label>
                   <dropdown id="repeats-select"
                             {options-list}="{unitOptions}"
-                            {name}="'state.result.unit'"
+                            name:bind="state.result.unit"
                             {is-disabled}="{repeatDisabled}">
                   </dropdown>
               </div>
@@ -36,7 +36,7 @@
                   </label>
                   <dropdown id="repeat-every-select"
                             {options-list}="{repeatOptions}"
-                            {name}="'state.result.repeatEvery'"
+                            name:bind="state.result.repeatEvery"
                             {is-disabled}="{repeatDisabled}">
                   </dropdown>
               </div>

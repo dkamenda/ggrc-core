@@ -7,6 +7,6 @@
 {{^if sort.field}}
   <i class="fa fa-sort"></i>
 {{/if}}
-{{#isSorted}}
+{{#if isSorted}}
   <i class="fa {{#if isSortedAsc}}fa-caret-up{{else}}fa-caret-down{{/if}}"></i>
-{{/isSorted}}
+{{/if}}
