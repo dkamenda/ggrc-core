@@ -8,7 +8,7 @@
   class="{{firstnonempty className 'input-block-level'}}"
   can-value="{{name}}"
   null-if-empty="null-if-empty"
-  can-change="onChange"
+  on:el:change="onChange"
   {{#isDisabled}}disabled="disabled"{{/isDisabled}}
   {{#controlId}}id="{{controlId}}"{{/controlId}}
   >
