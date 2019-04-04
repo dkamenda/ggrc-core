@@ -709,9 +709,15 @@ export default can.Model.extend({
             type: 'get',
             dataType: 'json',
           })
-            .then($.proxy(that, 'cleanupAcl'))
-            .then($.proxy(that, 'cleanupCollections'))
-            .then($.proxy(that.constructor, 'model'))
+            .then((response) => {
+              if (that.cleanupAcl) {
+                response = that.cleanupAcl(response);
+              }
+              if (that.cleanupCollections) {
+                response = that.cleanupCollections(response);
+              }
+              return that.constructor.model(response);
+            })
             .then((model) => {
               that.after_refresh && that.after_refresh();
               return model;
