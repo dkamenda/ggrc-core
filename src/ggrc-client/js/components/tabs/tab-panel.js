@@ -96,7 +96,7 @@ export default can.Component.extend({
     /**
      * On Components rendering finished add this viewModel to `panels` list
      */
-    inserted: function () {
+    init: function () {
       let vm = this.viewModel;
       vm.addPanel();
 

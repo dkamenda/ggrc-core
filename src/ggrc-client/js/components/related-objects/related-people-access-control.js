@@ -275,7 +275,9 @@ export default can.Component.extend({
       this.refreshGroups();
       this.viewModel.checkConflicts();
     },
-    inserted: 'setupGroups',
+    init() {
+      this.setupGroups();
+    },
     '{viewModel.instance} updated': 'setupGroups',
     '{viewModel} instance': 'refreshGroups',
   },

@@ -57,7 +57,7 @@ export default can.Component.extend({
     },
   }),
   events: {
-    inserted() {
+    init() {
       this.viewModel.setupRoles();
     },
     '{viewModel} instance'() {
