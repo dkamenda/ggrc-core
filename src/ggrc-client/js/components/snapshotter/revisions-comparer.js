@@ -155,7 +155,7 @@ export default can.Component.extend({
         // set correct order of revisions
         const isNeedReverse = revisions[0].id !== currentRevisionID;
         if (isNeedReverse) {
-          revisions = revisions.reverse();
+          revisions = _.reverse(revisions);
         }
         return new can.List(revisions);
       });
