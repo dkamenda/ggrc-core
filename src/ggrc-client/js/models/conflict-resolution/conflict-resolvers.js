@@ -8,11 +8,11 @@ export function buildChangeDescriptor(
   currentValue,
   remoteValue) {
   // The object attribute was changed on the server
-  let isChangedOnServer = !can.Object.same(previousValue, remoteValue);
+  let isChangedOnServer = !_.isEqual(previousValue, remoteValue);
   // The object attribute was changed on the client
-  let isChangedLocally = !can.Object.same(previousValue, currentValue);
+  let isChangedLocally = !_.isEqual(previousValue, currentValue);
   // The change on the server was not the same as the change on the client
-  let isDifferent = !can.Object.same(currentValue, remoteValue);
+  let isDifferent = !_.isEqual(currentValue, remoteValue);
 
   let hasConflict = (isChangedOnServer && isChangedLocally && isDifferent);
 

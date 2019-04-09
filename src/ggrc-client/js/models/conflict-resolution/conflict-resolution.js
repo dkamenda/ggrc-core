@@ -50,10 +50,10 @@ export default function resolveConflict(xhr, obj) {
     let stillHasConflict = false;
     let remoteAttrs = _.merge({}, obj.attr());
 
-    if (can.Object.same(remoteAttrs, attrs)) {
+    if (_.isEqual(remoteAttrs, attrs)) {
       // current state is same as server state -- do nothing.
       return obj;
-    } else if (can.Object.same(remoteAttrs, baseAttrs)) {
+    } else if (_.isEqual(remoteAttrs, baseAttrs)) {
       // base state matches server state -- no incorrect expectations -- save.
       return obj.attr(attrs).save();
     }
