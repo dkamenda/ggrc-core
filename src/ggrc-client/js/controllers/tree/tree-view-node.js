@@ -63,15 +63,6 @@ export default can.Control.extend({
   init: function () {
     this._draw_node_deferred = $.Deferred();
 
-    if (this.options.child_options) {
-      this.options.child_options.each(function (option) {
-        option.attr({
-          parent: this,
-          parent_instance: this.options.instance,
-        });
-      }.bind(this));
-    }
-
     // this timeout is required because the invoker will access the control via
     // the element synchronously so we must not replace the element just yet
     setTimeout(function () {
