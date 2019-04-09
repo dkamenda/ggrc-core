@@ -10,7 +10,7 @@
   <dropdown
     {class-name}="'input-block-level js-toggle-field'"
     {options-list}="{peopleValues}"
-    {name}="'selectedValue'"
+    name:bind="selectedValue"
     on:el:change="dropdownChanged"
     {no-value}="{hasEmptyValue}"
   ></dropdown>

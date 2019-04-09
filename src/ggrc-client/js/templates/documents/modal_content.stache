@@ -10,13 +10,13 @@
       <div class="ggrc-form-item__multiple-row">
         <label class="form-label ggrc-form-item__label">State</label>
         <dropdown {options-list}="{model.statuses}"
-                  {name}="'instance.status'">
+                  name:bind="instance.status">
         </dropdown>
       </div>
       <div class="ggrc-form-item__multiple-row">
         <label class="form-label ggrc-form-item__label">Document Type</label>
         <dropdown {options-list}="{model.kinds}"
-                  {name}="'instance.kind'"
+                  name:bind="instance.kind"
                   {{^if new_object_form}}{is-disabled}="{true}"{{/if}}>
         </dropdown>
       </div>

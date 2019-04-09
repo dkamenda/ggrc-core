@@ -33,7 +33,7 @@
             <dropdown
               {options-groups}="{objectTypes}"
               {is-grouped-dropdown}="{true}"
-              {name}="'assessmentType'">
+              name:bind="assessmentType">
             </dropdown>
           </assessment-object-type-dropdown>
         </div>

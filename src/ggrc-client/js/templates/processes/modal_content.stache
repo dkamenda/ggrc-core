@@ -105,7 +105,7 @@
                             {(value)}="{instance.network_zone}" 
                             {role}="'network_zone'">
             <dropdown {options-list}="{options}"
-                      on:el:change="selectedChanged()" {name}="'selected'"
+                      on:el:change="selectedChanged()" name:bind="selected"
                       {no-value}="{true}" {no-value-label}="'---'">
             </dropdown>
           </dropdown-wrapper>
@@ -127,7 +127,7 @@
         <dropdown {options-list}="{model.statuses}"
                   {no-value}="{true}"
                   {no-value-label}="'---'"
-                  {name}="'instance.status'"
+                  name:bind="instance.status"
                   tabindex="23">
         </dropdown>
     </div>

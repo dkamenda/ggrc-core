@@ -126,7 +126,7 @@
                               {(value)}="{instance.kind}" 
                               {role}="'control_kind'">
               <dropdown {options-list}="{options}"
-                        on:el:change="selectedChanged()" {name}="'selected'"
+                        on:el:change="selectedChanged()" name:bind="selected"
                         {no-value}="{true}" {no-value-label}="'---'">
               </dropdown>
             </dropdown-wrapper>
@@ -143,7 +143,7 @@
         <boolean-dropdown-wrapper class="input-block-level"
           {(selected)}="{instance.fraud_related}">
           <dropdown {options-list}="{model.fraudRelatedOptions}"
-                    {name}="'selectedInternal'"
+                    name:bind="selectedInternal"
                     {no-value}="{true}"
                     {no-value-label}="'---'"
                     on:el:change="onChange()"
@@ -160,7 +160,7 @@
         <boolean-dropdown-wrapper class="input-block-level"
           {(selected)}="{instance.key_control}">
           <dropdown {options-list}="{model.keyControlOptions}"
-                    {name}="'selectedInternal'"
+                    name:bind="selectedInternal"
                     {no-value}="{true}"
                     {no-value-label}="'---'"
                     on:el:change="onChange()"
@@ -180,7 +180,7 @@
                               {(value)}="{instance.means}"
                               {role}="'control_means'">
               <dropdown {options-list}="{options}" 
-                        on:el:change="selectedChanged()" {name}="'selected'"
+                        on:el:change="selectedChanged()" name:bind="selected"
                         {no-value}="{true}" {no-value-label}="'---'">
               </dropdown>
             </dropdown-wrapper>
@@ -207,7 +207,7 @@
                               {(value)}="{instance.verify_frequency}"
                               {role}="'verify_frequency'">
               <dropdown {options-list}="{options}"
-                        on:el:change="selectedChanged()" {name}="'selected'"
+                        on:el:change="selectedChanged()" name:bind="selected"
                         {no-value}="{true}" {no-value-label}="'---'">
               </dropdown>
             </dropdown-wrapper>
@@ -265,7 +265,7 @@
           <a data-id="hide_state_lk" href="javascript://" class="field-hide" tabindex="-1">hide</a>
         </label>
         <dropdown {options-list}="{model.statuses}"
-                  {name}="'instance.status'"
+                  name:bind="instance.status"
                   tab-index="14">
         </dropdown>
       </div>

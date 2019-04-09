@@ -18,7 +18,7 @@
     </div>
     <div class="ggrc-form-item__multiple-row">
       <dropdown {options-list}="{instance.class.issue_tracker_enable_options}"
-                {name}="'isIntegrationEnabled'">
+                name:bind="isIntegrationEnabled">
       </dropdown>
     </div>
   </div>
@@ -94,7 +94,7 @@
         Ticket Priority
       </label>
       <dropdown {options-list}="{instance.class.issue_tracker_priorities}"
-                {name}="'instance.issue_tracker.issue_priority}'">
+                name:bind="'instance.issue_tracker.issue_priority}'">
       </dropdown>
     </div>
     <div class="ggrc-form-item__multiple-row">
@@ -103,7 +103,7 @@
       </label>
       <dropdown {instance}="{instance}"
                 {options-list}="{instance.class.issue_tracker_severities}"
-                {name}="'instance.issue_tracker.issue_severity'">
+                name:bind="'instance.issue_tracker.issue_severity'">
       </dropdown>
     </div>
 

@@ -175,7 +175,7 @@
                 <h6>Response Options</h6>
                 {{! here we need to start a quick form or other component}}
                 <ggrc-quick-update {instance}="{instance}">
-                  <dropdown {name}="{instance.selected_response_options.0}"
+                  <dropdown name:bind="{instance.selected_response_options.0}"
                             {class-name}="{noop}" {{! to not use default from component}}
                             {is-disabled}="{{#if instance.responseOptionsEditable}}{false}{{else}}{true}{{/if}}"
                             {options-list}="{instance.response_options}">

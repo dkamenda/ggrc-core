@@ -104,7 +104,7 @@
         <dropdown {options-list}="{model.statuses}"
                   {no-value}="{true}"
                   {no-value-label}="'---'"
-                  {name}="'instance.status'"
+                  name:bind="instance.status"
                   tabindex="23">
         </dropdown>
     </div>
