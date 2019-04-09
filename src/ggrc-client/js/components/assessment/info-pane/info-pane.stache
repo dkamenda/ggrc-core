@@ -119,8 +119,6 @@
                                         {on-state-change-dfd}="{onStateChangeDfd}"
                                         {edit-mode}="{editMode}">
                             <attach-button
-                                        on:before-create="addItems(%event, 'files')"
-                                        on:created="addRelatedItem(%event, 'files')"
                                         {is-attach-action-disabled}="{isUpdatingFiles}"
                                         {confirmation-callback}="{@confirmEdit}"
                                         {instance}="{instance}"></attach-button>
@@ -151,9 +149,7 @@
                             {{#if urlsEditMode}}
                                 <create-url
                                     {context}="{instance.context}"
-                                    on:setEditMode="setUrlEditMode(false)"
-                                    on:beforeCreate="addItems(%event, 'urls')"
-                                    on:created="addRelatedItem(%event, 'urls')">
+                                    on:setEditMode="setUrlEditMode(false)">
                                     <form class="create-form">
                                         <fieldset class="create-form__layout">
                                             <input {($value)}="{value}" class="create-form__input" type="text" placeholder="Add URL" spellcheck="false" autocomplete="false">
@@ -209,8 +205,6 @@
                                                  {state}="{state}"
                                                  {evidences}="{files}"
                                                  {is-updating-evidences}="{isUpdatingFiles}"
-                                                 on:beforeCommentCreated="addItems(%event, 'comments')"
-                                                 on:afterCommentCreated="addRelatedItem(%event, 'comments')"
                         ></ca-object-modal-content>
                     </simple-modal>
                     <!-- End of Modal Window -->

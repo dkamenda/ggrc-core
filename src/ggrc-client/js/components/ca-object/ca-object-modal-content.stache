@@ -39,8 +39,6 @@
                     </editable-document-object-list-item>
                 </object-list>
                 <attach-button
-                    on:beforeCreate="addItems(%event, 'files')"
-                    on:created="addRelatedItem(%event, 'files')"
                     {is-attach-action-disabled}="{isUpdatingEvidences}"
                     {instance}="{instance}">
                 </attach-button>
@@ -61,9 +59,7 @@
                 {{#if urlsEditMode}}
                     <create-url {type}="{documentTypes.urls}"
                                 {context}="{instance.context}"
-                                on:setEditMode="setUrlEditMode(false)"
-                                on:beforeCreate="addItems(%event, 'urls')"
-                                on:created="addRelatedItem(%event, 'urls')">
+                                on:setEditMode="setUrlEditMode(false)">
                         <form class="create-form">
                             <fieldset class="create-form__layout">
                                 <input {($value)}="{value}" class="create-form__input" type="text" placeholder="Add URL" spellcheck="false" autocomplete="false">

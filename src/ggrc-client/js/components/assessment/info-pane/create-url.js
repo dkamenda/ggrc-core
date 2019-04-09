@@ -7,6 +7,7 @@ import {notifier} from '../../../plugins/utils/notifiers-utils';
 import {sanitizer} from '../../../plugins/utils/url-utils';
 import Context from '../../../models/service-models/context';
 import Evidence from '../../../models/business-models/evidence';
+import pubsub from '../../../pub-sub';
 
 export default can.Component.extend({
   tag: 'create-url',
@@ -30,19 +31,23 @@ export default can.Component.extend({
 
       let evidence = new Evidence(attrs);
       this.dispatch({type: 'setEditMode'});
-      this.dispatch({type: 'beforeCreate', items: [evidence]});
+
+      pubsub.dispatch({
+        type: 'relatedItemBeforeSave',
+        items: [evidence],
+        itemType: 'urls',
+      });
       evidence.save()
         .fail(() => {
           notifier('error', 'Unable to create URL.');
         })
         .done((data) => {
-          this.dispatch({type: 'created', item: data});
-          this.clear();
+          pubsub.dispatch({
+            type: 'relatedItemSaved',
+            item: data,
+            itemType: 'urls',
+          });
         });
-    },
-    clear() {
-      this.dispatch({type: 'setEditMode'});
-      this.attr('value', null);
     },
   }),
 });

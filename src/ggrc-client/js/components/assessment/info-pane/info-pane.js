@@ -679,5 +679,11 @@ export default can.Component.extend({
         this.viewModel.updateItems('files', 'urls');
       }
     },
+    '{pubsub} relatedItemSaved'(pubsub, event) {
+      this.viewModel.addRelatedItem(event, event.itemType);
+    },
+    '{pubsub} relatedItemBeforeSave'(pubsub, event) {
+      this.viewModel.addItems(event, event.itemType);
+    },
   },
 });

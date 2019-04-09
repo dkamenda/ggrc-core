@@ -9,6 +9,7 @@ import {
   getGDriveItemId,
   findGDriveItemById,
 } from '../../plugins/utils/gdrive-picker-utils';
+import pubSub from '../../pub-sub';
 
 export default can.Component.extend({
   tag: 'attach-button',
@@ -43,13 +44,17 @@ export default can.Component.extend({
     instance: null,
     isAttachActionDisabled: false,
     onBeforeCreate: function (event) {
-      let items = event.items;
-      this.dispatch({type: 'beforeCreate', items: items});
+      pubSub.dispatch({
+        type: 'relatedItemBeforeSave',
+        itemType: 'files',
+        items: event.items,
+      });
     },
     created: function (event) {
-      this.dispatch({
+      pubSub.dispatch({
         ...event,
-        type: 'created',
+        type: 'relatedItemSaved',
+        itemType: 'files',
       });
     },
     checkFolder: function () {

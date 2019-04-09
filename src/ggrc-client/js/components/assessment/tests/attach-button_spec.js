@@ -8,6 +8,7 @@ import {makeFakeInstance} from '../../../../js_specs/spec_helpers';
 import {getComponentVM} from '../../../../js_specs/spec_helpers';
 import Component from '../attach-button';
 import Assessment from '../../../models/business-models/assessment';
+import pubSub from '../../../pub-sub';
 
 describe('attach-button component', function () {
   'use strict';
@@ -23,11 +24,11 @@ describe('attach-button component', function () {
 
   describe('created() method', function () {
     it('dispatches "created" event', function () {
-      spyOn(viewModel, 'dispatch');
+      spyOn(pubSub, 'dispatch');
       viewModel.created();
 
-      expect(viewModel.dispatch)
-        .toHaveBeenCalledWith(jasmine.objectContaining({type: 'created'}));
+      expect(pubSub.dispatch).toHaveBeenCalledWith(
+        jasmine.objectContaining({type: 'relatedItemSaved'}));
     });
   });
 
