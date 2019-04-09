@@ -15,7 +15,7 @@ import {
   REFRESH_MAPPING,
   DESTINATION_UNMAPPED,
 } from '../../events/eventTypes';
-import pubsub from '../../pub-sub';
+import pubSub from '../../pub-sub';
 import Relationship from '../../models/service-models/relationship';
 import Context from '../../models/service-models/context';
 import Evidence from '../../models/business-models/evidence';
@@ -36,7 +36,7 @@ export default can.Component.extend({
     kind: '',
     documents: [],
     isLoading: false,
-    pubsub,
+    pubSub,
     define: {
 
       // automatically refresh instance on related document create/remove
@@ -249,7 +249,7 @@ export default can.Component.extend({
         viewModel.loadDocuments();
       }
     },
-    '{pubsub} objectDeleted'(pubsub, event) {
+    '{pubSub} objectDeleted'(pubSub, event) {
       let instance = event.instance;
       if (instance instanceof Evidence ||
         instance instanceof Document) {

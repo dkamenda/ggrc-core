@@ -7,7 +7,7 @@ import {notifier} from '../../../plugins/utils/notifiers-utils';
 import {sanitizer} from '../../../plugins/utils/url-utils';
 import Context from '../../../models/service-models/context';
 import Evidence from '../../../models/business-models/evidence';
-import pubsub from '../../../pub-sub';
+import pubSub from '../../../pub-sub';
 
 export default can.Component.extend({
   tag: 'create-url',
@@ -32,7 +32,7 @@ export default can.Component.extend({
       let evidence = new Evidence(attrs);
       this.dispatch({type: 'setEditMode'});
 
-      pubsub.dispatch({
+      pubSub.dispatch({
         type: 'relatedItemBeforeSave',
         items: [evidence],
         itemType: 'urls',
@@ -42,7 +42,7 @@ export default can.Component.extend({
           notifier('error', 'Unable to create URL.');
         })
         .done((data) => {
-          pubsub.dispatch({
+          pubSub.dispatch({
             type: 'relatedItemSaved',
             item: data,
             itemType: 'urls',
